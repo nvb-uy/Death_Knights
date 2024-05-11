@@ -13,7 +13,7 @@ public class AttributeRegistry {
 
 
     public static void register() {
-        Registry.register(Registries.ATTRIBUTE, new Identifier(DeathKnights.MODID, "blood_power"), BLOOD_POWER);
-        Registry.register(Registries.ATTRIBUTE, new Identifier(DeathKnights.MODID, "unholy_power"), UNHOLY_POWER);
+        Registry.register(Registries.ATTRIBUTE, new Identifier(DeathKnights.MODID, "blood"), BLOOD_POWER);
+        Registry.register(Registries.ATTRIBUTE, new Identifier(DeathKnights.MODID, "unholy"), UNHOLY_POWER);
     }
 }
