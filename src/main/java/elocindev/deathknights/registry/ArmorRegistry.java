@@ -26,7 +26,7 @@ public class ArmorRegistry {
     public static final List<Identifier> initiate_powers = List.of(SpellSchoolRegistry.BLOOD.id, SpellSchoolRegistry.UNHOLY.id, SpellSchools.FROST.id);
 
     @SuppressWarnings("unchecked")
-    public static final Armor.Set wizardRobeSet =
+    public static final Armor.Set initiate_set =
             create(
                     new Armor.CustomMaterial(
                         "initiate_armor",
@@ -36,13 +36,13 @@ public class ArmorRegistry {
                         INITIATE_INGREDIENTS
                     ),
                     ItemConfig.ArmorSet.with(
-                        new ItemConfig.ArmorSet.Piece(1)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
-                        new ItemConfig.ArmorSet.Piece(3)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
                         new ItemConfig.ArmorSet.Piece(2)
                                 .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
-                        new ItemConfig.ArmorSet.Piece(1)
+                        new ItemConfig.ArmorSet.Piece(5)
+                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+                        new ItemConfig.ArmorSet.Piece(4)
+                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+                        new ItemConfig.ArmorSet.Piece(2)
                                 .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1))
                     ))
             .bundle(material -> new Armor.Set(DeathKnights.MODID,
@@ -58,7 +58,7 @@ public class ArmorRegistry {
             return new Armor.Entry(material, null, defaults);
         }
 
-        public static void register(Map<String, ItemConfig.ArmorSet> configs) {
-            Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
-        }
+	public static void register(Map<String, ItemConfig.ArmorSet> configs) {
+			Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
+	}
 }
