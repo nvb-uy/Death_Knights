@@ -9,6 +9,8 @@
 
     "item.death_knights.blood_stone":                       "Blood Rune",
     "item.death_knights.unholy_stone":                      "Unholy Rune",
+    
+    "item.death_knights.runecarved_stone":                  "Runecarved Stone",
 
     "item.death_knights.blood_spell_book":                  "Tome of Vampiric Knowledge",
     "item.death_knights.unholy_spell_book":                 "Tome of Unholy Teachings",
@@ -16,10 +18,10 @@
 
     "item.death_knights.initiate_runeblade":                "Initiate's Runeblade",
 
-    "item.death_knights.initiate_armor_head":               "Hood of the Initiate Death Knight",
-    "item.death_knights.initiate_armor_chest":              "Tunic of the Initiate Death Knight",
-    "item.death_knights.initiate_armor_legs":               "Leggings of the Initiate Death Knight",
-    "item.death_knights.initiate_armor_feet":               "Boots of the Initiate Death Knight",
+    "item.death_knights.initiate_armor_head":               "Hood of Death's Call",
+    "item.death_knights.initiate_armor_chest":              "Tunic of Death's Call",
+    "item.death_knights.initiate_armor_legs":               "Leggings of Death's Call",
+    "item.death_knights.initiate_armor_feet":               "Boots of Death's Call",
 
     "spell.death_knights.death_strike.name":                "Death Strike",
 

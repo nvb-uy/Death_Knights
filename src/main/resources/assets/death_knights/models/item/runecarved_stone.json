@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "death_knights:item/runes/unholy_stone"
+      "layer0": "death_knights:item/runes/runic_tablet"
     }
 }
