@@ -5,8 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import elocindev.deathknights.config.ArmorConfig;
-import elocindev.deathknights.config.Configs;
+import elocindev.deathknights.config.ConfigLoader;
+import elocindev.deathknights.config.entries.ArmorConfig;
 import elocindev.deathknights.registry.ArmorRegistry;
 import elocindev.deathknights.registry.AttributeRegistry;
 import elocindev.deathknights.registry.ItemGroupRegistry;
@@ -20,7 +20,7 @@ public class DeathKnights implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Configs.init();
+		ConfigLoader.init(); ConfigLoader.initDatapack(true);
 
 		AttributeRegistry.register();
 		StatusEffectRegistry.register();

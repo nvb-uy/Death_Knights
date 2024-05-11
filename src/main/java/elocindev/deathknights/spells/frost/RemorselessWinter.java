@@ -1,6 +1,8 @@
 package elocindev.deathknights.spells.frost;
 
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.config.Configs;
+import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
@@ -25,6 +27,7 @@ import net.spell_power.api.SpellSchools;
 
 public class RemorselessWinter extends StatusEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(DeathKnights.MODID, "remorseless_winter"));
+    public static RemorselessWinterConfig CONFIG = Configs.Spells.Frost.REMORSELESS_WINTER;
 
     private boolean hasAmbientPlayed = false;
 
@@ -42,8 +45,8 @@ public class RemorselessWinter extends StatusEffect {
 
         double height = 2.0;
         int turns = 3;
-        double radius1 = 1.5;
-        double radius2 = 0.5;
+        double radius1 = CONFIG.radius;
+        double radius2 = radius1 / 2;
         int particlesPerTick = 20;
 
         ParticleEffect particleEffect = ParticleTypes.SNOWFLAKE;
@@ -70,17 +73,17 @@ public class RemorselessWinter extends StatusEffect {
                 world.addParticle(particleEffect, entity.getX() + xOffset2+off*-1, entity.getY() + randomYOffset/2, entity.getZ() + zOffset2+off, velocityX, 0, velocityZ);
         }
 
-        float damage = 1f + (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * 0.50f);
+        float damage = 1f + (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
 
-        if (random.nextDouble() < critChance) damage *= 2;
+        if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
-        if (entity.age % 5 == 0)
-            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(2.0, 2.0, 2.0), (e) -> e != entity)) {
+        if (entity.age % CONFIG.tick_rate == 0)
+            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.radius, CONFIG.radius, CONFIG.radius), (e) -> e != entity)) {
                 e.damage(SpellDamageSource.create(SpellSchools.FROST, entity), damage);
 
                 world.addParticle(Particles.frost_hit.particleType, e.getX(), e.getY()+1, e.getZ(), 0, -0.1, 0);
-                e.setFrozenTicks(20);
+                e.setFrozenTicks(CONFIG.frozen_ticks);
             }
         
         if (entity.age % 40 == 0) {
