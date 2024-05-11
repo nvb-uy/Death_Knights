@@ -1,6 +1,8 @@
 package elocindev.deathknights.config;
 
 import elocindev.deathknights.config.entries.ArmorConfig;
+import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
+import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import net.spell_engine.api.item.ItemConfig;
 import net.tinyconfig.ConfigManager;
@@ -12,7 +14,9 @@ public class Configs {
 
     public class Spells {
         public class Frost {
-            public static RemorselessWinterConfig REMORSELESS_WINTER = RemorselessWinterConfig.INSTANCE;
+            public static ObliterateConfig          OBLITERATE            =      ObliterateConfig.INSTANCE;
+            public static RemorselessWinterConfig   REMORSELESS_WINTER    =      RemorselessWinterConfig.INSTANCE;
+            public static BreathOfAgonyConfig       BREATH_OF_AGONY       =      BreathOfAgonyConfig.INSTANCE;
         }
 
         public class Unholy {
