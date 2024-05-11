@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CLC",
+        "B B"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "C": {
+            "item": "minecraft:chain"
+        },
+        "B": {
+            "item": "minecraft:bone"
+        }
+    },
+    "result": {
+        "count": 1,
+        "item": "death_knights:initiate_armor_head"
+    }
+}
