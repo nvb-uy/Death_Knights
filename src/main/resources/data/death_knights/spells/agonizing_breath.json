@@ -45,7 +45,7 @@
         "action": {
           "type": "STATUS_EFFECT",
           "status_effect": {
-            "effect_id": "prominent:agonizing_breath",
+            "effect_id": "death_knights:breath_of_agony",
             "duration": 5,
             "apply_mode": "SET",
             "amplifier": 0,

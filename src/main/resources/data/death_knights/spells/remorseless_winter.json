@@ -47,7 +47,7 @@
         "action": {
           "type": "STATUS_EFFECT",
           "status_effect": {
-            "effect_id": "prominent:remorseless_winter",
+            "effect_id": "death_knights:remorseless_winter",
             "duration": 10,
             "apply_mode": "SET",
             "amplifier": 0,

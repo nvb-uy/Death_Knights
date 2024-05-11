@@ -1,13 +1,13 @@
 package elocindev.deathknights.spells.frost;
 
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.api.core.SpellEffect;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.StopSoundS2CPacket;
@@ -25,7 +25,7 @@ import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
-public class RemorselessWinter extends StatusEffect {
+public class RemorselessWinter extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(DeathKnights.MODID, "remorseless_winter"));
     public static RemorselessWinterConfig CONFIG = Configs.Spells.Frost.REMORSELESS_WINTER;
 
