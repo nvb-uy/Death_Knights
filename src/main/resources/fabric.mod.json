@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "death_knights",
+	"version": "${version}",
+	"name": "Death Knights",
+	"description": "Embrace death and become a Death Knight! An RPG Series mod for Fabric.",
+	"authors": [
+		"ElocinDev"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/nvb-uy/Death_Knights"
+	},
+	"license": "All Rights Reserved",
+	"icon": "assets/death_knights/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"elocindev.deathknights.DeathKnights"
+		]
+	},
+	"mixins": [
+		"death_knights.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.0",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"player-animator": "*",
+		"spell_engine": "*"
+	},
+	"suggests": {
+		"bettercombat": "*"
+	}
+}

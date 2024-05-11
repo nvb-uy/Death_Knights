@@ -1,0 +1,65 @@
+{
+  "range": 2.5,
+  "school": "FROST",
+  "learn": {
+    "tier": 0
+  },
+  "cast": {
+    "duration": 0.0,
+    "animation": "spell_engine:one_handed_area_charge",
+    "sound": {
+      "id": "simplyswords:elemental_sword_ice_attack_01",
+      "randomness": 0
+    }
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR"
+    },
+    "animation": "spellbladenext:two_handed_slam_spellblade_2",
+    "sound": {
+      "id": "simplyswords:elemental_sword_ice_attack_01"
+    }
+  },
+  "impact": [
+    {
+      "school": "PHYSICAL_MELEE",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.5,
+          "spell_power_coefficient": 1.0
+        }
+      }
+    },
+    {
+      "school": "FROST",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.0,
+          "spell_power_coefficient": 0.6
+        }
+      },
+      "sound": {
+        "id": "simplyswords:elemental_bow_ice_shoot_impact_02"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "ADD",
+          "duration": 1,
+          "amplifier": 0,
+          "effect_id": "death_knights:obliterated_agony",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
+    }
+  ],
+  "cost": {
+    "cooldown_duration": 2
+  }
+}
