@@ -25,7 +25,7 @@ public class ArmorRegistry {
     public static final ArrayList<Armor.Entry> entries = new ArrayList<>();
     public static final List<Identifier> initiate_powers = List.of(SpellSchoolRegistry.BLOOD.id, SpellSchoolRegistry.UNHOLY.id, SpellSchools.FROST.id);
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set initiate_set =
             create(
                     new Armor.CustomMaterial(
