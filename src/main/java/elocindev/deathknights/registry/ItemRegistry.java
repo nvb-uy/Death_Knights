@@ -18,6 +18,8 @@ public class ItemRegistry {
     public static final Item BLOOD_RUNE = reg(new Item(new FabricItemSettings()), "blood_stone");
     public static final Item UNHOLY_RUNE = reg(new Item(new FabricItemSettings()), "unholy_stone");
 
+    public static final Item RUNECARVED_STONE = reg(new Item(new FabricItemSettings()), "runecarved_stone");
+
     public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "blood"));
     public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "unholy"));
     public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "frost"));

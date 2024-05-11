@@ -40,6 +40,8 @@ public class ItemGroupRegistry {
                 content.add(new ItemStack(ItemRegistry.UNHOLY_SPELL_BOOK));
                 content.add(new ItemStack(ItemRegistry.FROST_SPELL_BOOK));
 
+                content.add(new ItemStack(ItemRegistry.RUNECARVED_STONE));
+
                 content.add(new ItemStack(ItemRegistry.RUNEBLADE_1H));
             });
     }
