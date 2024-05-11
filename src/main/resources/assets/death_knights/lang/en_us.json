@@ -1,5 +1,5 @@
 {
-    "itemGroup.death_knights.main": "Death Knights",
+    "itemGroup.death_knights.main":                         "Death Knights",
     
     "attribute.name.death_knights.blood_power":             "Blood Spell Power",
     "attribute.name.death_knights.unholy_power":            "Unholy Spell Power",
@@ -15,6 +15,11 @@
     "item.death_knights.frost_spell_book":                  "Tome of the Eternal Winter",
 
     "item.death_knights.initiate_runeblade":                "Initiate's Runeblade",
+
+    "item.death_knights.initiate_armor_head":               "Hood of the Initiate Death Knight",
+    "item.death_knights.initiate_armor_chest":              "Tunic of the Initiate Death Knight",
+    "item.death_knights.initiate_armor_legs":               "Leggings of the Initiate Death Knight",
+    "item.death_knights.initiate_armor_feet":               "Boots of the Initiate Death Knight",
 
     "spell.death_knights.death_strike.name":                "Death Strike",
 

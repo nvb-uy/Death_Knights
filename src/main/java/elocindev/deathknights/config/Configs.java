@@ -1,7 +1,7 @@
 package elocindev.deathknights.config;
 
-import net.runes.tinyconfig.ConfigManager;
 import net.spell_engine.api.item.ItemConfig;
+import net.tinyconfig.ConfigManager;
 
 public class Configs {
     public static ConfigManager<ItemConfig> itemConfig = new ConfigManager<ItemConfig>
@@ -13,6 +13,6 @@ public class Configs {
     
 
     public static void init() {
-
+        itemConfig.refresh();
     }
 }

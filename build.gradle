@@ -16,6 +16,8 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven { url 'https://jitpack.io' }
+	
 	maven {
     	url "https://api.modrinth.com/maven"
 	}
@@ -50,7 +52,9 @@ dependencies {
 	modImplementation "maven.modrinth:playeranimator:${project.playeranimator_version}-fabric"
 	modCompileOnly "maven.modrinth:trinkets:${project.trinkets_version}-fabric"
 	modImplementation "maven.modrinth:azurelib-armor:${project.azurelibarmor_version}-fabric"
-	modImplementation "dev.emi:trinkets:${trinkets_version}"	
+	// modImplementation "dev.emi:trinkets:${trinkets_version}"	
+
+	include(implementation("com.github.ZsoltMolnarrr:TinyConfig:${project.tiny_config_version}"))
 }
 
 processResources {
