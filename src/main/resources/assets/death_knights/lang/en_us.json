@@ -28,7 +28,7 @@
     "spell.death_knights.obliterate.name":                  "Obliterate",
     "spell.death_knights.obliterate.description":           "Strikes a powerful attack against the target, dealing {damage}_0 physical damage and {damage}_1 frost damage.",
     "spell.death_knights.remorseless_winter.name":          "Remorseless Winter",
-    "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing {damage} as frost damage to all enemies within 8 blocks every second.",
+    "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing constant frost damage to all enemies within 8 blocks every second.",
     "spell.death_knights.agonizing_breath.name":            "Agonizing Breath",
     "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing {damage} as frost damage to all enemies in front of you. If no targets are hit, the breath will stop."
 }
