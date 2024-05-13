@@ -25,6 +25,5 @@ public class SpellSchoolRegistry {
         )
     );
 
-
     public static void register() {}
 }

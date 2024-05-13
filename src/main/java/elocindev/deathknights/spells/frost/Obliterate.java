@@ -35,8 +35,6 @@ public class Obliterate extends SpellEffect {
         if (entity.hasStatusEffect(winter)) {
             entity.addStatusEffect(new StatusEffectInstance(winter, entity.getStatusEffect(winter).getDuration() + CONFIG.remorseless_winter_extension_ticks, 0, false, false, true));
         }
-
-        entity.removeStatusEffect(this);
     }
 
     @Override
