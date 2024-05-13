@@ -7,10 +7,6 @@
     },
     "cast": {
       "duration": 0.0,
-      "sound": {
-        "id": "simplyswords:elemental_sword_ice_attack_03",
-        "randomness": 0
-      },
       "particles": [
         {
           "particle_id": "spell_engine:frost_spell",
@@ -27,7 +23,8 @@
         "type": "SELF"
       },
       "sound": {
-        "id": "simplyswords:elemental_sword_ice_attack_03"
+        "id": "spell_engine:generic_frost_release",
+        "pitch": 1.2
       },
       "particles": [
         {

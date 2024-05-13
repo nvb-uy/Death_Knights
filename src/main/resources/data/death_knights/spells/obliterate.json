@@ -5,8 +5,7 @@
     "tier": 0
   },
   "cast": {
-    "duration": 0.0,
-    "animation": "spell_engine:one_handed_area_charge"
+    "duration": 0.0
   },
   "release": {
     "target": {
