@@ -6,20 +6,13 @@
   },
   "cast": {
     "duration": 0.0,
-    "animation": "spell_engine:one_handed_area_charge",
-    "sound": {
-      "id": "simplyswords:elemental_sword_ice_attack_01",
-      "randomness": 0
-    }
+    "animation": "spell_engine:one_handed_area_charge"
   },
   "release": {
     "target": {
       "type": "CURSOR"
     },
-    "animation": "spellbladenext:two_handed_slam_spellblade_2",
-    "sound": {
-      "id": "simplyswords:elemental_sword_ice_attack_01"
-    }
+    "animation": "death_knights:obliterate"
   },
   "impact": [
     {
@@ -40,9 +33,6 @@
           "knockback": 0.0,
           "spell_power_coefficient": 0.6
         }
-      },
-      "sound": {
-        "id": "simplyswords:elemental_bow_ice_shoot_impact_02"
       }
     },
     {
@@ -52,7 +42,7 @@
           "apply_mode": "ADD",
           "duration": 1,
           "amplifier": 0,
-          "effect_id": "death_knights:obliterated_agony",
+          "effect_id": "death_knights:obliterate",
           "show_particles": false
         },
         "apply_to_caster": true
