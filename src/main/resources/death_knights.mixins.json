@@ -5,6 +5,9 @@
 	"mixins": [
 		"entity.attribute.LivingAttributeApplyMixin"
 	],
+	"client": [
+		"client.animation.AnimationSpeedPatcherMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
