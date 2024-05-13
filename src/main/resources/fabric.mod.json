@@ -8,7 +8,7 @@
 		"ElocinDev"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "https://rpg.prominence.wiki/mod/death-knights",
 		"sources": "https://github.com/nvb-uy/Death_Knights"
 	},
 	"license": "All Rights Reserved",
@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"elocindev.deathknights.DeathKnights"
+		],
+		"client": [
+			"elocindev.deathknights.DeathKnightsClient"
 		]
 	},
 	"mixins": [

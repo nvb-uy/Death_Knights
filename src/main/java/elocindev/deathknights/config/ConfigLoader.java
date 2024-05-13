@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.config.entries.ClientConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
@@ -20,6 +21,10 @@ public class ConfigLoader {
         NecConfigAPI.registerConfig(ObliterateConfig.class);
         NecConfigAPI.registerConfig(RemorselessWinterConfig.class);
         NecConfigAPI.registerConfig(BreathOfAgonyConfig.class);
+    }
+
+    public static void initClient() {
+        NecConfigAPI.registerConfig(ClientConfig.class);
     }
 
     public static void initDatapack(boolean started) {

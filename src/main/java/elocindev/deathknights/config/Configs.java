@@ -1,6 +1,7 @@
 package elocindev.deathknights.config;
 
 import elocindev.deathknights.config.entries.ArmorConfig;
+import elocindev.deathknights.config.entries.ClientConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
@@ -9,7 +10,7 @@ import net.tinyconfig.ConfigManager;
 
 public class Configs {   
     public class Client {
-        //
+        public static ClientConfig                  CONFIG                =      ClientConfig.INSTANCE;
     }
 
     public class Spells {

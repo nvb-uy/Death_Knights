@@ -1,6 +1,7 @@
 package elocindev.deathknights;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import elocindev.deathknights.registry.StatusEffectRegistry;
 public class DeathKnights implements ModInitializer {
 	public static final String MODID = "death_knights";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+
+	public static final boolean BETTERCOMBAT_ENABLED = FabricLoader.getInstance().isModLoaded("bettercombat");
 
 	@Override
 	public void onInitialize() {

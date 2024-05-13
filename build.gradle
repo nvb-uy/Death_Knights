@@ -37,6 +37,8 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.1.2-beta.5")))
+
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
@@ -45,7 +47,7 @@ dependencies {
 	modImplementation "maven.modrinth:spell-power:${project.spellpower_version}+1.20.1-fabric"
 	modImplementation "maven.modrinth:spell-engine:${project.spellengine_version}+1.20.1-fabric"
 	modImplementation "maven.modrinth:runes:${project.runes_version}+1.20.1-fabric"
-	modRuntimeOnly "maven.modrinth:better-combat:${project.bettercombat_version}+1.20.1-fabric"
+	modImplementation "maven.modrinth:better-combat:${project.bettercombat_version}+1.20.1-fabric"
 
 	// Spell engine dependencies 
 	modImplementation "maven.modrinth:cloth-config:${project.clothconfig_version}+fabric" 
