@@ -6,7 +6,6 @@ import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.item.weapon.RunebladeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -25,12 +24,12 @@ public class ItemRegistry {
     public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "frost"));
 
     // Weapons
-    public static final SwordItem RUNEBLADE_1H = reg(
+    public static final RunebladeItem RUNEBLADE_1H = reg(
         new RunebladeItem(
             RunebladeType.ALL,
             RunebladeSize.ONE_HANDED,
             2, -2.4F,
-            0.5F, true
+            1F, true
             ),
             "initiate_runeblade"
         );
