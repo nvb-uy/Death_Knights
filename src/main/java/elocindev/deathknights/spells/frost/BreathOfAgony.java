@@ -60,7 +60,7 @@ public class BreathOfAgony extends SpellEffect {
             world.addParticle(particleEffect, basePosition.x, basePosition.y, basePosition.z, particleVelocity.x, 0, particleVelocity.z);
         }
 
-        float damage = 1f + (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        float damage = (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;

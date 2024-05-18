@@ -27,4 +27,8 @@ public class RemorselessWinterConfig {
     @Comment("The amount of ticks the victim gets frozen after being hit. 20 ticks is 1 second.")
     @Comment("Default: 20 ticks")
     public int frozen_ticks = 20;
+    @Comment("Chance per tick to apply frozen to the target")
+    @Comment("Default: 0.10 (10%)")
+    public float frozen_chance = 0.10f;
+
 }

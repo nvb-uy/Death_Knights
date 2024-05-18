@@ -2,7 +2,7 @@
   "range": 2.5,
   "school": "FROST",
   "learn": {
-    "tier": 0
+    "tier": 1
   },
   "cast": {
     "duration": 0.0
@@ -12,9 +12,9 @@
       "type": "CURSOR"
     },
     "sound": {
-      "id": "minecraft:entity.player.attack.sweep"
+      "id": "minecraft:entity.player.attack.strong"
     },
-    "animation": "death_knights:obliterate"
+    "animation": "death_knights:frost_strike"
   },
   "impact": [
     {
@@ -23,7 +23,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.5,
-          "spell_power_coefficient": 1.0
+          "spell_power_coefficient": 0.2
         }
       }
     },
@@ -33,7 +33,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.0,
-          "spell_power_coefficient": 0.6
+          "spell_power_coefficient": 1.4
         }
       }
     },
@@ -44,15 +44,15 @@
           "apply_mode": "ADD",
           "duration": 1,
           "amplifier": 0,
-          "effect_id": "death_knights:obliterate",
+          "effect_id": "death_knights:frost_strike",
           "show_particles": false
         },
-        "apply_to_caster": true
+        "apply_to_caster": false
       }
     }
   ],
   "cost": {
     "exhaust": 0.2,
-    "cooldown_duration": 2
+    "cooldown_duration": 4
   }
 }

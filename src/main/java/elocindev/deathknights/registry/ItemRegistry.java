@@ -28,7 +28,7 @@ public class ItemRegistry {
         new RunebladeItem(
             RunebladeType.ALL,
             RunebladeSize.ONE_HANDED,
-            2, -2.4F,
+            3, -2.4F,
             1F, true
             ),
             "initiate_runeblade"

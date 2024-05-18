@@ -1,7 +1,10 @@
 package elocindev.deathknights.item.weapon;
 
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
+import net.minecraft.recipe.Ingredient;
 
 import java.util.UUID;
 
@@ -11,6 +14,7 @@ import com.google.common.collect.Multimap;
 import elocindev.deathknights.api.DKAttributeAPI;
 import elocindev.deathknights.api.types.RunebladeSize;
 import elocindev.deathknights.api.types.RunebladeType;
+import elocindev.deathknights.registry.ItemRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -26,7 +30,40 @@ public class RunebladeItem extends SwordItem {
     private boolean isAddition;
 
     public RunebladeItem(RunebladeType type, RunebladeSize size, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition) {
-        super(ToolMaterials.NETHERITE, attackDamage, attackSpeed, new FabricItemSettings());
+        super(
+            new ToolMaterial() {
+                @Override
+                public int getDurability() {
+                    return 300;
+                }
+
+                @Override
+                public float getMiningSpeedMultiplier() {
+                    return 1.0f;
+                }
+
+                @Override
+                public float getAttackDamage() {
+                    return 2.0F;
+                }
+
+                @Override
+                public int getEnchantability() {
+                    return 14;
+                }
+
+                @Override
+                public int getMiningLevel() {
+                    return 2;
+                }
+
+                @Override
+                public Ingredient getRepairIngredient() {
+                    return Ingredient.ofItems(new ItemConvertible[]{ItemRegistry.RUNECARVED_STONE});
+                }
+
+            },
+        attackDamage, attackSpeed, new FabricItemSettings());
 
         this.type = type;
         this.size = size;

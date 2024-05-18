@@ -1,17 +1,12 @@
 {
     "range": 1.0,
     "school": "FROST",
-    "group": "primary",
     "learn": {
-      "tier": 1
+      "tier": 2
     },
     "cast": {
       "duration": 0.0,
       "animation": "spell_engine:one_handed_area_charge",
-      "sound": {
-        "id": "simplyswords:elemental_sword_ice_attack_03",
-        "randomness": 0
-      },
       "particles": [
         {
           "particle_id": "spell_engine:frost_spell",
@@ -28,9 +23,6 @@
         "type": "SELF"
       },
       "animation": "spell_engine:one_handed_area_release",
-      "sound": {
-        "id": "simplyswords:elemental_sword_ice_attack_03"
-      },
       "particles": [
         {
           "particle_id": "spell_engine:frost_hit",
@@ -58,6 +50,8 @@
       }
     ],
     "cost": {
+      "exhaust": 0.2,
+      "item_id": "runes:frost_stone",
       "cooldown_duration": 20
     }
   }

@@ -73,7 +73,7 @@ public class RemorselessWinter extends SpellEffect {
                 world.addParticle(particleEffect, entity.getX() + xOffset2+off*-1, entity.getY() + randomYOffset/2, entity.getZ() + zOffset2+off, velocityX, 0, velocityZ);
         }
 
-        float damage = 1f + (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        float damage = (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
@@ -84,7 +84,9 @@ public class RemorselessWinter extends SpellEffect {
                 e.damage(SpellDamageSource.create(SpellSchools.FROST, entity), damage);
 
                 world.addParticle(Particles.frost_hit.particleType, e.getX(), e.getY()+1, e.getZ(), 0, -0.1, 0);
-                e.setFrozenTicks(CONFIG.frozen_ticks);
+                
+                if (random.nextDouble() < CONFIG.frozen_chance)
+                    e.setFrozenTicks(CONFIG.frozen_ticks);
             }
         
         if (entity.age % 40 == 0) {

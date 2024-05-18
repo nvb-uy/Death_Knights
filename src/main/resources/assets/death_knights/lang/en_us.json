@@ -26,9 +26,11 @@
     "spell.death_knights.death_strike.name":                "Death Strike",
 
     "spell.death_knights.obliterate.name":                  "Obliterate",
-    "spell.death_knights.obliterate.description":           "Strikes a powerful attack against the target, dealing {damage}_0 physical damage and {damage}_1 frost damage.",
+    "spell.death_knights.obliterate.description":           "Strikes a powerful attack against the target, dealing {damage}_0 physical damage and {damage}_1 frost damage. Applies freezing to the target for 2 seconds.",
+    "spell.death_knights.frost_strike.name":                "Frost Strike",
+    "spell.death_knights.frost_strike.description":         "Infuse your runeblade with frost, dealing {damage}_1 frost damage and {damage}_0 physical damage. If the victim is frozen, icicles will be be thrown to all nearby enemies, dealing {damage}_1 frost damage.",
     "spell.death_knights.remorseless_winter.name":          "Remorseless Winter",
-    "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing constant frost damage to all enemies within 8 blocks every second.",
+    "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing constant frost damage to all enemies within 8 blocks every second, having a small chance of freezing them for a second every time it deals damage.",
     "spell.death_knights.agonizing_breath.name":            "Agonizing Breath",
-    "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing {damage} as frost damage to all enemies in front of you. If no targets are hit, the breath will stop."
+    "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing high frost damage to all enemies in front of you. If no targets are hit, the breath will stop."
 }
