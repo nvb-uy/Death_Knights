@@ -31,7 +31,8 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"player-animator": "*",
-		"spell_engine": "*"
+		"spell_engine": "*",
+		"necronomicon": "*"
 	},
 	"suggests": {
 		"bettercombat": "*"
