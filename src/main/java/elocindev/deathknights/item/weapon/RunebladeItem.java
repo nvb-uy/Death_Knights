@@ -3,7 +3,6 @@ package elocindev.deathknights.item.weapon;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 
 import java.util.UUID;

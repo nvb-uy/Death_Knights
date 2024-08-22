@@ -9,9 +9,9 @@ import elocindev.deathknights.registry.AttributeRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 
-@Mixin(value = LivingEntity.class)
+@Mixin(value = LivingEntity.class, priority = 1000)
 public class LivingAttributeApplyMixin {
-    @Inject(method = "createLivingAttributes", at = @At("RETURN")) 
+    @Inject(method = "createLivingAttributes", at = @At("RETURN"), cancellable = true) 
     private static void death_knights$registerLivingEntityAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
         ((DefaultAttributeContainer.Builder)cir.getReturnValue())
             .add(AttributeRegistry.BLOOD_POWER)

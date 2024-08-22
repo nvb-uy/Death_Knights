@@ -9,6 +9,7 @@
 	"client": [
 		"client.animation.AnimationSpeedPatcherMixin"
 	],
+	"refmap": "death_knights-refmap.json",
 	"injectors": {
 		"defaultRequire": 1
 	}
