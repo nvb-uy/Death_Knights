@@ -47,7 +47,7 @@ dependencies {
 	modImplementation "maven.modrinth:spell-power:${project.spellpower_version}+1.20.1-fabric"
 	modImplementation "maven.modrinth:spell-engine:${project.spellengine_version}+1.20.1-fabric"
 	modImplementation "maven.modrinth:runes:${project.runes_version}+1.20.1-fabric"
-	modImplementation "maven.modrinth:better-combat:${project.bettercombat_version}+1.20.1-fabric"
+	modCompileOnly 	  "maven.modrinth:better-combat:${project.bettercombat_version}+1.20.1-fabric"
 
 	// Spell engine dependencies 
 	modImplementation "maven.modrinth:cloth-config:${project.clothconfig_version}+fabric" 

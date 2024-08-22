@@ -9,8 +9,8 @@ import com.llamalad7.mixinextras.sugar.Local;
 
 import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.compat.BetterCombatCompat;
 import elocindev.deathknights.config.Configs;
-import net.bettercombat.BetterCombat;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,7 +32,7 @@ public class AnimationSpeedPatcherMixin {
                     KeyframeAnimation kfAnim = (KeyframeAnimation)AnimationRegistry.animations.get(animation);
     
                     float syncedSpeed = (float) kfAnim.endTick / (kfAnim.getLength());
-                    float upswingSpeed = syncedSpeed / BetterCombat.config.getUpswingMultiplier();
+                    float upswingSpeed = syncedSpeed / BetterCombatCompat.getUpswing();
     
                     float atkSpeed = (float) ((PlayerEntity) player).getAttributeValue(EntityAttributes.GENERIC_ATTACK_SPEED);
 
