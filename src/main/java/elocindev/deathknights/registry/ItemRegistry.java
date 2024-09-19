@@ -6,7 +6,6 @@ import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.item.weapon.RunebladeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,8 +20,8 @@ public class ItemRegistry {
 
     public static final Item RUNECARVED_STONE = reg(new Item(new FabricItemSettings()), "runecarved_stone");
 
-    // public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "blood"));
-    // public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "unholy"));
+    public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "blood"));
+    public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "unholy"));
     public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "frost"));
 
     // Weapons
@@ -65,8 +64,8 @@ public class ItemRegistry {
     }
 
     public static void register() {
-        // Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "blood_spell_book"), BLOOD_SPELL_BOOK.asItem());
-        // Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "unholy_spell_book"), UNHOLY_SPELL_BOOK.asItem());
+        Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "blood_spell_book"), BLOOD_SPELL_BOOK.asItem());
+        Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "unholy_spell_book"), UNHOLY_SPELL_BOOK.asItem());
         Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "frost_spell_book"), FROST_SPELL_BOOK.asItem());
     }
 }

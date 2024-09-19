@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench by Mim1q <3",
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "death_knights:item/weapons/runeblades/diamond_runeblade",
-		"particle": "death_knights:item/weapons/runeblades/diamond_runeblade"
+		"layer0": "death_knights:item/weapons/runeblades/aeternium_runeblade",
+		"particle": "death_knights:item/weapons/runeblades/aeternium_runeblade"
 	},
 	"gui_light": "front",
 	"display": {

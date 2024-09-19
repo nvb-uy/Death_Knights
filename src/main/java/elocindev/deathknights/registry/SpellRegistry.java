@@ -19,7 +19,7 @@ public class SpellRegistry {
 
     public static void register() {}
 
-    public static <T extends SpellEffect> T reg(T spell, String id) {
+    public static <S extends SpellEffect> S reg(S spell, String id) {
         Registry.register(Registries.STATUS_EFFECT, new Identifier(DeathKnights.MODID, id), (SpellEffect) spell);
         
         return spell;

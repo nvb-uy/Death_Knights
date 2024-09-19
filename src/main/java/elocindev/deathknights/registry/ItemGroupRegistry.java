@@ -42,7 +42,10 @@ public class ItemGroupRegistry {
 
                 content.add(new ItemStack(ItemRegistry.RUNECARVED_STONE));
 
-                content.add(new ItemStack(ItemRegistry.RUNEBLADE_1H));
+                content.add(new ItemStack(ItemRegistry.IRON_RUNEBLADE));
+                content.add(new ItemStack(ItemRegistry.DIAMOND_RUNEBLADE));
+                content.add(new ItemStack(ItemRegistry.NETHERITE_RUNEBLADE));
+                
             });
     }
 }
