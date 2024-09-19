@@ -28,32 +28,32 @@ public class RunebladeItem extends SwordItem {
     private float spellPowerAmount;
     private boolean isAddition;
 
-    public RunebladeItem(RunebladeType type, RunebladeSize size, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition) {
+    public RunebladeItem(RunebladeType type, RunebladeSize size, ToolMaterial material, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition) {
         super(
             new ToolMaterial() {
                 @Override
                 public int getDurability() {
-                    return 300;
+                    return material.getDurability();
                 }
 
                 @Override
                 public float getMiningSpeedMultiplier() {
-                    return 1.0f;
+                    return material.getMiningSpeedMultiplier();
                 }
 
                 @Override
                 public float getAttackDamage() {
-                    return 2.0F;
+                    return material.getAttackDamage();
                 }
 
                 @Override
                 public int getEnchantability() {
-                    return 14;
+                    return material.getEnchantability();
                 }
 
                 @Override
                 public int getMiningLevel() {
-                    return 2;
+                    return material.getMiningLevel();
                 }
 
                 @Override
