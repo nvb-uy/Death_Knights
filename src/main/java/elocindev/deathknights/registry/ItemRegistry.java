@@ -76,7 +76,7 @@ public class ItemRegistry {
             RunebladeSize.ONE_HANDED,
             ToolMaterials.NETHERITE,
             4, -2.4F,
-            2F, true,
+            3F, true,
             true
             ),
             "aeternium_runeblade"
