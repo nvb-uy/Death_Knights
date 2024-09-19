@@ -16,7 +16,11 @@
     "item.death_knights.unholy_spell_book":                 "Tome of Unholy Teachings",
     "item.death_knights.frost_spell_book":                  "Tome of the Eternal Winter",
 
-    "item.death_knights.initiate_runeblade":                "Initiate's Runeblade",
+    "item.death_knights.initiate_runeblade":                "Iron Runeblade",
+    "item.death_knights.diamond_runeblade":                 "Diamond Runeblade",
+    "item.death_knights.netherite_runeblade":               "Netherite Runeblade",
+    "item.death_knights.ruby_runeblade":                    "Ruby Runeblade",
+    "item.death_knights.aeternium_runeblade":               "Aeternium Runeblade",
 
     "item.death_knights.initiate_armor_head":               "Hood of Death's Call",
     "item.death_knights.initiate_armor_chest":              "Tunic of Death's Call",
