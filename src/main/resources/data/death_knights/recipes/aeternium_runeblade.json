@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "death_knights:runecarved_stone"
+    },
+    "base": {
+        "item": "death_knights:netherite_runeblade"
+    },
+    "addition": {
+        "item": "betterend:aeternium_ingot"
+    },
+    "result": {
+        "item": "death_knights:aeternium_runeblade"
+    }
+}
