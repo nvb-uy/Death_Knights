@@ -16,8 +16,8 @@ public class RemorselessWinterConfig {
     @Comment("Default: 5 ticks")
     public int tick_rate = 5;
     @Comment("The radius of the spell. This applies for both the particles and damage.")
-    @Comment("Default: 2 blocks")
-    public double radius = 2;
+    @Comment("Default: 4 blocks")
+    public double radius = 4;
     @Comment("The damage scaling of the spell. This multiplies the base frost power of the caster to output damage.")
     @Comment("Default: 0.5x")
     public float damage_frost_scaling = 0.5f;
