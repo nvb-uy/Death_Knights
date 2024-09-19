@@ -46,6 +46,13 @@ public class ItemGroupRegistry {
                 content.add(new ItemStack(ItemRegistry.DIAMOND_RUNEBLADE));
                 content.add(new ItemStack(ItemRegistry.NETHERITE_RUNEBLADE));
                 
+                if (DeathKnights.BETTERNETHER_ENABLED) {
+                    content.add(new ItemStack(ItemRegistry.RUBY_RUNEBLADE));
+                }
+
+                if (DeathKnights.BETTEREND_ENABLED) {
+                    content.add(new ItemStack(ItemRegistry.AETERNIUM_RUNEBLADE));
+                }
             });
     }
 }
