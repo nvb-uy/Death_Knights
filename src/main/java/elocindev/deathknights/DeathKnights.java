@@ -21,6 +21,8 @@ public class DeathKnights implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	public static final boolean BETTERCOMBAT_ENABLED = FabricLoader.getInstance().isModLoaded("bettercombat");
+	public static final boolean BETTEREND_ENABLED = FabricLoader.getInstance().isModLoaded("betterend");
+	public static final boolean BETTERNETHER_ENABLED = FabricLoader.getInstance().isModLoaded("betternether");
 
 	@Override
 	public void onInitialize() {

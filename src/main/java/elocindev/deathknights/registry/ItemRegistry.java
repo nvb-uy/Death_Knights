@@ -41,7 +41,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.ONE_HANDED,
             ToolMaterials.DIAMOND,
-            4, -2.4F,
+            3, -2.4F,
             1F, true
             ),
             "diamond_runeblade"
@@ -52,10 +52,34 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.ONE_HANDED,
             ToolMaterials.NETHERITE,
-            5, -2.4F,
+            3, -2.4F,
             2F, true
             ),
             "netherite_runeblade"
+        );
+
+    public static final RunebladeItem RUBY_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.ONE_HANDED,
+            ToolMaterials.NETHERITE,
+            4, -2.4F,
+            3F, true,
+            true
+            ),
+            "ruby_runeblade"
+        );
+    
+    public static final RunebladeItem AETERNIUM_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.ONE_HANDED,
+            ToolMaterials.NETHERITE,
+            4, -2.4F,
+            2F, true,
+            true
+            ),
+            "aeternium_runeblade"
         );
     
 

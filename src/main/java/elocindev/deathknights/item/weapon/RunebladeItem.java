@@ -29,6 +29,10 @@ public class RunebladeItem extends SwordItem {
     private boolean isAddition;
 
     public RunebladeItem(RunebladeType type, RunebladeSize size, ToolMaterial material, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition) {
+        this(type, size, material, attackDamage, attackSpeed, attributeAmount, isAddition, false);
+    }
+
+    public RunebladeItem(RunebladeType type, RunebladeSize size, ToolMaterial material, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition, boolean isRubyorAeternium) {
         super(
             new ToolMaterial() {
                 @Override
@@ -43,6 +47,10 @@ public class RunebladeItem extends SwordItem {
 
                 @Override
                 public float getAttackDamage() {
+                    if (isRubyorAeternium) {
+                        return material.getAttackDamage() - 0.5f;
+                    }
+
                     return material.getAttackDamage();
                 }
 
