@@ -60,6 +60,7 @@ dependencies {
 	// MISC COMPATS
 	modCompileOnly 	  	"maven.modrinth:better-combat:${project.bettercombat_version}+1.20.1-fabric"
 	modImplementation 	"maven.modrinth:betterend:${project.betterend_version}-fabric"
+	modImplementation 	"maven.modrinth:betternether:${project.betternether_version}-fabric"
 	modRuntimeOnly 		"maven.modrinth:bclib:${project.bclib_version}-fabric"
 }
 
