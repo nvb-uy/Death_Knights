@@ -3,6 +3,7 @@ Death Knights Public Branch Changelog
 # 0.4.0
 - Added Great Runeblades
 - Fixed runeblades not being able to use Spell Power enchantments
+- Fixed compat recipes loading when they shouldn't
 
 # 0.3.5
 - Initiate Runeblade is now named Iron Runeblade
