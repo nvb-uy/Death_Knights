@@ -81,7 +81,65 @@ public class ItemRegistry {
             ),
             "aeternium_runeblade"
         );
+
+    // TWO HANDED RUNEBLADES
+
+    public static final RunebladeItem GREAT_IRON_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.TWO_HANDED,
+            ToolMaterials.IRON,
+            5, -3.0F,
+            1F, true
+            ),
+            "great_iron_runeblade"
+        );
     
+    public static final RunebladeItem GREAT_DIAMOND_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.TWO_HANDED,
+            ToolMaterials.DIAMOND,
+            7, -3.0F,
+            2F, true
+            ),
+            "great_diamond_runeblade"
+        );
+    
+    public static final RunebladeItem GREAT_NETHERITE_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.TWO_HANDED,
+            ToolMaterials.NETHERITE,
+            7, -3.0F,
+            4F, true
+            ),
+            "great_netherite_runeblade"
+        );
+
+    public static final RunebladeItem GREAT_RUBY_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.TWO_HANDED,
+            ToolMaterials.NETHERITE,
+            9, -3.0F,
+            5F, true,
+            true
+            ),
+            "great_ruby_runeblade"
+        );
+
+    public static final RunebladeItem GREAT_AETERNIUM_RUNEBLADE = reg(
+        new RunebladeItem(
+            RunebladeType.ALL,
+            RunebladeSize.TWO_HANDED,
+            ToolMaterials.NETHERITE,
+            9, -3.0F,
+            5F, true,
+            true
+            ),
+            "great_aeternium_runeblade"
+        );
 
     public static <T extends Item> T reg(T instance, String id) {
         return Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, id), instance);

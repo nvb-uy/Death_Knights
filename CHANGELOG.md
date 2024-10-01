@@ -1,5 +1,9 @@
 Death Knights Public Branch Changelog
 
+# 0.4.0
+- Added Great Runeblades
+- Fixed runeblades not being able to use Spell Power enchantments
+
 # 0.3.5
 - Initiate Runeblade is now named Iron Runeblade
 - Added Diamond Runeblade

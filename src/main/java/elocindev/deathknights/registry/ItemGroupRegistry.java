@@ -45,14 +45,14 @@ public class ItemGroupRegistry {
                 content.add(new ItemStack(ItemRegistry.IRON_RUNEBLADE));
                 content.add(new ItemStack(ItemRegistry.DIAMOND_RUNEBLADE));
                 content.add(new ItemStack(ItemRegistry.NETHERITE_RUNEBLADE));
-                
-                if (DeathKnights.BETTERNETHER_ENABLED) {
-                    content.add(new ItemStack(ItemRegistry.RUBY_RUNEBLADE));
-                }
+                if (DeathKnights.BETTERNETHER_ENABLED) { content.add(new ItemStack(ItemRegistry.RUBY_RUNEBLADE)); }
+                if (DeathKnights.BETTEREND_ENABLED) { content.add(new ItemStack(ItemRegistry.AETERNIUM_RUNEBLADE)); }
 
-                if (DeathKnights.BETTEREND_ENABLED) {
-                    content.add(new ItemStack(ItemRegistry.AETERNIUM_RUNEBLADE));
-                }
+                content.add(new ItemStack(ItemRegistry.GREAT_IRON_RUNEBLADE));
+                content.add(new ItemStack(ItemRegistry.GREAT_DIAMOND_RUNEBLADE));
+                content.add(new ItemStack(ItemRegistry.GREAT_NETHERITE_RUNEBLADE));
+                if (DeathKnights.BETTERNETHER_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_RUBY_RUNEBLADE)); }
+                if (DeathKnights.BETTEREND_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_AETERNIUM_RUNEBLADE)); }
             });
     }
 }
