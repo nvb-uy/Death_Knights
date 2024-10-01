@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+        "condition": "fabric:all_mods_loaded",
+        "values": [
+            "betterend"
+        ]
+        }
+    ],
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "base": {
+        "item": "death_knights:great_netherite_runeblade"
+    },
+    "addition": {
+        "item": "betterend:aeternium_ingot"
+    },
+    "result": {
+        "item": "death_knights:great_aeternium_runeblade"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "B": {
+        "item": "minecraft:iron_ingot"
+      },
+      "H": [
+        {
+          "tag": "c:wood_sticks"
+        },
+        {
+          "item": "minecraft:stick"
+        }
+        ],
+      "R": {
+            "item": "death_knights:runecarved_stone"
+        }
+    },
+    "pattern": [
+      " RB",
+      "BBR",
+      "HB "
+    ],
+    "result": {
+      "id": "death_knights:great_iron_runeblade"
+    }
+  }
