@@ -25,40 +25,64 @@ public class ArmorRegistry {
     public static final ArrayList<Armor.Entry> entries = new ArrayList<>();
     public static final List<Identifier> initiate_powers = List.of(SpellSchoolRegistry.BLOOD.id, SpellSchoolRegistry.UNHOLY.id, SpellSchools.FROST.id);
 
+	// TIER 0
+	// +1 ALL POWERS
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set initiate_set =
-            create(
-                    new Armor.CustomMaterial(
-                        "initiate_armor",
-                        10,
-                        9,
-                        InitiateArmor.equipSound,
-                        INITIATE_INGREDIENTS
-                    ),
-                    ItemConfig.ArmorSet.with(
-                        new ItemConfig.ArmorSet.Piece(2)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
-                        new ItemConfig.ArmorSet.Piece(5)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
-                        new ItemConfig.ArmorSet.Piece(4)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
-                        new ItemConfig.ArmorSet.Piece(2)
-                                .addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1))
-                    ))
-            .bundle(material -> new Armor.Set(DeathKnights.MODID,
-                    new InitiateArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
-                    new InitiateArmor(material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
-                    new InitiateArmor(material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
-                    new InitiateArmor(material, ArmorItem.Type.BOOTS, new Item.Settings())
-            ))
-            .put(entries)
-            .armorSet();
+		create(
+				new Armor.CustomMaterial(
+					"initiate_armor",
+					10,
+					9,
+					InitiateArmor.equipSound,
+					INITIATE_INGREDIENTS
+				),
+				ItemConfig.ArmorSet.with(
+					new ItemConfig.ArmorSet.Piece(2)
+							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+					new ItemConfig.ArmorSet.Piece(5)
+							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+					new ItemConfig.ArmorSet.Piece(4)
+							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+					new ItemConfig.ArmorSet.Piece(2)
+							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1))
+				))
+		.bundle(material -> new Armor.Set(DeathKnights.MODID,
+				new InitiateArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
+				new InitiateArmor(material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
+				new InitiateArmor(material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
+				new InitiateArmor(material, ArmorItem.Type.BOOTS, new Item.Settings())
+		))
+		.put(entries)
+		.armorSet();
 
-        private static Armor.Entry create(Armor.CustomMaterial material, ItemConfig.ArmorSet defaults) {
-            return new Armor.Entry(material, null, defaults);
-        }
+	// TIER 1
+	
+	// FROST
+	// +10% FROST POWER, +3% ATTACK SPEED
+	
+	// BLOOD
+	// +10% BLOOD POWER, +1 MAX HEALTH
+
+	// UNHOLY
+	// +10% UNHOLY POWER, +2% ATTACK DAMAGE
+
+	// TIER 2
+
+	// FROST
+	// +20% FROST POWER, +5% ATTACK SPEED
+
+	// BLOOD
+	// +20% BLOOD POWER, +2 MAX HEALTH
+
+	// UNHOLY
+	// +20% UNHOLY POWER, +4% ATTACK DAMAGE
+
+	private static Armor.Entry create(Armor.CustomMaterial material, ItemConfig.ArmorSet defaults) {
+			return new Armor.Entry(material, null, defaults);
+	}
 
 	public static void register(Map<String, ItemConfig.ArmorSet> configs) {
-			Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
+					Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
 	}
 }
