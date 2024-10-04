@@ -62,6 +62,9 @@ dependencies {
 	modImplementation 	"maven.modrinth:betterend:${project.betterend_version}-fabric"
 	modImplementation 	"maven.modrinth:betternether:${project.betternether_version}-fabric"
 	modRuntimeOnly 		"maven.modrinth:bclib:${project.bclib_version}-fabric"
+
+	// Other RPG Series
+	modImplementation "maven.modrinth:rogues-and-warriors:${project.warriors_version}-fabric"
 }
 
 processResources {
