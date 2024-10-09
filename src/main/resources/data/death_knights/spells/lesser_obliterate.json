@@ -3,7 +3,7 @@
   "school": "FROST",
   "group": "primary",
   "learn": {
-    "tier": 1
+    "tier": 0
   },
   "cast": {
     "duration": 0.0
@@ -24,7 +24,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.5,
-          "spell_power_coefficient": 1.0
+          "spell_power_coefficient": 0.8
         }
       }
     },
@@ -34,27 +34,14 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.0,
-          "spell_power_coefficient": 0.6
+          "spell_power_coefficient": 0.4
         }
-      }
-    },
-    {
-      "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "apply_mode": "ADD",
-          "duration": 1,
-          "amplifier": 0,
-          "effect_id": "death_knights:obliterate",
-          "show_particles": false
-        },
-        "apply_to_caster": true
       }
     }
   ],
   "cost": {
     "exhaust": 0.2,
     "item_id": "runes:frost_stone",
-    "cooldown_duration": 2
+    "cooldown_duration": 3
   }
 }

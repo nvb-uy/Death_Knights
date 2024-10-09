@@ -2,7 +2,7 @@
   "range": 2.5,
   "school": "FROST",
   "learn": {
-    "tier": 1
+    "tier": 2
   },
   "cast": {
     "duration": 0.0
@@ -53,6 +53,7 @@
   ],
   "cost": {
     "exhaust": 0.2,
+    "item_id": "runes:frost_stone",
     "cooldown_duration": 4
   }
 }
