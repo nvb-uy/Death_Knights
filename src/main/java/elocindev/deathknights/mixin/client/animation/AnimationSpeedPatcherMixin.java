@@ -4,11 +4,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import com.bawnorton.mixinsquared.TargetHandler;
 import com.llamalad7.mixinextras.sugar.Local;
 
 import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.client.animation.DeathKnightsAnimations;
 import elocindev.deathknights.compat.BetterCombatCompat;
 import elocindev.deathknights.config.Configs;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -18,30 +18,42 @@ import net.spell_engine.client.animation.AnimationRegistry;
 
 @Mixin(value = AbstractClientPlayerEntity.class, priority = 1500)
 public class AnimationSpeedPatcherMixin {
-    @TargetHandler(
-        mixin = "net.spell_engine.mixin.client.AbstractClientPlayerEntityMixin", 
-        name = "playSpellAnimation"
-    )
-    @ModifyVariable(method = "@MixinSquared:Handler", at = @At("HEAD"), ordinal = 0)
+    @ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
     private float death_knights$playSpellAnimation(float speed, @Local String animation) {
         AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
         
-        for (String anim : Configs.Client.CONFIG.patched_animations) {
-            if (animation != null && animation.equals(anim)) {
-                if (DeathKnights.BETTERCOMBAT_ENABLED && Configs.Client.CONFIG.enable_bettercombat_compatibility) {
-                    KeyframeAnimation kfAnim = (KeyframeAnimation)AnimationRegistry.animations.get(animation);
-    
-                    float syncedSpeed = (float) kfAnim.endTick / (kfAnim.getLength());
-                    float upswingSpeed = syncedSpeed / BetterCombatCompat.getUpswing();
-    
-                    float atkSpeed = (float) ((PlayerEntity) player).getAttributeValue(EntityAttributes.GENERIC_ATTACK_SPEED);
+        KeyframeAnimation kfAnim = (KeyframeAnimation) AnimationRegistry.animations.get(animation);
+        if (animation == null) return speed;
 
-                    return upswingSpeed + atkSpeed;
-                }
-                else return 3f;
+        for (String anim : Configs.Client.CONFIG.patched_animations) {
+            if (animation.equals(anim)) {
+                return calculateSpeed(player, kfAnim, animation, speed);
+            }
+        }
+
+        for (String anim : DeathKnightsAnimations.PATCHED_ANIMATIONS) {
+            if (animation.equals(anim)) {
+                return calculateSpeed(player, kfAnim, animation, speed);
             }
         }
         
         return speed;
+    }
+
+    private float calculateSpeed(AbstractClientPlayerEntity player, KeyframeAnimation kfAnim, String animation, float speed) {
+        if (DeathKnights.BETTERCOMBAT_ENABLED && Configs.Client.CONFIG.enable_bettercombat_compatibility) {
+            float mult = 1f;
+
+            float syncedSpeed = (float) kfAnim.endTick / (kfAnim.getLength());
+            float upswingSpeed = syncedSpeed / BetterCombatCompat.getUpswing();
+
+            float atkSpeed = (float) ((PlayerEntity) player).getAttributeValue(EntityAttributes.GENERIC_ATTACK_SPEED);
+
+            if (animation.contains("2h")) mult = 0.6f;
+
+            return upswingSpeed + atkSpeed * mult;
+        } else {
+            return 3f;
+        }
     }
 }

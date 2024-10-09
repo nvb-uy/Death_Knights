@@ -21,9 +21,11 @@ public class ClientConfig {
 
     @Comment("Patches melee animations for Spell Engine.")
     @Comment("If you're making a compatible datapack and added custom animations, add them here if you have issues with their playback speed.")
+    @Comment("Add 2h at the end of the animation name if it's a two-handed weapon animation, which will be slower.")
     public String[] patched_animations = new String[] {
         "death_knights:obliterate",
         "death_knights:frost_strike",
-        "death_knights:death_strike"
+        "death_knights:death_strike_2h",
+        "death_knights:festering_strike_2h"
     };
 }

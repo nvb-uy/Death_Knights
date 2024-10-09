@@ -1,13 +1,12 @@
 {
     "school": "death_knights:unholy",
-    "group": "primary",
     "range": 64,
     "learn": {
-      "tier": 1
+      "tier": 2
     },
     "cast": {
-      "duration": 1.5,
-      "animation": "spell_engine:one_handed_projectile_charge",
+      "duration": 0.60,
+      "animation": "death_knights:death_coil_cast",
       "sound": {
         "id": "spell_engine:generic_arcane_casting",
         "randomness": 0
@@ -87,6 +86,6 @@
       }
     ],
     "cost": {
-      "item_id": "runes:arcane_stone"
+      "item_id": "death_knights:unholy_stone"
     }
   }

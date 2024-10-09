@@ -1,6 +1,6 @@
 {
     "attributes": {
-      "attack_range": 2.75,
+      "attack_range": 3.00,
       "category": "sword",
       "attacks": [
         {
@@ -28,7 +28,7 @@
           "damage_multiplier": 1.20,
           "angle": 0,
           "upswing": 0.5,
-          "animation": "bettercombat:two_handed_stab",
+          "animation": "bettercombat:two_handed_stab_left",
           "swing_sound": {
             "id": "bettercombat:sword_slash",
             "pitch": 1.2

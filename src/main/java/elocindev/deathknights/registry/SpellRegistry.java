@@ -16,6 +16,8 @@ public class SpellRegistry {
     public static final RemorselessWinter REMORSELESS_WINTER = reg(new RemorselessWinter(), "remorseless_winter");
     public static final BreathOfAgony BREATH_OF_AGONY = reg(new BreathOfAgony(), "breath_of_agony");
 
+    public static final Obliterate FESTERING_STRIKE = reg(new Obliterate(), "festering_strike");
+
 
     public static void register() {}
 
