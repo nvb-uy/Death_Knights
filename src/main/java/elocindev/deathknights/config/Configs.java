@@ -7,6 +7,7 @@ import elocindev.deathknights.config.entries.spells.frost.FrostStrikeConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import elocindev.deathknights.config.entries.spells.unholy.DeathCoilConfig;
+import elocindev.deathknights.config.entries.spells.unholy.DeathGripConfig;
 import elocindev.deathknights.config.entries.spells.unholy.EpidemicConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import net.spell_engine.api.item.ItemConfig;
@@ -28,7 +29,8 @@ public class Configs {
         public class Unholy {
             public static PlaguesConfig             PLAGUES               =      PlaguesConfig.INSTANCE;
             public static DeathCoilConfig           DEATH_COIL            =      DeathCoilConfig.INSTANCE;
-            public static EpidemicConfig            Epidemic              =      EpidemicConfig.INSTANCE;
+            public static EpidemicConfig            EPIDEMIC              =      EpidemicConfig.INSTANCE;
+            public static DeathGripConfig           DEATH_GRIP            =      DeathGripConfig.INSTANCE;
         }
 
         public class Blood {

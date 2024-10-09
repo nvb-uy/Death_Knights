@@ -49,7 +49,7 @@ public class AnimationSpeedPatcherMixin {
 
             float atkSpeed = (float) ((PlayerEntity) player).getAttributeValue(EntityAttributes.GENERIC_ATTACK_SPEED);
 
-            if (animation.contains("2h")) mult = 0.6f;
+            if (animation.contains("2h")) mult = 0.85f;
 
             return upswingSpeed + atkSpeed * mult;
         } else {

@@ -11,6 +11,7 @@ public class SpellSchoolRegistry {
         SpellSchools.createMagic(
             new Identifier(DeathKnights.MODID, "blood"),
             0x800000,
+            false,
             AttributeRegistry.BLOOD_POWER,
             StatusEffectRegistry.BLOOD_POWER
         )
@@ -20,6 +21,7 @@ public class SpellSchoolRegistry {
         SpellSchools.createMagic(
             new Identifier(DeathKnights.MODID, "unholy"),
             0x2abf6d,
+            false,
             AttributeRegistry.UNHOLY_POWER,
             StatusEffectRegistry.UNHOLY_POWER
         )
