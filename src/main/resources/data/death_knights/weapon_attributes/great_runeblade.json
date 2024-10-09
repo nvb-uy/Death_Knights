@@ -1,6 +1,7 @@
 {
     "attributes": {
       "attack_range": 3.00,
+      "pose": "bettercombat:pose_two_handed_sword",
       "category": "sword",
       "attacks": [
         {
