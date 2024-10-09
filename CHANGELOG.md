@@ -1,10 +1,15 @@
 Death Knights Public Branch Changelog
 
-# 0.4.0
-- Added the Unholy Death Knight class
+# 0.4.0 - Unholy Update
+
+## Main Features
+- Added the Unholy Death Knight Class
+- Added Great Runeblades, a new two handed weapon with 5 variants
+- Added Death Knight Jewelry found in Ancient City loot
+
+## Changelog:
 - Added Tome of Unholy Teachings
 - Added 4 spells for Unholy DK: Festering Strike, Death Coil, Epidemic and Death Grip
-- Added Great Runeblades
 - Slightly reduced Frost Strike's frost power scaling (from 1.2 to 1.0)
 - Fixed runeblades not being able to use Spell Power enchantments
 - Fixed compat recipes loading when they shouldn't
