@@ -8,7 +8,7 @@
       "duration": 0.60,
       "animation": "death_knights:death_coil_cast",
       "sound": {
-        "id": "spell_engine:generic_arcane_casting",
+        "id": "spell_engine:generic_soul_casting",
         "randomness": 0
       },
       "particles": [
@@ -55,7 +55,8 @@
       },
       "animation": "spell_engine:one_handed_projectile_release",
       "sound": {
-        "id": "wizards:arcane_missile_release"
+        "id": "spell_engine:generic_soul_release",
+        "pitch": 1.1
       }
     },
     "impact": [
@@ -78,7 +79,8 @@
           }
         ],
         "sound": {
-          "id": "wizards:arcane_missile_impact"
+          "id": "spell_engine:generic_soul_release",
+          "pitch": 1.6
         }
       }
     ],

@@ -5,7 +5,6 @@ import java.util.List;
 import elocindev.deathknights.config.entries.spells.unholy.EpidemicConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig.PlagueProperty;
-import elocindev.deathknights.registry.ParticleRegistry;
 import elocindev.deathknights.registry.SpellSchoolRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -76,7 +75,6 @@ public class EpidemicHandler {
                                         int nearbyRemainingStacks = nearbyStacks - nearbyStacksToExplode;
 
                                         ent.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * nearbyStacksToExplode);
-                                        ent.getWorld().addParticle(ParticleRegistry.UNHOLY_HIT, ent.getX(), ent.getY()+0.5, ent.getZ(), 0, 0.04, 0);
 
                                         if (nearbyRemainingStacks > 0) {
                                             ent.addStatusEffect(new StatusEffectInstance(activeEffect, activePlague.duration_ticks, nearbyRemainingStacks - 1));

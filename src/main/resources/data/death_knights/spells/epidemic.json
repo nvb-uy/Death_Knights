@@ -16,7 +16,11 @@
           "min_speed": 0.05,
           "max_speed": 0.1
         }
-      ]
+      ],
+      "sound": {
+        "id": "spell_engine:generic_soul_casting",
+        "pitch": 1.1
+      }
     },
     "release": {
       "target": {
@@ -53,6 +57,10 @@
             "knockback": 0.0,
             "spell_power_coefficient": 0.0
           }
+        },
+        "sound": {
+          "id": "spell_engine:generic_soul_release",
+          "pitch": 1.6
         }
       }
     ],
