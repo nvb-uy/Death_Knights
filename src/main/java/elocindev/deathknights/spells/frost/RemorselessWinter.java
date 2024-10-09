@@ -77,7 +77,6 @@ public class RemorselessWinter extends SpellEffect {
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
-        DeathKnights.LOGGER.info("Damage: " + damage+ " Crit Chance: " + critChance);
 
         if (entity.age % CONFIG.tick_rate == 0)
             for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.radius, CONFIG.radius, CONFIG.radius), (e) -> e != entity)) {

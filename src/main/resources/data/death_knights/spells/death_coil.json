@@ -13,12 +13,12 @@
       },
       "particles": [
         {
-          "particle_id": "spell_engine:arcane_spell",
+          "particle_id": "death_knights:unholy_smoke",
           "shape": "PIPE",
           "origin": "FEET",
           "count": 1.0,
-          "min_speed": 0.05,
-          "max_speed": 0.1
+          "min_speed": 0.02,
+          "max_speed": 0.05
         }
       ]
     },
@@ -39,13 +39,13 @@
             "client_data": {
               "travel_particles": [
                 {
-                  "particle_id": "spell_engine:arcane_spell",
+                  "particle_id": "death_knights:unholy_smoke",
                   "shape": "CIRCLE",
                   "rotation": "LOOK",
                   "origin": "CENTER",
                   "count": 2.0,
-                  "min_speed": 0.05,
-                  "max_speed": 0.1
+                  "min_speed": 0.01,
+                  "max_speed": 0.04
                 }
               ],
               "model": {
@@ -72,12 +72,12 @@
         },
         "particles": [
           {
-            "particle_id": "spell_engine:arcane_hit",
+            "particle_id": "death_knights:unholy_hit",
             "shape": "SPHERE",
             "origin": "CENTER",
             "count": 40,
-            "min_speed": 0.2,
-            "max_speed": 0.7
+            "min_speed": 0.04,
+            "max_speed": 0.07
           }
         ],
         "sound": {

@@ -13,7 +13,7 @@
       },
       "particles": [
         {
-          "particle_id": "spell_engine:arcane_spell",
+          "particle_id": "death_knights:unholy_smoke",
           "shape": "PIPE",
           "origin": "FEET",
           "count": 1.0,
@@ -39,7 +39,7 @@
             "client_data": {
               "travel_particles": [
                 {
-                  "particle_id": "spell_engine:arcane_spell",
+                  "particle_id": "death_knights:unholy_smoke",
                   "shape": "CIRCLE",
                   "rotation": "LOOK",
                   "origin": "CENTER",
@@ -72,7 +72,7 @@
         },
         "particles": [
           {
-            "particle_id": "spell_engine:arcane_hit",
+            "particle_id": "death_knights:unholy_hit",
             "shape": "SPHERE",
             "origin": "CENTER",
             "count": 40,

@@ -12,6 +12,7 @@ import elocindev.deathknights.registry.ArmorRegistry;
 import elocindev.deathknights.registry.AttributeRegistry;
 import elocindev.deathknights.registry.ItemGroupRegistry;
 import elocindev.deathknights.registry.ItemRegistry;
+import elocindev.deathknights.registry.ParticleRegistry;
 import elocindev.deathknights.registry.SpellRegistry;
 import elocindev.deathknights.registry.SpellSchoolRegistry;
 import elocindev.deathknights.registry.StatusEffectRegistry;
@@ -39,6 +40,7 @@ public class DeathKnights implements ModInitializer {
 		ArmorRegistry.register(ArmorConfig.INSTANCE.armor_sets);
 
 		SpellHandler.registerSpells();
+		ParticleRegistry.register();
 
 		LOGGER.info("Death Knights Initialized!");
 	}

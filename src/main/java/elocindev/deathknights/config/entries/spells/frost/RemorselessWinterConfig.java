@@ -20,7 +20,7 @@ public class RemorselessWinterConfig {
     public double radius = 4;
     @Comment("The damage scaling of the spell. This multiplies the base frost power of the caster to output damage.")
     @Comment("Default: 0.5x")
-    public float damage_frost_scaling = 0.5f;
+    public float damage_frost_scaling = 0.25f;
     @Comment("The multiplier for critical damage. This is multiplied to the damage if the spell crits.")
     @Comment("Default: 2.0x")
     public float damage_critical_scaling = 2f;
