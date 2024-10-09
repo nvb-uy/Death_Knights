@@ -28,13 +28,13 @@
         "projectile": {
           "launch_properties": {
             "velocity": 1.5,
-            "extra_launch_count": 1,
+            "extra_launch_count": 0,
             "extra_launch_delay": 4
           },
           "projectile": {
             "homing_angle": 2,
             "perks": {
-              "pierce": 2
+              "pierce": 1
             },
             "client_data": {
               "travel_particles": [
@@ -49,8 +49,8 @@
                 }
               ],
               "model": {
-                "model_id": "wizards:projectile/arcane_missile",
-                "scale": 0.75
+                "model_id": "death_knights:projectile/unholy_missile",
+                "scale": 1.0
               }
             }
           }
@@ -67,7 +67,7 @@
           "type": "DAMAGE",
           "damage": {
             "knockback": 0.6,
-            "spell_power_coefficient": 0.5
+            "spell_power_coefficient": 1.2
           }
         },
         "particles": [
