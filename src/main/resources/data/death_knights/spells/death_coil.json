@@ -27,15 +27,12 @@
         "type": "PROJECTILE",
         "projectile": {
           "launch_properties": {
-            "velocity": 1.5,
+            "velocity": 1.2,
             "extra_launch_count": 0,
             "extra_launch_delay": 4
           },
           "projectile": {
             "homing_angle": 2,
-            "perks": {
-              "pierce": 1
-            },
             "client_data": {
               "travel_particles": [
                 {
@@ -43,7 +40,7 @@
                   "shape": "CIRCLE",
                   "rotation": "LOOK",
                   "origin": "CENTER",
-                  "count": 2.0,
+                  "count": 3.0,
                   "min_speed": 0.01,
                   "max_speed": 0.04
                 }
