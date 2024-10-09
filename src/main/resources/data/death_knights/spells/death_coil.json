@@ -86,6 +86,7 @@
       }
     ],
     "cost": {
-      "item_id": "death_knights:unholy_stone"
+      "item_id": "death_knights:unholy_stone",
+      "cooldown_duration": 6
     }
   }
