@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class GreviousPlague extends SpellEffect {
     public GreviousPlague() {
-        super(StatusEffectCategory.HARMFUL, 0x6fa64c);
+        super(StatusEffectCategory.HARMFUL, 0x4b3478);
     }
 
     @Override

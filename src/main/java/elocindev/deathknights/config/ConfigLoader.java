@@ -9,6 +9,7 @@ import elocindev.deathknights.config.entries.ClientConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
+import elocindev.deathknights.config.entries.spells.unholy.DeathCoilConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.necronomicon.api.config.v1.NecConfigAPI;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -25,6 +26,7 @@ public class ConfigLoader {
 
         // UNHOLY SPELLS
         NecConfigAPI.registerConfig(PlaguesConfig.class);
+        NecConfigAPI.registerConfig(DeathCoilConfig.class);
     }
 
     public static void initClient() {
