@@ -20,7 +20,7 @@ public class FesteringStrike extends SpellEffect {
     private static final Random RANDOM = Random.create();
 
     public FesteringStrike() {
-        super(StatusEffectCategory.NEUTRAL, 0x6fa64c);
+        super(StatusEffectCategory.HARMFUL, 0x6fa64c);
     }
 
     @Override

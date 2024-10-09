@@ -45,7 +45,7 @@
           "apply_mode": "ADD",
           "duration": 1,
           "amplifier": 1,
-          "effect_id": "death_knights:festering_struck",
+          "effect_id": "death_knights:festering_wound",
           "show_particles": false
         },
         "apply_to_caster": false

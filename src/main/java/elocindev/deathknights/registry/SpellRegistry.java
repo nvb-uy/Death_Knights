@@ -21,7 +21,7 @@ public class SpellRegistry {
     public static final BreathOfAgony BREATH_OF_AGONY = reg(new BreathOfAgony(), "breath_of_agony");
 
     // UNHOLY
-    public static final FesteringStrike FESTERING_STRUCK = reg(new FesteringStrike(), "festering_struck");
+    public static final FesteringStrike FESTERING_WOUND = reg(new FesteringStrike(), "festering_wound");
 
     // Passive effects / debuffs
     public static final AtrociousPlague ATROCIOUS_PLAGUE = reg(new AtrociousPlague(), "atrocious_plague");

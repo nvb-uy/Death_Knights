@@ -66,7 +66,7 @@
     "spell.death_knights.agonizing_breath.name":            "Agonizing Breath",
     "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing high frost damage to all enemies in front of you. If no targets are hit, the breath will stop.",
 
-    "effect.death_knights.festering_struck":                "Festering Wound",
+    "effect.death_knights.festering_wound":                "Festering Wound",
     "effect.death_knights.atrocious_plague":                "Atrocious Plague",
     "effect.death_knights.blood_plague":                    "Blood Plague",
     "effect.death_knights.grevious_plague":                 "Grevious Plague"
