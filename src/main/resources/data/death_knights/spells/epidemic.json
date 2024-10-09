@@ -1,11 +1,11 @@
 {
-    "range": 1.0,
-    "school": "FROST",
+    "range": 10.0,
+    "school": "death_knights:unholy",
     "learn": {
       "tier": 3
     },
     "cast": {
-      "duration": 0.0,
+      "duration": 0.3,
       "animation": "spell_engine:one_handed_area_charge",
       "particles": [
         {
@@ -20,7 +20,10 @@
     },
     "release": {
       "target": {
-        "type": "SELF"
+        "type": "AREA",
+        "area": {
+          "vertical_range_multiplier": 0.8
+        }
       },
       "animation": "spell_engine:one_handed_area_release",
       "particles": [
@@ -29,29 +32,25 @@
           "shape": "CIRCLE",
           "origin": "CENTER",
           "count": 130.0,
-          "min_speed": 0.7,
-          "max_speed": 0.7
+          "min_speed": 0.4,
+          "max_speed": 1.1
         }
       ]
     },
     "impact": [
       {
         "action": {
-          "type": "STATUS_EFFECT",
-          "status_effect": {
-            "effect_id": "death_knights:remorseless_winter",
-            "duration": 10,
-            "apply_mode": "SET",
-            "amplifier": 0,
-            "amplifier_power_multiplier": 0,
-            "show_particles": false
+          "type": "DAMAGE",
+          "damage": {
+            "knockback": 0.0,
+            "spell_power_coefficient": 0.0
           }
         }
       }
     ],
     "cost": {
       "exhaust": 0.2,
-      "item_id": "runes:frost_stone",
-      "cooldown_duration": 20
+      "item_id": "death_knights:unholy_stone",
+      "cooldown_duration": 1
     }
   }
