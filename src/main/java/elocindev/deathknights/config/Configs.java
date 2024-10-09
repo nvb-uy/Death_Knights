@@ -6,6 +6,7 @@ import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.FrostStrikeConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
+import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import net.spell_engine.api.item.ItemConfig;
 import net.tinyconfig.ConfigManager;
 
@@ -23,7 +24,7 @@ public class Configs {
         }
 
         public class Unholy {
-            //
+            public static PlaguesConfig             PLAGUES               =      PlaguesConfig.INSTANCE;
         }
 
         public class Blood {

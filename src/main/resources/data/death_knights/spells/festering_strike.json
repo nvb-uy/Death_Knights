@@ -44,11 +44,11 @@
         "status_effect": {
           "apply_mode": "ADD",
           "duration": 1,
-          "amplifier": 0,
-          "effect_id": "death_knights:festering_strike",
+          "amplifier": 1,
+          "effect_id": "death_knights:festering_struck",
           "show_particles": false
         },
-        "apply_to_caster": true
+        "apply_to_caster": false
       }
     }
   ],

@@ -6,17 +6,26 @@ import elocindev.deathknights.spells.frost.BreathOfAgony;
 import elocindev.deathknights.spells.frost.FrostStrike;
 import elocindev.deathknights.spells.frost.Obliterate;
 import elocindev.deathknights.spells.frost.RemorselessWinter;
+import elocindev.deathknights.spells.unholy.FesteringStrike;
+import elocindev.deathknights.spells.unholy.debuff.AtrociousPlague;
+import elocindev.deathknights.spells.unholy.debuff.GreviousPlague;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class SpellRegistry {
+    // FROST
     public static final Obliterate OBLITERATED_AGONY = reg(new Obliterate(), "obliterate");
     public static final FrostStrike FROST_STRIKE = reg(new FrostStrike(), "frost_strike");
     public static final RemorselessWinter REMORSELESS_WINTER = reg(new RemorselessWinter(), "remorseless_winter");
     public static final BreathOfAgony BREATH_OF_AGONY = reg(new BreathOfAgony(), "breath_of_agony");
 
-    public static final Obliterate FESTERING_STRIKE = reg(new Obliterate(), "festering_strike");
+    // UNHOLY
+    public static final FesteringStrike FESTERING_STRUCK = reg(new FesteringStrike(), "festering_struck");
+
+    // Passive effects / debuffs
+    public static final AtrociousPlague ATROCIOUS_PLAGUE = reg(new AtrociousPlague(), "atrocious_plague");
+    public static final GreviousPlague GREVIOUS_PLAGUE = reg(new GreviousPlague(), "grevious_plague");
 
 
     public static void register() {}

@@ -35,8 +35,8 @@
 
     "spell.death_knights.lesser_death_strike.name":         "Death Strike",
     "spell.death_knights.lesser_death_strike.description":  "Strike the target with a powerful attack, dealing {damage_0} physical damage and {damage_1} blood damage.",
-    "spell.death_knights.death_strike.name":                "Death Strike (Improved)",
-    "spell.death_knights.death_strike.description":         "Strike the target with a powerful attack, dealing {damage_0} physical damage and {damage_1} blood damage. You heal 10% of the damage dealt.",
+    "spell.death_knights.death_strike.name":                "Improved Death Strike",
+    "spell.death_knights.death_strike.description":         "Strike the target with a powerful attack, dealing {damage_0} physical damage and {damage_1} blood damage. You heal 10% of the damage dealt, if you are already at maximum health, you get a shield that absorbs the same amount of health.",
     "spell.death_knights.blood_boil.name":                  "Blood Boil",
     "spell.death_knights.blood_boil.description":           "Boil the blood of all enemies within 8 blocks, dealing {damage_0} blood damage and applying Blood Plague, dealing constant damage per second.",
     "spell.death_knights.marrowrend.name":                  "Marrowrend",
@@ -46,7 +46,7 @@
 
     "spell.death_knights.lesser_festering_strike.name":     "Festering Strike",
     "spell.death_knights.lesser_festering_strike.description": "Strike the target with a festering attack, dealing {damage_0} physical damage and {damage_1} unholy damage.",
-    "spell.death_knights.festering_strike.name":            "Festering Strike (Improved)",
+    "spell.death_knights.festering_strike.name":            "Improved Festering Strike",
     "spell.death_knights.festering_strike.description":     "Strike the target with a festering attack, dealing {damage_0} physical damage and {damage_1} unholy damage. Applies two stacks of a random disease to the target if they have no active disease, or increases the stacks of the active disease by 2.",
     "spell.death_knights.death_coil.name":                  "Death Coil",
     "spell.death_knights.death_coil.description":           "Unleash a coil of death, dealing {damage_0} unholy damage to the target. If the target is affected by a disease, it will explode up to 4 stacks and apply a single stack of that disease to nearby non-infected targets.",
@@ -57,12 +57,17 @@
 
     "spell.death_knights.lesser_obliterate.name":           "Obliterate",
     "spell.death_knights.lesser_obliterate.description":    "Strikes a powerful attack against the target, dealing {damage_0} physical damage and {damage_1} frost damage.",
-    "spell.death_knights.obliterate.name":                  "Obliterate (Improved)",
+    "spell.death_knights.obliterate.name":                  "Improved Obliterate",
     "spell.death_knights.obliterate.description":           "Strikes a powerful attack against the target, dealing {damage_0} physical damage and {damage_1} frost damage. Applies freezing to the target for 2 seconds and extends the duration of Remorseless Winter and Agonizing Breath.",
     "spell.death_knights.frost_strike.name":                "Frost Strike",
     "spell.death_knights.frost_strike.description":         "Infuse your runeblade with frost, dealing {damage_1} frost damage and {damage_0} physical damage. If the victim is frozen, icicles will be be thrown to all nearby enemies, dealing {damage_1} frost damage.",
     "spell.death_knights.remorseless_winter.name":          "Remorseless Winter",
     "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing constant frost damage to all enemies within 8 blocks every second, having a small chance of freezing them for a second every time it deals damage.",
     "spell.death_knights.agonizing_breath.name":            "Agonizing Breath",
-    "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing high frost damage to all enemies in front of you. If no targets are hit, the breath will stop."
+    "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing high frost damage to all enemies in front of you. If no targets are hit, the breath will stop.",
+
+    "effect.death_knights.festering_struck":                "Festering Wound",
+    "effect.death_knights.atrocious_plague":                "Atrocious Plague",
+    "effect.death_knights.blood_plague":                    "Blood Plague",
+    "effect.death_knights.grevious_plague":                 "Grevious Plague"
 }
