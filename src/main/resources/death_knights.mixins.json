@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_17",
 	"plugin": "elocindev.deathknights.mixin.DeathKnightsPlugin",
 	"mixins": [
-		"entity.attribute.LivingAttributeApplyMixin"
+		"entity.attribute.LivingAttributeApplyMixin",
+		"entity.debuff_logic.LivingPlagueModifiersMixin"
 	],
 	"client": [
 		"client.animation.AnimationSpeedPatcherMixin"
