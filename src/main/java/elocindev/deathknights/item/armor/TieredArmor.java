@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
+import elocindev.deathknights.client.render.armor.TieredArmorRenderer;
 import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
 import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
@@ -29,10 +30,12 @@ public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttri
     public static final Identifier equipSoundId = new Identifier("iron_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
+    private String name;
 
-    public TieredArmor(Armor.CustomMaterial material, Type type, Settings settings) {
+    public TieredArmor(String name, Armor.CustomMaterial material, Type type, Settings settings) {
         super(material, type, settings);
         this.customMaterial = material;
+        this.name = name;
     }
 
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
@@ -60,6 +63,8 @@ public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttri
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {
+        String name = this.name;
+
         consumer.accept(new RenderProvider() {
             private GeoArmorRenderer<?> renderer;
             
@@ -67,7 +72,7 @@ public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttri
             @Override
             public BipedEntityModel<LivingEntity> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, BipedEntityModel<LivingEntity> original) {
                 if (this.renderer == null) {
-                    this.renderer = new InitiateArmorRenderer();
+                    this.renderer = new TieredArmorRenderer(name);
                 }
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
                 return this.renderer;

@@ -90,7 +90,7 @@ public class ArmorRegistry {
     public static final Armor.Set frozen_champion =
 		create(
 				new Armor.CustomMaterial(
-					"frozen_champion",
+					"frozen_champion_armor",
 					13,
 					10,
 					TieredArmor.equipSound,
@@ -107,10 +107,10 @@ public class ArmorRegistry {
 							.addAll(getPowerForTier(1, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.03f))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
-				new TieredArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.BOOTS, new Item.Settings())
+				new TieredArmor("frozen_champion", material, ArmorItem.Type.HELMET, new Item.Settings()),
+				new TieredArmor("frozen_champion", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
+				new TieredArmor("frozen_champion", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
+				new TieredArmor("frozen_champion", material, ArmorItem.Type.BOOTS, new Item.Settings())
 		))
 		.put(entries)
 		.armorSet();
@@ -127,7 +127,7 @@ public class ArmorRegistry {
     public static final Armor.Set crimson_guard =
 		create(
 				new Armor.CustomMaterial(
-					"crimson_guard",
+					"crimson_guard_armor",
 					13,
 					10,
 					TieredArmor.equipSound,
@@ -144,10 +144,10 @@ public class ArmorRegistry {
 							.addAll(getPowerForTier(1, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 1f, true))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
-				new TieredArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.BOOTS, new Item.Settings())
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.HELMET, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.BOOTS, new Item.Settings())
 		))
 		.put(entries)
 		.armorSet();
@@ -164,7 +164,7 @@ public class ArmorRegistry {
     public static final Armor.Set plaguebringer =
 		create(
 				new Armor.CustomMaterial(
-					"plaguebringer",
+					"plaguebringer_armor",
 					13,
 					10,
 					TieredArmor.equipSound,
@@ -181,10 +181,10 @@ public class ArmorRegistry {
 							.addAll(getPowerForTier(1, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.02f))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
-				new TieredArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
-				new TieredArmor(material, ArmorItem.Type.BOOTS, new Item.Settings())
+				new TieredArmor("plaguebringer", material, ArmorItem.Type.HELMET, new Item.Settings()),
+				new TieredArmor("plaguebringer", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
+				new TieredArmor("plaguebringer", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
+				new TieredArmor("plaguebringer", material, ArmorItem.Type.BOOTS, new Item.Settings())
 		))
 		.put(entries)
 		.armorSet();
