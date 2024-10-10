@@ -37,6 +37,21 @@
     "item.death_knights.initiate_armor_legs":               "Leggings of Death's Call",
     "item.death_knights.initiate_armor_feet":               "Boots of Death's Call",
 
+    "item.death_knights.frozen_champion_armor_head":        "Helm of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_chest":       "Chestplate of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_legs":        "Legplates of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_feet":        "Boots of the Frozen Champion",
+
+    "item.death_knights.plaguebringer_armor_head":          "Helm of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_chest":         "Chestplate of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_legs":          "Legplates of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_feet":          "Boots of the Plaguebringer",
+
+    "item.death_knights.crimson_guard_armor_head":          "Crimson Guard's Helmet",
+    "item.death_knights.crimson_guard_armor_chest":         "Crimson Guard's Chestplate",
+    "item.death_knights.crimson_guard_armor_legs":          "Crimson Guard's Legplates",
+    "item.death_knights.crimson_guard_armor_feet":          "Crimson Guard's Boots",
+
     "item.death_knights.frost_dk_ring":                     "Ring of the Eternal Winter",
     "item.death_knights.frost_dk_ring.lore":                "Born of death and cold, no one knows where this ancient ring came from.",
     "item.death_knights.frost_dk_necklace":                 "A Dragon's Bane",
