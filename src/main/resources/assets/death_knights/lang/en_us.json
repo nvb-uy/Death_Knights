@@ -7,6 +7,10 @@
     "effect.death_knights.blood_power":                     "Blood Power",
     "effect.death_knights.unholy_power":                    "Unholy Power",
 
+    "enchantment.death_knights.decaying":                   "Decaying",
+    "enchantment.death_knights.decaying.desc":              "Increases the damage dealt by Unholy and Blood Spell Powers.",
+    "enchantment.death_knights.decaying.description":       "Increases the damage dealt by Unholy and Blood Spell Powers.",
+
     "item.death_knights.blood_stone":                       "Blood Rune",
     "item.death_knights.unholy_stone":                      "Unholy Rune",
     

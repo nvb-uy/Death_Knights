@@ -6,6 +6,7 @@ import java.nio.file.Path;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.config.entries.ClientConfig;
+import elocindev.deathknights.config.entries.enchants.DecayingEnchantConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
@@ -21,6 +22,9 @@ public class ConfigLoader {
     public static void init() {
         Configs.Items.ARMORS.refresh();
         Configs.Items.JEWELRY.refresh();
+
+        // ENCHANTS
+        NecConfigAPI.registerConfig(DecayingEnchantConfig.class);
         
         // FROST SPELLS
         NecConfigAPI.registerConfig(ObliterateConfig.class);
