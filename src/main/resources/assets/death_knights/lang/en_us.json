@@ -33,6 +33,16 @@
     "item.death_knights.initiate_armor_legs":               "Leggings of Death's Call",
     "item.death_knights.initiate_armor_feet":               "Boots of Death's Call",
 
+    "item.death_knights.frost_dk_ring":                     "Ring of the Eternal Winter",
+    "item.death_knights.frost_dk_ring.lore":                "Born of death and cold, no one knows where this ancient ring came from.",
+    "item.death_knights.frost_dk_necklace":                 "A Dragon's Bane",
+    "item.death_knights.frost_dk_necklace.lore":            "Crafted from the remains of an ancient frozen dragon.",
+
+    "item.death_knights.unholy_dk_ring":                    "Signet of Death",
+    "item.death_knights.unholy_dk_ring.lore":               "Listen closely... hear the pain and suffering of the damned souls within this ring.",
+    "item.death_knights.unholy_dk_necklace":                "Echoes of the Damned",
+    "item.death_knights.unholy_dk_necklace.lore":           "Passed by many generations, says to be cursed by the soul of each owner it had.",
+
     "spell.death_knights.lesser_death_strike.name":         "Death Strike",
     "spell.death_knights.lesser_death_strike.description":  "Strike the target with a powerful attack, dealing {damage_1} physical damage and {damage_2} blood damage.",
     "spell.death_knights.death_strike.name":                "Improved Death Strike",
@@ -49,11 +59,11 @@
     "spell.death_knights.festering_strike.name":            "Improved Festering Strike",
     "spell.death_knights.festering_strike.description":     "Strike the target with a festering attack, dealing {damage_1} physical damage and {damage_2} unholy damage. Applies two stacks of a random disease to the target if they have no active disease, or increases the stacks of the active disease by 2.",
     "spell.death_knights.death_coil.name":                  "Death Coil",
-    "spell.death_knights.death_coil.description":           "Unleash a coil of death, dealing {damage_1} unholy damage to the target. If the target is affected by a disease, it will explode up to 4 stacks and apply a single stack of that disease to nearby non-infected targets.",
+    "spell.death_knights.death_coil.description":           "Unleash a coil of death, dealing {damage} unholy damage to the target. If the target is affected by a disease, it will explode up to 4 stacks and apply a single stack of that disease to nearby non-infected targets.",
     "spell.death_knights.epidemic.name":                    "Epidemic",
-    "spell.death_knights.epidemic.description":             "Explode up to 2 stacks of an active disease of all nearby targets, and deal {damage_1} unholy damage per stack to each affected target.",
+    "spell.death_knights.epidemic.description":             "Explode up to 2 stacks of an active disease of all nearby targets, and deal unholy damage per stack to each affected target.",
     "spell.death_knights.death_grip.name":                  "Death Grip",
-    "spell.death_knights.death_grip.description":           "Grip the target with the power of death, pulling them towards you and slowing them.",
+    "spell.death_knights.death_grip.description":           "Grip the target with the power of death, pulling them towards you, and giving them slowness.",
 
     "spell.death_knights.lesser_obliterate.name":           "Obliterate",
     "spell.death_knights.lesser_obliterate.description":    "Strikes a powerful attack against the target, dealing {damage_1} physical damage and {damage_2} frost damage.",

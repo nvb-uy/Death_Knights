@@ -17,7 +17,7 @@ import net.runes.api.RuneItems.RuneType;
 
 public class ItemGroupRegistry {
     public static final ItemGroup MAIN_TAB = FabricItemGroup.builder()
-		.icon(() -> new ItemStack(ItemRegistry.BLOOD_RUNE))
+		.icon(() -> new ItemStack(ArmorRegistry.initiate_set.head))
         .displayName(Text.translatable("itemGroup.death_knights.main"))
 		.build();
 
@@ -32,13 +32,13 @@ public class ItemGroupRegistry {
             });
 
             ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DeathKnights.MODID, "main"))).register(content -> {
-                content.add(new ItemStack(ItemRegistry.BLOOD_RUNE));
-                content.add(new ItemStack(ItemRegistry.UNHOLY_RUNE));
-                content.add(new ItemStack(RuneItems.get(RuneType.FROST)));
-                
                 content.add(new ItemStack(ItemRegistry.BLOOD_SPELL_BOOK));
                 content.add(new ItemStack(ItemRegistry.UNHOLY_SPELL_BOOK));
                 content.add(new ItemStack(ItemRegistry.FROST_SPELL_BOOK));
+
+                content.add(new ItemStack(ItemRegistry.BLOOD_RUNE));
+                content.add(new ItemStack(ItemRegistry.UNHOLY_RUNE));
+                content.add(new ItemStack(RuneItems.get(RuneType.FROST)));
 
                 content.add(new ItemStack(ItemRegistry.RUNECARVED_STONE));
 
@@ -53,6 +53,12 @@ public class ItemGroupRegistry {
                 content.add(new ItemStack(ItemRegistry.GREAT_NETHERITE_RUNEBLADE));
                 if (DeathKnights.BETTERNETHER_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_RUBY_RUNEBLADE)); }
                 if (DeathKnights.BETTEREND_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_AETERNIUM_RUNEBLADE)); }
+
+                content.add(new ItemStack(ItemRegistry.FROST_DK_RING.item()));
+                content.add(new ItemStack(ItemRegistry.FROST_DK_NECKLACE.item()));
+                content.add(new ItemStack(ItemRegistry.UNHOLY_DK_RING.item()));
+                content.add(new ItemStack(ItemRegistry.UNHOLY_DK_NECKLACE.item()));
+                //content.add(new ItemStack(ItemRegistry.BLOOD_DK_RING.item()));
             });
     }
 }

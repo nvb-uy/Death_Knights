@@ -5,6 +5,7 @@ import net.spell_engine.api.item.ItemConfig;
 
 public class ArmorConfig {
     public final static ItemConfig INSTANCE;
+    
     static {
         INSTANCE = new ItemConfig();
 

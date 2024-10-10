@@ -1,6 +1,6 @@
 Death Knights Public Branch Changelog
 
-# 0.4.0 - Unholy Update
+# 0.4.0 - Jewelry & Unholy Update
 
 ## Main Features
 - Added the Unholy Death Knight Class
@@ -8,9 +8,11 @@ Death Knights Public Branch Changelog
 - Added Death Knight Jewelry found in Ancient City loot
 
 ## Changelog:
+- WARNING! Armor config has been moved to an "item" folder, as the jewelry config is also there now.
 - Added Tome of Unholy Teachings
 - Added 4 spells for Unholy DK: Festering Strike, Death Coil, Epidemic and Death Grip
 - Slightly reduced Frost Strike's frost power scaling (from 1.2 to 1.0)
+- Nerfed aeternium/ruby tier of one handed runeblades giving +6 spell power total. Now gives +5
 - Fixed runeblades not being able to use Spell Power enchantments
 - Fixed compat recipes loading when they shouldn't
 - Fixed spell descriptions having the wrong placeholder and not showing damage on the latest spell engine version

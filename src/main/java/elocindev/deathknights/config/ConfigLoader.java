@@ -20,6 +20,7 @@ import net.fabricmc.loader.api.FabricLoader;
 public class ConfigLoader {
     public static void init() {
         Configs.Items.ARMORS.refresh();
+        Configs.Items.JEWELRY.refresh();
         
         // FROST SPELLS
         NecConfigAPI.registerConfig(ObliterateConfig.class);

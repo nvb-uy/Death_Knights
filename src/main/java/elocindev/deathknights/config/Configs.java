@@ -2,6 +2,7 @@ package elocindev.deathknights.config;
 
 import elocindev.deathknights.config.entries.ArmorConfig;
 import elocindev.deathknights.config.entries.ClientConfig;
+import elocindev.deathknights.config.entries.JewelryConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.FrostStrikeConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
@@ -39,6 +40,9 @@ public class Configs {
     }
 
     public class Items {
-        public static ConfigManager<ItemConfig> ARMORS = new ConfigManager<ItemConfig>("armor_sets", ArmorConfig.INSTANCE).builder().setDirectory("death_knights").sanitize(true).build();
+        public static ConfigManager<ItemConfig> ARMORS = new ConfigManager<ItemConfig>("armor_sets", ArmorConfig.INSTANCE).builder().setDirectory("death_knights/items").sanitize(true).build();
+        public static ConfigManager<JewelryConfig> JEWELRY = new ConfigManager<>("jewelry", JewelryConfig.INSTANCE).builder().setDirectory("death_knights/items").sanitize(true).build();
     }
+
+    
 }
