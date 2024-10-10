@@ -135,7 +135,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.TWO_HANDED,
             ToolMaterials.IRON,
-            5, -3.0F,
+            6, -3.2F,
             1F, true
             ),
             "great_iron_runeblade"
@@ -146,7 +146,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.TWO_HANDED,
             ToolMaterials.DIAMOND,
-            7, -3.0F,
+            7, -3.2F,
             2F, true
             ),
             "great_diamond_runeblade"
@@ -157,7 +157,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.TWO_HANDED,
             ToolMaterials.NETHERITE,
-            7, -3.0F,
+            7, -3.2F,
             4F, true
             ),
             "great_netherite_runeblade"
@@ -168,7 +168,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.TWO_HANDED,
             ToolMaterials.NETHERITE,
-            9, -3.0F,
+            9, -3.2F,
             5F, true,
             true
             ),
@@ -180,7 +180,7 @@ public class ItemRegistry {
             RunebladeType.ALL,
             RunebladeSize.TWO_HANDED,
             ToolMaterials.NETHERITE,
-            9, -3.0F,
+            9, -3.2F,
             5F, true,
             true
             ),
