@@ -3,7 +3,6 @@ package elocindev.deathknights.item.armor;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
-import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
 import elocindev.deathknights.client.render.armor.TieredArmorRenderer;
 import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;

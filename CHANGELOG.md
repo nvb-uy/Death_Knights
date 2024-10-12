@@ -5,7 +5,7 @@ Death Knights Public Branch Changelog
 ## Main Features
 - Added the Unholy Death Knight Class
 - Added Great Runeblades, a new two handed weapon with 5 variants
-- Added Death Knight Jewelry found in Ancient City loot
+- Added Death Knight Jewelry found in Ancient City (Frost) and Woodland Mansions (Unholy)
 
 ## Changelog:
 - WARNING! Armor config has been moved to an "item" folder, as the jewelry config is also there now.

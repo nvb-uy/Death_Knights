@@ -51,7 +51,7 @@ public class ArmorRegistry {
 		return List.of(ItemConfig.Attribute.multiply(power, main_power), ItemConfig.Attribute.multiply(secondary, secondaryAmount));
 	}
 
-	// TIER 0
+	// TIER 1 INITIATE - Initiate Set
 	// +1 ALL POWERS
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set initiate_set =
@@ -83,8 +83,8 @@ public class ArmorRegistry {
 		.armorSet();
 
 	
-	// TIER 1 FROST - Frozen Champion Set
-	// +10% FROST POWER, +3% ATTACK SPEED
+	// TIER 2 FROST - Frozen Champion Set
+	// +20% FROST POWER, +5% ATTACK SPEED
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set frozen_champion =
@@ -98,13 +98,13 @@ public class ArmorRegistry {
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.03f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 					new ItemConfig.ArmorSet.Piece(6)
-							.addAll(getPowerForTier(1, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.03f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 					new ItemConfig.ArmorSet.Piece(5)
-							.addAll(getPowerForTier(1, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.03f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.03f))
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new TieredArmor("frozen_champion", material, ArmorItem.Type.HELMET, new Item.Settings()),
@@ -114,14 +114,11 @@ public class ArmorRegistry {
 		))
 		.put(entries)
 		.armorSet();
-
-	// TIER 2 FROST - Howling Deathlord Set
-	// +20% FROST POWER, +5% ATTACK SPEED
 	
 	// ------------------------------
 
-	// TIER 1 BLOOD - Crimson Guard Set
-	// +10% BLOOD POWER, +1 MAX HEALTH
+	// TIER 2 BLOOD - Crimson Guard Set
+	// +20% BLOOD POWER, +2 MAX HEALTH
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set crimson_guard =
@@ -135,13 +132,13 @@ public class ArmorRegistry {
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 1f, true)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
 					new ItemConfig.ArmorSet.Piece(6)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 1f, true)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
 					new ItemConfig.ArmorSet.Piece(5)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 1f, true)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 1f, true))
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new TieredArmor("crimson_guard", material, ArmorItem.Type.HELMET, new Item.Settings()),
@@ -152,13 +149,8 @@ public class ArmorRegistry {
 		.put(entries)
 		.armorSet();
 
-	// TIER 2 BLOOD - Blood Deathlord Set 
-	// +20% BLOOD POWER, +2 MAX HEALTH
-
-	// ------------------------------
-
-	// TIER 1 UNHOLY - Plaguebringer Set
-	// +10% UNHOLY POWER, +2% ATTACK DAMAGE	
+	// TIER 2 UNHOLY - Plaguebringer Set
+	// +20% UNHOLY POWER, +4% ATTACK DAMAGE
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set plaguebringer =
@@ -172,13 +164,13 @@ public class ArmorRegistry {
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.02f)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(6)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.02f)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(5)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.02f)),
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(1, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.02f))
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.04f))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new TieredArmor("plaguebringer", material, ArmorItem.Type.HELMET, new Item.Settings()),
@@ -188,9 +180,6 @@ public class ArmorRegistry {
 		))
 		.put(entries)
 		.armorSet();
-
-	// TIER 2 UNHOLY - Necrotic Deathlord Set
-	// +20% UNHOLY POWER, +4% ATTACK DAMAGE
 
 	private static Armor.Entry create(Armor.CustomMaterial material, ItemConfig.ArmorSet defaults) {
 			return new Armor.Entry(material, null, defaults);
