@@ -1,6 +1,5 @@
 package elocindev.deathknights.compat;
 
-import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.registry.ItemRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemStack;
