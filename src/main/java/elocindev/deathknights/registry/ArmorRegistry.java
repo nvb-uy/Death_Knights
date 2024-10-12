@@ -84,27 +84,27 @@ public class ArmorRegistry {
 
 	
 	// TIER 2 FROST - Frozen Champion Set
-	// +20% FROST POWER, +5% ATTACK SPEED
+	// +20% FROST POWER, +4% ATTACK SPEED
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
     public static final Armor.Set frozen_champion =
 		create(
 				new Armor.CustomMaterial(
 					"frozen_champion_armor",
-					13,
+					18,
 					10,
 					TieredArmor.equipSound,
 					TIER_1_INGREDIENTS
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(6)
-							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(5)
-							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.04f)),
 					new ItemConfig.ArmorSet.Piece(3)
-							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f))
+							.addAll(getPowerForTier(2, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.04f))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new TieredArmor("frozen_champion", material, ArmorItem.Type.HELMET, new Item.Settings()),
@@ -125,7 +125,7 @@ public class ArmorRegistry {
 		create(
 				new Armor.CustomMaterial(
 					"crimson_guard_armor",
-					13,
+					18,
 					10,
 					TieredArmor.equipSound,
 					TIER_1_INGREDIENTS
@@ -157,7 +157,7 @@ public class ArmorRegistry {
 		create(
 				new Armor.CustomMaterial(
 					"plaguebringer_armor",
-					13,
+					18,
 					10,
 					TieredArmor.equipSound,
 					TIER_1_INGREDIENTS
