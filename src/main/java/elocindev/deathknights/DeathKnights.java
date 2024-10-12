@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import elocindev.deathknights.compat.JewelryCompat;
 import elocindev.deathknights.config.ConfigLoader;
 import elocindev.deathknights.config.entries.ArmorConfig;
+import elocindev.deathknights.loot.LootInjector;
 import elocindev.deathknights.registry.ArmorRegistry;
 import elocindev.deathknights.registry.AttributeRegistry;
 import elocindev.deathknights.registry.EnchantmentRegistry;
@@ -40,6 +41,7 @@ public class DeathKnights implements ModInitializer {
 
 		EnchantmentRegistry.register();
 		ItemRegistry.register();
+		LootInjector.init();
 		ItemGroupRegistry.register();
 		ArmorRegistry.register(ArmorConfig.INSTANCE.armor_sets);
 

@@ -4,6 +4,7 @@ import elocindev.deathknights.config.entries.ArmorConfig;
 import elocindev.deathknights.config.entries.ClientConfig;
 import elocindev.deathknights.config.entries.JewelryConfig;
 import elocindev.deathknights.config.entries.enchants.DecayingEnchantConfig;
+import elocindev.deathknights.config.entries.loot.JewelryLootConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.FrostStrikeConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
@@ -47,5 +48,9 @@ public class Configs {
 
     public class Enchantments {
         public static DecayingEnchantConfig DECAYING = DecayingEnchantConfig.INSTANCE;
+    }
+
+    public class Loot {
+        public static JewelryLootConfig JEWELRY = JewelryLootConfig.INSTANCE;
     }
 }
