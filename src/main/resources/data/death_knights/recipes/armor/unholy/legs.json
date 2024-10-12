@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "death_knights:unholy_stone"
+    },
+    "base": {
+        "item": "death_knights:initiate_armor_head"
+    },
+    "addition": {
+        "item": "minecraft:iron_leggings"
+    },
+    "result": {
+        "item": "death_knights:plaguebringer_armor_legs"
+    }
+}
