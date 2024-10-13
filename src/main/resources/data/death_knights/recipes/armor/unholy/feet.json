@@ -4,7 +4,7 @@
         "item": "death_knights:unholy_stone"
     },
     "base": {
-        "item": "death_knights:initiate_armor_head"
+        "item": "death_knights:initiate_armor_feet"
     },
     "addition": {
         "item": "minecraft:iron_boots"
