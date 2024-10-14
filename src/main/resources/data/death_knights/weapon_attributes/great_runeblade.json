@@ -3,6 +3,7 @@
       "attack_range": 3.00,
       "pose": "bettercombat:pose_two_handed_sword",
       "category": "sword",
+      "two_handed": true,
       "attacks": [
         {
           "hitbox": "HORIZONTAL_PLANE",
