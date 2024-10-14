@@ -1,10 +1,10 @@
 Death Knights Public Branch Changelog
 
-# 0.4.0 - Jewelry & Unholy Update
+# 0.4.0 - Unholy & Jewelry Update
 
 ## Main Features
 - Added the Unholy Death Knight Class
-- Added Tier 2 Armors for Unholy and Frost Death Knights
+- Added Tier 2 Armors for Unholy and Frost Death Knights; The Plaguebringer and Frozen Champion sets.
 - Added Great Runeblades, a new two handed weapon with 5 variants
 - Added Death Knight Jewelry found in Ancient City (Frost) and Woodland Mansions (Unholy)
 
@@ -13,8 +13,8 @@ Death Knights Public Branch Changelog
 - Added Tome of Unholy Teachings
 - Added 4 spells for Unholy DK: Festering Strike, Death Coil, Epidemic and Death Grip
 - Added Frozen Champion armor set for Frost Death Knights
-- Added Crimson Guard armor set for Blood Death Knights (spells aren't implemented yet!)
 - Added Plaguebringer armor set for Unholy Death Knights
+- Added Great Runeblades with Iron, Diamond, Netherite, Ruby and Aeternium variants.
 - Slightly reduced Frost Strike's frost power scaling (from 1.2 to 1.0)
 - Nerfed aeternium/ruby tier of one handed runeblades giving +6 spell power total. Now gives +5
 - Fixed armors and weapons not being able to be enchanted
