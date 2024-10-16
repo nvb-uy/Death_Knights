@@ -13,8 +13,8 @@
         }
         ],
       "R": {
-            "item": "death_knights:runecarved_stone"
-        }
+        "item": "death_knights:runecarved_stone"
+      }
     },
     "pattern": [
       " RB",
@@ -22,6 +22,6 @@
       "HB "
     ],
     "result": {
-      "id": "death_knights:great_diamond_runeblade"
+      "item": "death_knights:great_diamond_runeblade"
     }
   }
