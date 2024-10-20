@@ -36,7 +36,17 @@
           "knockback": 0.0,
           "spell_power_coefficient": 0.6
         }
-      }
+      },
+      "particles": [
+        {
+          "particle_id": "death_knights:blood_hit",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 6,
+          "min_speed": 0.05,
+          "max_speed": 0.2
+        }
+      ]
     }
   ],
   "cost": {

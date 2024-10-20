@@ -6,22 +6,7 @@
     },
     "cast": {
       "duration": 0,
-      "animation": "spell_engine:two_handed_channeling",
-      "sound": {
-        "id": "spell_engine:generic_fire_release",
-        "pitch": 1.6,
-        "randomness": 0
-      },
-      "particles": [
-        {
-          "particle_id": "firework",
-          "shape": "PIPE",
-          "origin": "FEET",
-          "count": 1.0,
-          "min_speed": 0.05,
-          "max_speed": 0.1
-        }
-      ]
+      "animation": "spell_engine:two_handed_channeling"
     },
     "release": {
       "target": {
@@ -31,6 +16,10 @@
         }
       },
       "animation": "spell_engine:one_handed_area_release",
+      "sound": {
+        "id": "spell_engine:generic_fire_release",
+        "pitch": 1.2
+      },
       "particles": [
         {
           "particle_id": "death_knights:blood_boil",
@@ -84,7 +73,11 @@
             "min_speed": 0.05,
             "max_speed": 0.2
           }
-        ]
+        ],
+        "sound": {
+          "id": "spell_engine:generic_fire_release",
+          "pitch": 1.8
+        }
       },
       {
         "action": {
