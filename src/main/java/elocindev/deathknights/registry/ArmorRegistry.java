@@ -120,34 +120,34 @@ public class ArmorRegistry {
 	// TIER 2 BLOOD - Crimson Guard Set
 	// +20% BLOOD POWER, +2 MAX HEALTH
 
-	// @SuppressWarnings({ "unchecked", "rawtypes" })
-    // public static final Armor.Set crimson_guard =
-	// 	create(
-	// 			new Armor.CustomMaterial(
-	// 				"crimson_guard_armor",
-	// 				18,
-	// 				10,
-	// 				TieredArmor.equipSound,
-	// 				TIER_1_INGREDIENTS
-	// 			),
-	// 			ItemConfig.ArmorSet.with(
-	// 				new ItemConfig.ArmorSet.Piece(3)
-	// 						.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
-	// 				new ItemConfig.ArmorSet.Piece(6)
-	// 						.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
-	// 				new ItemConfig.ArmorSet.Piece(5)
-	// 						.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
-	// 				new ItemConfig.ArmorSet.Piece(3)
-	// 						.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true))
-	// 			))
-	// 	.bundle(material -> new Armor.Set(DeathKnights.MODID,
-	// 			new TieredArmor("crimson_guard", material, ArmorItem.Type.HELMET, new Item.Settings()),
-	// 			new TieredArmor("crimson_guard", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
-	// 			new TieredArmor("crimson_guard", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
-	// 			new TieredArmor("crimson_guard", material, ArmorItem.Type.BOOTS, new Item.Settings())
-	// 	))
-	// 	.put(entries)
-	// 	.armorSet();
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+    public static final Armor.Set crimson_guard =
+		create(
+				new Armor.CustomMaterial(
+					"crimson_guard_armor",
+					18,
+					10,
+					TieredArmor.equipSound,
+					TIER_1_INGREDIENTS
+				),
+				ItemConfig.ArmorSet.with(
+					new ItemConfig.ArmorSet.Piece(3)
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
+					new ItemConfig.ArmorSet.Piece(6)
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
+					new ItemConfig.ArmorSet.Piece(5)
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true)),
+					new ItemConfig.ArmorSet.Piece(3)
+							.addAll(getPowerForTier(2, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 2f, true))
+				))
+		.bundle(material -> new Armor.Set(DeathKnights.MODID,
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.HELMET, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
+				new TieredArmor("crimson_guard", material, ArmorItem.Type.BOOTS, new Item.Settings())
+		))
+		.put(entries)
+		.armorSet();
 
 	// TIER 2 UNHOLY - Plaguebringer Set
 	// +20% UNHOLY POWER, +4% ATTACK DAMAGE
