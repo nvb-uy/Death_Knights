@@ -1,0 +1,105 @@
+{
+    "school": "death_knights:blood",
+    "range": 5,
+    "learn": {
+      "tier": 3
+    },
+    "cast": {
+      "duration": 0,
+      "animation": "spell_engine:two_handed_channeling",
+      "sound": {
+        "id": "spell_engine:generic_fire_release",
+        "pitch": 1.6,
+        "randomness": 0
+      },
+      "particles": [
+        {
+          "particle_id": "firework",
+          "shape": "PIPE",
+          "origin": "FEET",
+          "count": 1.0,
+          "min_speed": 0.05,
+          "max_speed": 0.1
+        }
+      ]
+    },
+    "release": {
+      "target": {
+        "type": "AREA",
+        "area": {
+          "vertical_range_multiplier": 0.5
+        }
+      },
+      "animation": "spell_engine:one_handed_area_release",
+      "particles": [
+        {
+          "particle_id": "firework",
+          "shape": "CIRCLE",
+          "origin": "CENTER",
+          "count": 120.0,
+          "min_speed": 0.09,
+          "max_speed": 0.09
+        },
+        {
+          "particle_id": "firework",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 200.0,
+          "min_speed": 0.06,
+          "max_speed": 0.06
+        },
+        {
+          "particle_id": "firework",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 100.0,
+          "min_speed": 0.1,
+          "max_speed": 0.1
+        },
+        {
+          "particle_id": "firework",
+          "shape": "CIRCLE",
+          "origin": "CENTER",
+          "count": 130.0,
+          "min_speed": 0.07,
+          "max_speed": 0.07
+        }
+      ]
+    },
+    "impact": [
+      {
+        "action": {
+          "type": "DAMAGE",
+          "damage": {
+            "spell_power_coefficient": 0.7
+          }
+        },
+        "particles": [
+          {
+            "particle_id": "firework",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 5,
+            "min_speed": 0.05,
+            "max_speed": 0.2
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "STATUS_EFFECT",
+          "status_effect": {
+            "apply_mode": "ADD",
+            "duration": 4,
+            "amplifier": 0,
+            "effect_id": "minecells:stunned",
+            "show_particles": false
+          },
+          "apply_to_caster": false
+        }
+      }
+    ],
+    "cost": {
+      "cooldown_duration": 8
+    }
+  }

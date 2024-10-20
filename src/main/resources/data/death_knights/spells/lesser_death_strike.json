@@ -1,0 +1,47 @@
+{
+  "range": 3.5,
+  "school": "death_knights:blood",
+  "group": "primary",
+  "learn": {
+    "tier": 0
+  },
+  "cast": {
+    "duration": 0.0
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR"
+    },
+    "sound": {
+      "id": "minecraft:entity.player.attack.sweep"
+    },
+    "animation": "death_knights:death_strike_2h"
+  },
+  "impact": [
+    {
+      "school": "PHYSICAL_MELEE",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.5,
+          "spell_power_coefficient": 1.0
+        }
+      }
+    },
+    {
+      "school": "death_knights:blood",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.0,
+          "spell_power_coefficient": 0.2
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.2,
+    "item_id": "death_knights:blood_stone",
+    "cooldown_duration": 6
+  }
+}

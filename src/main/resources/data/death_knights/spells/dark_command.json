@@ -1,0 +1,39 @@
+{
+  "school": "death_knights:blood",
+  "range": 16,
+  "learn": {
+    "tier": 4
+  },
+  "cast": {
+    "duration": 0.3,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_soul_casting",
+      "randomness": 0
+    }
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR",
+      "cursor": { }
+    },
+    "animation": "spell_engine:one_handed_projectile_release",
+    "sound": {
+      "id": "spell_engine:generic_soul_release",
+      "pitch": 0.8
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "FIRE",
+        "fire": {
+          "duration": 0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "cooldown_duration": 8
+  }
+}

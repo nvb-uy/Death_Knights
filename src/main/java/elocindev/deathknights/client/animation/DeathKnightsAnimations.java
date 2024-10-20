@@ -7,6 +7,7 @@ public class DeathKnightsAnimations {
         "death_knights:obliterate",
         "death_knights:frost_strike",
         "death_knights:death_strike_2h",
-        "death_knights:festering_strike_2h"
+        "death_knights:festering_strike_2h",
+        "death_knights:marrowrend"
     );
 }

@@ -1,5 +1,10 @@
 Death Knights Public Branch Changelog
 
+# 0.5.0 - Blood Death Knights
+- Added the Blood Death Knight Class (Tank)
+- Added the Tome of Vampiric Knowledge
+- Added Tier 2 Armor for Blood Death Knight; Crimson Guard Set.
+
 # 0.4.0 - Unholy & Jewelry Update
 
 ## Main Features
