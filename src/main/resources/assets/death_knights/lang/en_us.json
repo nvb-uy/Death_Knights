@@ -98,7 +98,11 @@
     "effect.death_knights.festering_wound":                 "Festering Wound",
     "effect.death_knights.atrocious_plague":                "Atrocious Plague",
     "effect.death_knights.atrocious_plague.desc":           "Reduces the damage dealt by the target by 10% per stack.",
-    "effect.death_knights.blood_plague":                    "Blood Plague",
     "effect.death_knights.grevious_plague":                 "Grevious Plague",
-    "effect.death_knights.grevious_plague.desc":            "Reduces the healing received by the target by 15% per stack."
+    "effect.death_knights.grevious_plague.desc":            "Reduces the healing received by the target by 15% per stack.",
+    
+    "effect.death_knights.blood_plague":                    "Blood Plague",
+    "effect.death_knights.blood_plague.desc":               "Deals constant damage per second based on the nearest's blood death knight's power.",
+    "effect.death_knights.blood_thirst":                    "Blood Thirst",
+    "effect.death_knights.blood_thirst.desc":               "Bloodlust takes over, allowing to damage nearby enemies affected by Blood Plague."
 }

@@ -68,10 +68,11 @@
     },
     "impact": [
       {
+        "school": "death_knights:blood",
         "action": {
           "type": "DAMAGE",
           "damage": {
-            "spell_power_coefficient": 0.7
+            "spell_power_coefficient": 1.2
           }
         },
         "particles": [
@@ -87,19 +88,29 @@
       },
       {
         "action": {
+          "type": "FIRE",
+          "fire": {
+            "duration": 0
+          }
+        }
+      },
+      {
+        "action": {
           "type": "STATUS_EFFECT",
           "status_effect": {
             "apply_mode": "ADD",
-            "duration": 4,
+            "duration": 15,
             "amplifier": 0,
-            "effect_id": "minecells:stunned",
+            "effect_id": "death_knights:blood_thirst",
             "show_particles": false
           },
-          "apply_to_caster": false
+          "apply_to_caster": true
         }
       }
     ],
     "cost": {
-      "cooldown_duration": 8
+      "exhaust": 0.4,
+      "item_id": "death_knights:blood_stone",
+      "cooldown_duration": 13
     }
   }

@@ -2,6 +2,8 @@ package elocindev.deathknights.registry;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.api.core.SpellEffect;
+import elocindev.deathknights.spells.blood.BloodThirst;
+import elocindev.deathknights.spells.blood.debuff.BloodPlague;
 import elocindev.deathknights.spells.frost.BreathOfAgony;
 import elocindev.deathknights.spells.frost.FrostStrike;
 import elocindev.deathknights.spells.frost.Obliterate;
@@ -23,10 +25,13 @@ public class SpellRegistry {
     // UNHOLY
     public static final FesteringStrike FESTERING_WOUND = reg(new FesteringStrike(), "festering_wound");
 
+    // BLOOD
+    public static final BloodThirst BLOOD_THIRST = reg(new BloodThirst(), "blood_thirst");
+
     // Passive effects / debuffs
     public static final AtrociousPlague ATROCIOUS_PLAGUE = reg(new AtrociousPlague(), "atrocious_plague");
     public static final GreviousPlague GREVIOUS_PLAGUE = reg(new GreviousPlague(), "grevious_plague");
-
+    public static final BloodPlague BLOOD_PLAGUE = reg(new BloodPlague(), "blood_plague");
 
     public static void register() {}
 

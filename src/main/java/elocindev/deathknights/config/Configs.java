@@ -13,6 +13,7 @@ import elocindev.deathknights.config.entries.spells.unholy.DeathCoilConfig;
 import elocindev.deathknights.config.entries.spells.unholy.DeathGripConfig;
 import elocindev.deathknights.config.entries.spells.unholy.EpidemicConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
+import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
 import net.spell_engine.api.item.ItemConfig;
 import net.tinyconfig.ConfigManager;
 
@@ -38,6 +39,7 @@ public class Configs {
 
         public class Blood {
             //
+            public static BloodBoilConfig          BLOOD_BOIL            =      BloodBoilConfig.INSTANCE;
         }
     }
 
