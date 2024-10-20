@@ -8,6 +8,8 @@ public class ClientParticleRegistry {
         var instance = ParticleFactoryRegistry.getInstance();
 
         instance.register(ParticleRegistry.UNHOLY_HIT, SpellFlameParticle.FlameFactory::new);
-        instance.register(ParticleRegistry.UNHOLY_SMOKE, SpellFlameParticle.FlameFactory::new);        
+        instance.register(ParticleRegistry.UNHOLY_SMOKE, SpellFlameParticle.MediumFlameFactory::new);
+        instance.register(ParticleRegistry.BLOOD_HIT, SpellFlameParticle.FlameFactory::new);
+        instance.register(ParticleRegistry.BLOOD_BOIL, SpellFlameParticle.MediumFlameFactory::new);     
     }
 }
