@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.passive.HorseEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
 
@@ -30,8 +31,8 @@ public class BloodPlague extends SpellEffect {
         super.applyUpdateEffect(entity, amplifier);
         if (entity.getWorld().isClient() || entity.age % CONFIG.tick_rate != 0) return;
 
-        for (LivingEntity e : entity.getEntityWorld().getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(10), (e) -> e.hasStatusEffect(SpellRegistry.BLOOD_THIRST))) {
-            if (TargetHelper.allowedToHurt(e, entity) && !(e instanceof HorseEntity)) {
+        for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(CONFIG.radius*2), (e) -> e.hasStatusEffect(SpellRegistry.BLOOD_THIRST))) {
+            if (TargetHelper.allowedToHurt(e, entity) && !(entity instanceof HorseEntity)) {
                 entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(SpellSchoolRegistry.BLOOD.attribute) * CONFIG.damage_blood_scaling) * (amplifier));
                 break;
             }
