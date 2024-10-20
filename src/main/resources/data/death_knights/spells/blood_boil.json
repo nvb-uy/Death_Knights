@@ -33,36 +33,36 @@
       "animation": "spell_engine:one_handed_area_release",
       "particles": [
         {
-          "particle_id": "firework",
+          "particle_id": "death_knights:blood_boil",
           "shape": "CIRCLE",
           "origin": "CENTER",
           "count": 120.0,
-          "min_speed": 0.09,
-          "max_speed": 0.09
+          "min_speed": 0.19,
+          "max_speed": 0.19
         },
         {
-          "particle_id": "firework",
+          "particle_id": "death_knights:blood_boil",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 200.0,
-          "min_speed": 0.06,
-          "max_speed": 0.06
+          "min_speed": 0.26,
+          "max_speed": 0.29
         },
         {
-          "particle_id": "firework",
+          "particle_id": "death_knights:blood_boil",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 100.0,
-          "min_speed": 0.1,
-          "max_speed": 0.1
+          "min_speed": 0.41,
+          "max_speed": 0.43
         },
         {
-          "particle_id": "firework",
+          "particle_id": "death_knights:blood_boil",
           "shape": "CIRCLE",
           "origin": "CENTER",
           "count": 130.0,
-          "min_speed": 0.07,
-          "max_speed": 0.07
+          "min_speed": 0.17,
+          "max_speed": 0.17
         }
       ]
     },
@@ -77,10 +77,10 @@
         },
         "particles": [
           {
-            "particle_id": "firework",
+            "particle_id": "death_knights:blood_hit",
             "shape": "SPHERE",
             "origin": "CENTER",
-            "count": 5,
+            "count": 8,
             "min_speed": 0.05,
             "max_speed": 0.2
           }
