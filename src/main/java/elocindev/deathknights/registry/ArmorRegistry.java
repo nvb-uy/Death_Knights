@@ -182,10 +182,10 @@ public class ArmorRegistry {
 		.armorSet();
 
 	private static Armor.Entry create(Armor.CustomMaterial material, ItemConfig.ArmorSet defaults) {
-			return new Armor.Entry(material, null, defaults);
+		return new Armor.Entry(material, null, defaults);
 	}
 
 	public static void register(Map<String, ItemConfig.ArmorSet> configs) {
-					Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
+		Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
 	}
 }
