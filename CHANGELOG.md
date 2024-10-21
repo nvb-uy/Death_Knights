@@ -4,6 +4,7 @@ Death Knights Public Branch Changelog
 - Added the Blood Death Knight Class (Tank)
 - Added the Tome of Vampiric Knowledge
 - Added Tier 2 Armor for Blood Death Knight; Crimson Guard Set.
+- Melee abilities like Obliterate, Festering Strike, Frost Strike, Death Strike, etc. now reset the attack cooldown, making you unable to do a basic attack depending on the weapon's attack speed.
 
 # 0.4.0 - Unholy & Jewelry Update
 
