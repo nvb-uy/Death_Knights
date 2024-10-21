@@ -50,8 +50,8 @@
     }
   ],
   "cost": {
-    "exhaust": 0.2,
+    "exhaust": 0.6,
     "item_id": "death_knights:blood_stone",
-    "cooldown_duration": 5
+    "cooldown_duration": 8
   }
 }

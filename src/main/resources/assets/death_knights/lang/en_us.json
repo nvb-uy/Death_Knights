@@ -69,9 +69,9 @@
     "spell.death_knights.blood_boil.name":                  "Blood Boil",
     "spell.death_knights.blood_boil.description":           "Boil the blood of all enemies within 8 blocks, dealing {damage_1} blood damage and applying Blood Plague, dealing constant damage per second.",
     "spell.death_knights.marrowrend.name":                  "Marrowrend",
-    "spell.death_knights.marrowrend.description":           "Rend the target, dealing {damage_1} physical damage and {damage_2} blood damage. Applies 4 stacks of Resistance to the caster. Taking damage will reduce a stack.",
+    "spell.death_knights.marrowrend.description":           "Rend the target, dealing {damage_1} physical damage and {damage_2} blood damage. Applies 3 stacks of Resistance to the caster, taking damage will reduce a stack. The stacks can go up to 4.",
     "spell.death_knights.dark_command.name":                "Dark Command",
-    "spell.death_knights.dark_command.description":         "Shout to command the target and enrage it, forcing it to attack you. Enraged enemies attack faster.",
+    "spell.death_knights.dark_command.description":         "Shout to command the target and enrage it, forcing it to attack you. Enraged enemies attack faster but deal less damage.",
 
     "spell.death_knights.lesser_festering_strike.name":     "Festering Strike",
     "spell.death_knights.lesser_festering_strike.description": "Strike the target with a festering attack, dealing {damage_1} physical damage and {damage_2} unholy damage.",
@@ -104,5 +104,7 @@
     "effect.death_knights.blood_plague":                    "Blood Plague",
     "effect.death_knights.blood_plague.desc":               "Deals constant damage per second based on the nearest's blood death knight's power.",
     "effect.death_knights.blood_thirst":                    "Blood Thirst",
-    "effect.death_knights.blood_thirst.desc":               "Bloodlust takes over, allowing to damage nearby enemies affected by Blood Plague."
+    "effect.death_knights.blood_thirst.desc":               "Bloodlust takes over, allowing to damage nearby enemies affected by Blood Plague.",
+    "effect.death_knights.marrowshield":                    "Marrowshield",
+    "effect.death_knights.marrowshield.desc":               "Protected by the bones of the fallen, gaining stacked Resistance lost by getting hit."
 }
