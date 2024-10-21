@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import elocindev.deathknights.config.Configs;
@@ -82,16 +83,14 @@ public abstract class LivingEffectModifiersMixin {
         cir.setReturnValue(newAmount);;
     }
 
-    @Inject(method = "heal", at = @At("RETURN"), cancellable = true)
-    protected void death_knights$heal(float amount, CallbackInfoReturnable<Float> cir) {
+    @ModifyVariable(method = "heal", at = @At("HEAD"), argsOnly = true)
+    private float death_knights$modifyHealAmount(float amount) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
-        float newAmount = amount;
-
         if (entity.hasStatusEffect(SpellRegistry.GREVIOUS_PLAGUE)) {
-            newAmount = amount * (1.0f - (0.10f * (entity.getStatusEffect(SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
+            amount = amount * (1.0f - (0.10f * (entity.getStatusEffect(SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
-        cir.setReturnValue(newAmount);;
+        return amount;
     }
 }
