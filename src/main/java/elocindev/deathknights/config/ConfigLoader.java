@@ -10,6 +10,7 @@ import elocindev.deathknights.config.entries.enchants.DecayingEnchantConfig;
 import elocindev.deathknights.config.entries.loot.JewelryLootConfig;
 import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
 import elocindev.deathknights.config.entries.spells.blood.DeathStrikeConfig;
+import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import elocindev.deathknights.config.entries.spells.frost.ObliterateConfig;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
@@ -45,6 +46,7 @@ public class ConfigLoader {
 
         // BLOOD SPELLS
         NecConfigAPI.registerConfig(DeathStrikeConfig.class);
+        NecConfigAPI.registerConfig(MarrowrendConfig.class);
         NecConfigAPI.registerConfig(BloodBoilConfig.class);
     }
 
