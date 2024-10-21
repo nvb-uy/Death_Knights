@@ -9,6 +9,8 @@ import elocindev.deathknights.spells.unholy.EpidemicHandler;
 
 public class SpellHandler {
     public static void registerSpells() {
+        GlobalCooldown.register();
+
         DeathCoilHandler.register();
         EpidemicHandler.register();
         DeathGripHandler.register();
