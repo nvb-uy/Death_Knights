@@ -2,7 +2,7 @@ package elocindev.deathknights.registry;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.api.core.SpellEffect;
-import elocindev.deathknights.spells.blood.BloodThirst;
+import elocindev.deathknights.spells.blood.buff.BloodThirst;
 import elocindev.deathknights.spells.blood.debuff.BloodPlague;
 import elocindev.deathknights.spells.frost.BreathOfAgony;
 import elocindev.deathknights.spells.frost.FrostStrike;

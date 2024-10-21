@@ -1,4 +1,4 @@
-package elocindev.deathknights.spells.blood;
+package elocindev.deathknights.spells.blood.buff;
 
 import elocindev.deathknights.api.core.SpellEffect;
 import net.minecraft.entity.LivingEntity;
