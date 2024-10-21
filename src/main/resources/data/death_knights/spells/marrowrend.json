@@ -47,6 +47,19 @@
           "max_speed": 0.2
         }
       ]
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "SET",
+          "duration": 10,
+          "amplifier": 0,
+          "effect_id": "death_knights:marrowshield",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
     }
   ],
   "cost": {
