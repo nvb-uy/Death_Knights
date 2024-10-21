@@ -1,10 +1,12 @@
-package elocindev.deathknights.mixin.entity.debuff_logic;
+package elocindev.deathknights.mixin.entity.effect_logic;
 
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import elocindev.deathknights.registry.SpellRegistry;
 import net.minecraft.entity.LivingEntity;
@@ -20,24 +22,24 @@ public abstract class LivingPlagueModifiersMixin {
     @Shadow public abstract float getHealth();
     @Shadow public abstract boolean damage(DamageSource source, float amount);
 
-    @ModifyVariable(method = "modifyAppliedDamage", at = @At("RETURN"), ordinal = 0)
-    private float death_knights$applyAtrociousPlagueModifier(float amount, DamageSource source) {
+    @Inject(method = "modifyAppliedDamage", at = @At("RETURN"), cancellable = true)
+    protected void death_knights$modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
         LivingEntity attacker = entity.getAttacker();
 
         float newAmount = amount;
 
-        if (attacker == null) return newAmount;
+        if (attacker == null) return;
 
         if (attacker.hasStatusEffect(SpellRegistry.ATROCIOUS_PLAGUE)) {
             newAmount = amount * (1.0f - (0.10f * (attacker.getStatusEffect(SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
-        return newAmount;
+        cir.setReturnValue(newAmount);;
     }
 
-    @ModifyVariable(method = "heal", at = @At("HEAD"), ordinal = 0)
-    private float death_knights$applyGreviousPlagueModifier(float amount) {
+    @Inject(method = "heal", at = @At("RETURN"), cancellable = true)
+    protected void death_knights$heal(float amount, CallbackInfoReturnable<Float> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
         float newAmount = amount;
@@ -46,6 +48,6 @@ public abstract class LivingPlagueModifiersMixin {
             newAmount = amount * (1.0f - (0.10f * (entity.getStatusEffect(SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
-        return newAmount;
+        cir.setReturnValue(newAmount);;
     }
 }
