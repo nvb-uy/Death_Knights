@@ -80,6 +80,10 @@ public abstract class LivingEffectModifiersMixin {
             newAmount = amount * (1.0f - (0.10f * (attacker.getStatusEffect(SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
+        if (attacker.hasStatusEffect(SpellRegistry.ENRAGED)) {
+            newAmount *= 1f - (0.20f * (attacker.getStatusEffect(SpellRegistry.ENRAGED).getAmplifier() + 1));   
+        }
+
         cir.setReturnValue(newAmount);;
     }
 

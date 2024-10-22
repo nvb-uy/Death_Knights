@@ -5,6 +5,7 @@ import elocindev.deathknights.api.core.SpellEffect;
 import elocindev.deathknights.spells.blood.buff.BloodThirst;
 import elocindev.deathknights.spells.blood.buff.Marrowshield;
 import elocindev.deathknights.spells.blood.debuff.BloodPlague;
+import elocindev.deathknights.spells.blood.debuff.Enraged;
 import elocindev.deathknights.spells.frost.BreathOfAgony;
 import elocindev.deathknights.spells.frost.FrostStrike;
 import elocindev.deathknights.spells.frost.Obliterate;
@@ -28,6 +29,7 @@ public class SpellRegistry {
 
     // BLOOD
     public static final Marrowshield MARROWSHIELD = reg(new Marrowshield(), "marrowshield");
+    public static final Enraged ENRAGED = reg(new Enraged(), "enraged");
 
     // Passive effects / debuffs
     public static final AtrociousPlague ATROCIOUS_PLAGUE = reg(new AtrociousPlague(), "atrocious_plague");

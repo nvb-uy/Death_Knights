@@ -34,6 +34,6 @@
     }
   ],
   "cost": {
-    "cooldown_duration": 8
+    "cooldown_duration": 12
   }
 }

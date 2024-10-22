@@ -12,7 +12,8 @@ public class GlobalCooldown {
         "death_knights:lesser_death_strike",
         "death_knights:lesser_obliterate",
         "death_knights:lesser_festering_strike",
-        "death_knights:marrowrend"
+        "death_knights:marrowrend",
+        "death_knights:frost_strike"
     );
 
     public static void register() {
@@ -21,8 +22,9 @@ public class GlobalCooldown {
                 PlayerEntity caster = args.caster();
                 if (caster == null) return;
 
-                if (gcd_spells.contains(args.spell().id().toString()))
+                if (gcd_spells.contains(args.spell().id().toString())) {
                     caster.resetLastAttackedTicks();
+                }
             }
         );
     }
