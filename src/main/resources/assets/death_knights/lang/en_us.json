@@ -67,7 +67,7 @@
     "spell.death_knights.death_strike.name":                "Death Strike",
     "spell.death_knights.death_strike.description":         "Strike the target with a powerful attack, dealing {damage_1} physical damage and {damage_2} blood damage. You heal 10% of your maximum health, if you are already at maximum health, you get an absorption equivalent to 10% of your max health.",
     "spell.death_knights.blood_boil.name":                  "Blood Boil",
-    "spell.death_knights.blood_boil.description":           "Boil the blood of all enemies within 8 blocks, dealing {damage_1} blood damage and applying Blood Plague, dealing constant damage per second.",
+    "spell.death_knights.blood_boil.description":           "Boil the blood of all enemies within 8 blocks, dealing {damage} blood damage and applying Blood Plague, dealing constant damage per second.",
     "spell.death_knights.marrowrend.name":                  "Marrowrend",
     "spell.death_knights.marrowrend.description":           "Rend the target, dealing {damage_1} physical damage and {damage_2} blood damage. Applies 3 stacks of Resistance to the caster, taking damage will reduce a stack. The stacks can go up to 4.",
     "spell.death_knights.dark_command.name":                "Dark Command",

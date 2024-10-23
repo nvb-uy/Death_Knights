@@ -6,6 +6,8 @@ Death Knights Public Branch Changelog
 - Added Tier 2 Armor for Blood Death Knight; Crimson Guard Set.
 - Melee abilities like Obliterate, Festering Strike, Frost Strike, Death Strike, etc. now reset the attack cooldown, making you unable to do a basic attack depending on the weapon's attack speed.
 
+**Jewelry and Great Runeaxes are coming in v0.6.0, which will be the last update before the 1.21 port!**
+
 # 0.4.0 - Unholy & Jewelry Update
 
 ## Main Features
