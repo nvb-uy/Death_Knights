@@ -1,9 +1,8 @@
 {
   "range": 3.5,
   "school": "death_knights:blood",
-  "group": "primary",
   "learn": {
-    "tier": 1
+    "tier": 2
   },
   "cast": {
     "duration": 0.0
