@@ -106,5 +106,7 @@
     "effect.death_knights.blood_thirst":                    "Blood Thirst",
     "effect.death_knights.blood_thirst.desc":               "Bloodlust takes over, allowing to damage nearby enemies affected by Blood Plague.",
     "effect.death_knights.marrowshield":                    "Marrowshield",
-    "effect.death_knights.marrowshield.desc":               "Protected by the bones of the fallen, gaining stacked Resistance lost by getting hit."
+    "effect.death_knights.marrowshield.desc":               "Protected by the bones of the fallen, gaining stacked Resistance lost by getting hit.",
+    "effect.death_knights.enraged":                         "Enraged",
+    "effect.death_knights.enraged.desc":                    "Enraged by bloodlust. You deal 20% less damage."
 }
