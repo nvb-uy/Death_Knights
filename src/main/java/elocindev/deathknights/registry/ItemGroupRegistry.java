@@ -54,11 +54,18 @@ public class ItemGroupRegistry {
                 if (DeathKnights.BETTERNETHER_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_RUBY_RUNEBLADE)); }
                 if (DeathKnights.BETTEREND_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_AETERNIUM_RUNEBLADE)); }
 
+                content.add(new ItemStack(ItemRegistry.GREAT_IRON_RUNEAXE));
+                content.add(new ItemStack(ItemRegistry.GREAT_DIAMOND_RUNEAXE));
+                content.add(new ItemStack(ItemRegistry.GREAT_NETHERITE_RUNEAXE));
+                if (DeathKnights.BETTERNETHER_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_RUBY_RUNEAXE)); }
+                if (DeathKnights.BETTEREND_ENABLED) { content.add(new ItemStack(ItemRegistry.GREAT_AETERNIUM_RUNEAXE)); }
+
                 content.add(new ItemStack(ItemRegistry.FROST_DK_RING.item()));
                 content.add(new ItemStack(ItemRegistry.FROST_DK_NECKLACE.item()));
                 content.add(new ItemStack(ItemRegistry.UNHOLY_DK_RING.item()));
                 content.add(new ItemStack(ItemRegistry.UNHOLY_DK_NECKLACE.item()));
-                //content.add(new ItemStack(ItemRegistry.BLOOD_DK_RING.item()));
+                content.add(new ItemStack(ItemRegistry.BLOOD_DK_RING.item()));
+                content.add(new ItemStack(ItemRegistry.BLOOD_DK_NECKLACE.item()));
             });
     }
 }
