@@ -3,7 +3,9 @@
     "values": [
         "death_knights:frost_dk_necklace",
         "death_knights:unholy_dk_necklace",
+        "death_knights:blood_dk_necklace",
         "death_knights:frost_dk_ring",
-        "death_knights:unholy_dk_ring"
+        "death_knights:unholy_dk_ring",
+        "death_knights:blood_dk_ring"
     ]
 }

@@ -1,0 +1,29 @@
+{
+    "attributes": {
+      "attack_range": 3.00,
+      "category": "axe",
+      "two_handed": true,
+      "attacks": [
+        {
+          "hitbox": "HORIZONTAL_PLANE",
+          "damage_multiplier": 1.00,
+          "angle": 120,
+          "upswing": 0.5,
+          "animation": "bettercombat:two_handed_slash_horizontal_right",
+          "swing_sound": {
+            "id": "bettercombat:sword_slash"
+          }
+        },
+        {
+          "hitbox": "HORIZONTAL_PLANE",
+          "damage_multiplier": 1.00,
+          "angle": 120,
+          "upswing": 0.5,
+          "animation": "bettercombat:two_handed_slash_horizontal_left",
+          "swing_sound": {
+            "id": "bettercombat:sword_slash"
+          }
+        }
+      ]
+    }
+  }

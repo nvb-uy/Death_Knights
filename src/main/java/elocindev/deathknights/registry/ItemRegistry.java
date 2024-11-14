@@ -6,6 +6,7 @@ import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.JewelryConfig;
 import elocindev.deathknights.item.jewelry.DKJewelryItem;
+import elocindev.deathknights.item.weapon.RuneaxeItem;
 import elocindev.deathknights.item.weapon.RunebladeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -67,6 +68,20 @@ public class ItemRegistry {
             List.of(
                 new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
                 new JewelryConfig.AttributeModifier(new Identifier("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+            )
+    ));
+
+    public static Jewelry BLOOD_DK_RING = add(new Identifier(DeathKnights.MODID, "blood_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
+            List.of(
+                    new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new JewelryConfig.AttributeModifier(new Identifier("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+            )
+    ));
+
+    public static Jewelry BLOOD_DK_NECKLACE = add(new Identifier(DeathKnights.MODID, "blood_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
+            List.of(
+                new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                new JewelryConfig.AttributeModifier(new Identifier("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -186,6 +201,63 @@ public class ItemRegistry {
             ),
             "great_aeternium_runeblade"
         );
+
+        public static final RuneaxeItem GREAT_IRON_RUNEAXE = reg(
+            new RuneaxeItem(
+                RunebladeType.ALL,
+                RunebladeSize.TWO_HANDED,
+                ToolMaterials.IRON,
+                7, -3.6F,
+                1F, true
+                ),
+                "great_iron_runeaxe"
+            );
+        
+        public static final RuneaxeItem GREAT_DIAMOND_RUNEAXE = reg(
+            new RuneaxeItem(
+                RunebladeType.ALL,
+                RunebladeSize.TWO_HANDED,
+                ToolMaterials.DIAMOND,
+                8, -3.6F,
+                2F, true
+                ),
+                "great_diamond_runeaxe"
+            );
+        
+        public static final RuneaxeItem GREAT_NETHERITE_RUNEAXE = reg(
+            new RuneaxeItem(
+                RunebladeType.ALL,
+                RunebladeSize.TWO_HANDED,
+                ToolMaterials.NETHERITE,
+                8, -3.6F,
+                4F, true
+                ),
+                "great_netherite_runeaxe"
+            );
+    
+        public static final RuneaxeItem GREAT_RUBY_RUNEAXE = reg(
+            new RuneaxeItem(
+                RunebladeType.ALL,
+                RunebladeSize.TWO_HANDED,
+                ToolMaterials.NETHERITE,
+                10, -3.6F,
+                5F, true,
+                true
+                ),
+                "great_ruby_runeaxe"
+            );
+    
+        public static final RuneaxeItem GREAT_AETERNIUM_RUNEAXE = reg(
+            new RuneaxeItem(
+                RunebladeType.ALL,
+                RunebladeSize.TWO_HANDED,
+                ToolMaterials.NETHERITE,
+                10, -3.6F,
+                5F, true,
+                true
+                ),
+                "great_aeternium_runeaxe"
+            );
 
     public static <T extends Item> T reg(T instance, String id) {
         return Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, id), instance);

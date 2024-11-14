@@ -32,6 +32,12 @@
     "item.death_knights.great_ruby_runeblade":              "Great Ruby Runeblade",
     "item.death_knights.great_aeternium_runeblade":         "Great Aeternium Runeblade",
 
+    "item.death_knights.great_iron_runeaxe":                "Great Iron Runeaxe",
+    "item.death_knights.great_diamond_runeaxe":             "Great Diamond Runeaxe",
+    "item.death_knights.great_netherite_runeaxe":           "Great Netherite Runeaxe",
+    "item.death_knights.great_ruby_runeaxe":                "Great Ruby Runeaxe",
+    "item.death_knights.great_aeternium_runeaxe":           "Great Aeternium Runeaxe",
+
     "item.death_knights.initiate_armor_head":               "Hood of Death's Call",
     "item.death_knights.initiate_armor_chest":              "Tunic of Death's Call",
     "item.death_knights.initiate_armor_legs":               "Leggings of Death's Call",
@@ -46,7 +52,7 @@
     "item.death_knights.plaguebringer_armor_chest":         "Chestplate of the Plaguebringer",
     "item.death_knights.plaguebringer_armor_legs":          "Legplates of the Plaguebringer",
     "item.death_knights.plaguebringer_armor_feet":          "Boots of the Plaguebringer",
-
+    
     "item.death_knights.crimson_guard_armor_head":          "Crimson Guard's Helmet",
     "item.death_knights.crimson_guard_armor_chest":         "Crimson Guard's Chestplate",
     "item.death_knights.crimson_guard_armor_legs":          "Crimson Guard's Legplates",
@@ -61,6 +67,11 @@
     "item.death_knights.unholy_dk_ring.lore":               "Listen closely... hear the pain and suffering of the damned souls within this ring.",
     "item.death_knights.unholy_dk_necklace":                "Echoes of the Damned",
     "item.death_knights.unholy_dk_necklace.lore":           "Passed by many generations, says to be cursed by the soul of each owner it had.",
+    
+    "item.death_knights.blood_dk_ring":                     "Ring of Bloodthirst",
+    "item.death_knights.blood_dk_ring.lore":                "The blood of those who used this ring still drips to this day.",
+    "item.death_knights.blood_dk_necklace":                 "Necklace of the Blood Queen",
+    "item.death_knights.blood_dk_necklace.lore":            "Forged from the blood of a queen, may hold a curse.",
 
     "spell.death_knights.lesser_death_strike.name":         "Death Strike",
     "spell.death_knights.lesser_death_strike.description":  "Strike the target with a powerful attack, dealing {damage_1} physical damage and {damage_2} blood damage.",

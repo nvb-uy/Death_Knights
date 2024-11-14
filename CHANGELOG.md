@@ -1,5 +1,8 @@
 Death Knights Public Branch Changelog
 
+# 0.6.0 - Great Runeaxes & Blood Death Knight Jewelry
+- Added Great Runeaxes, meant for blood death knights. They're slow and have Death Strike as an integrated spell.
+
 # 0.5.0 - Blood Death Knights
 - Added the Blood Death Knight Class (Tank)
 - Added the Tome of Vampiric Knowledge
