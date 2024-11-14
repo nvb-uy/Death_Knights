@@ -21,6 +21,8 @@ public class LootInjector {
             injectLoot(ItemRegistry.FROST_DK_RING.item(), CONFIG.frost_ring, id, tableBuilder);
             injectLoot(ItemRegistry.UNHOLY_DK_NECKLACE.item(), CONFIG.unholy_necklace, id, tableBuilder);
             injectLoot(ItemRegistry.UNHOLY_DK_RING.item(), CONFIG.unholy_ring, id, tableBuilder);
+            injectLoot(ItemRegistry.BLOOD_DK_NECKLACE.item(), CONFIG.blood_necklace, id, tableBuilder);
+            injectLoot(ItemRegistry.BLOOD_DK_RING.item(), CONFIG.blood_ring, id, tableBuilder);
         });
     }
 

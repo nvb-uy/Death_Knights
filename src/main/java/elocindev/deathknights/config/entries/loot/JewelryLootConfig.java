@@ -10,7 +10,7 @@ public class JewelryLootConfig {
     public static JewelryLootConfig INSTANCE;
 
     public static String getFile() {
-        return ConfigLoader.getNestedFile("jewelry.json5", "loot");
+        return ConfigLoader.getNestedFile("jewelry_v2.json5", "loot");
     }
 
     public class LootHolder {
@@ -30,4 +30,7 @@ public class JewelryLootConfig {
 
     public LootHolder unholy_necklace = new LootHolder(1, 0.20F, List.of("minecraft:chests/woodland_mansion"));
     public LootHolder unholy_ring = new LootHolder(3, 0.10F, List.of("minecraft:chests/woodland_mansion"));
+
+    public LootHolder blood_necklace = new LootHolder(1, 0.20F, List.of("minecraft:chests/bastion_treasure"));
+    public LootHolder blood_ring = new LootHolder(3, 0.10F, List.of("minecraft:chests/bastion_treasure"));
 }
