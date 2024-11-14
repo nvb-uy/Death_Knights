@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iii",
+        "i/R",
+        "/  "
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:diamond"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "R": {
+            "item": "death_knights:runecarved_stone"
+        }
+    },
+    "result": {
+        "item": "death_knights:great_diamond_runeaxe",
+        "count": 1
+    }
+}
