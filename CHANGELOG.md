@@ -1,5 +1,10 @@
 Death Knights Public Branch Changelog
 
+# 0.6.1 - Fixes
+- Fixed Crimson Guard armor's pivot points being wrong
+- Fixed Soulfrost not being able to be added into DK armor
+- Fixed spell enchants not usable in runeblades
+
 # 0.6.0 - Great Runeaxes & Blood Death Knight Jewelry
 - YOUR JEWLERY CONFIG WILL BE RESET! It's now named jewelry_v2.json
 - Added Great Runeaxes, meant for blood death knights. They're slow and have Death Strike as an integrated spell.
