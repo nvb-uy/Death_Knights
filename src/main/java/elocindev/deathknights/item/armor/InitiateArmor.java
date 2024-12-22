@@ -1,21 +1,12 @@
 package elocindev.deathknights.item.armor;
 
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
-
 import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
-
+import elocindev.necronomicon.api.ResourceIdentifier;
 //? if 1.20.1 {
 /*import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
 import mod.azure.azurelibarmor.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.util.AzureLibUtil;
-*///?} else {
-import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
-import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
-import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
-import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
-//?}
 
 import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
 import mod.azure.azurelibarmor.core.animation.AnimatableManager;
@@ -28,14 +19,41 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import net.minecraft.util.Identifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.item.ConfigurableAttributes;
 import net.spell_engine.api.item.armor.Armor;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+*///?} else {
+import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
+import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
+import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
+import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
+
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
+import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
+import mod.azure.azurelibarmor.core.animation.AnimatableManager;
+
+import net.minecraft.client.render.entity.model.BipedEntityModel;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.spell_engine.api.item.armor.Armor;
+
+import java.util.function.Consumer;
+//?}
+
+
+//? if 1.20.1 {
+/*public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
     public static final Identifier equipSoundId = ResourceIdentifier.get("leather_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
@@ -100,3 +118,43 @@ public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAtt
         return cache;
     }
 }
+*///?} else {
+
+public class InitiateArmor extends Armor.CustomItem implements GeoItem {
+    public InitiateArmor(RegistryEntry<ArmorMaterial> material, Type slot, Settings settings) {
+        super(material, slot, settings);
+    }
+
+    public static final Identifier equipSoundId = ResourceIdentifier.get("iron_equip");
+    public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
+
+    // MARK: GeoItem
+
+    @Override
+    public void createRenderer(Consumer<RenderProvider> consumer) {
+        consumer.accept(new RenderProvider() {
+            private GeoArmorRenderer<?> renderer;
+
+            @SuppressWarnings("unchecked")
+            @Override
+            public BipedEntityModel<LivingEntity> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, BipedEntityModel<LivingEntity> original) {
+                if (this.renderer == null) {
+                    this.renderer = new InitiateArmorRenderer();
+                }
+                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
+                return this.renderer;
+            }
+        });
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { }
+
+    private final AnimatableInstanceCache cache = AzureLibUtil.createInstanceCache(this);
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return cache;
+    }
+}
+//?}
