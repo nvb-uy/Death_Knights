@@ -1,6 +1,7 @@
 package elocindev.deathknights.client.particle;
 
-import net.minecraft.client.particle.Particle;
+//? if 1.20.1 {
+/*import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleFactory;
 import net.minecraft.client.particle.ParticleTextureSheet;
 import net.minecraft.client.particle.SpriteBillboardParticle;
@@ -38,3 +39,4 @@ public class OpaqueSpellParticle extends SpriteBillboardParticle {
         }
     }
 }
+*///?}
