@@ -9,10 +9,10 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 
 //? if 1.20.1 {
-/*import net.minecraft.entity.attribute.AttributeContainer;
-*///?} else {
-import net.minecraft.registry.RegistryEntry;
-//?}
+import net.minecraft.entity.attribute.AttributeContainer;
+//?} else {
+/*import net.minecraft.registry.RegistryEntry;
+*///?}
 
 public class Obliterate extends SpellEffect {
     public static ObliterateConfig CONFIG = ObliterateConfig.INSTANCE;
@@ -30,13 +30,13 @@ public class Obliterate extends SpellEffect {
     @Override
     public void onApplied(LivingEntity entity, 
     //? if 1.20.1 {
-    /*AttributeContainer attributes,
-    *///?}
+    AttributeContainer attributes,
+    //?}
     int amplifier) {
         super.onApplied(entity,
         //? if 1.20.1 {
-        /*attributes,
-        *///?}
+        attributes,
+        //?}
         amplifier);
 
         var breath = SpellRegistry.BREATH_OF_AGONY;
@@ -45,7 +45,7 @@ public class Obliterate extends SpellEffect {
         if (EffectUtils.hasStatusEffect(entity, breath)) {
             entity.addStatusEffect(new StatusEffectInstance(
                 //? if 1.20.1 {
-                /*breath,
+                breath,
                 //?} else {
                 /*RegistryEntry.of(breath),
                 *///?}
@@ -69,4 +69,3 @@ public class Obliterate extends SpellEffect {
     }
     
 }
-*/

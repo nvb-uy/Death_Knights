@@ -20,11 +20,11 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 
 //? if 1.20.1 {
-/*import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-*///?} else {
-import net.minecraft.block.Block;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+//?} else {
+/*import net.minecraft.block.Block;
 import net.minecraft.registry.tag.TagKey;
-//?}
+*///?}
 
 public class RuneaxeItem extends AxeItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> mainHandAttributes;
@@ -67,11 +67,11 @@ public class RuneaxeItem extends AxeItem {
                 }
 
                 //? if 1.20.1 {
-                /*@Override
+                @Override
                 public int getMiningLevel() {
                     return material.getMiningLevel();
                 }
-                *///?}
+                //?}
 
                 @Override
                 public Ingredient getRepairIngredient() {
@@ -79,18 +79,18 @@ public class RuneaxeItem extends AxeItem {
                 }
 
                 //? if 1.21.1 {
-                @Override
+                /*@Override
                 public TagKey<Block> getInverseTag() {
                     return null;
                 }
-                //?}
+                *///?}
             },
         //? if 1.20.1 {
-        /*attackDamage, attackSpeed, 
+        attackDamage, attackSpeed, 
         new FabricItemSettings());
-        *///?} else {
-        new Settings());
-        //?}
+        //?} else {
+        /*new Settings());
+        *///?}
 
         this.type = type;
         this.size = size;

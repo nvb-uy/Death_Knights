@@ -22,8 +22,8 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.21.1 {
-import net.minecraft.registry.entry.RegistryEntry;
-//?}
+/*import net.minecraft.registry.entry.RegistryEntry;
+*///?}
 
 public class BreathOfAgony extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "breath_of_agony"));
@@ -36,7 +36,7 @@ public class BreathOfAgony extends SpellEffect {
     
     @Override public
     //? if 1.20.1 {
-    /*void
+    void
     //?} else {
     /*boolean
     *///?}
@@ -134,4 +134,4 @@ public class BreathOfAgony extends SpellEffect {
     public static DamageSource of(World world, RegistryKey<DamageType> key) {
         return new DamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(key));
     }
-}*/
+}
