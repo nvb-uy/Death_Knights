@@ -1,6 +1,7 @@
 package elocindev.deathknights.enchant;
 
-import net.minecraft.enchantment.Enchantment;
+//? if 1.20.1 {
+/*import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -100,3 +101,4 @@ public class DecayingEnchantment extends SchoolFilteredEnchantment {
         return false;
     }
 }
+*///?}
