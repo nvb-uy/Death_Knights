@@ -21,8 +21,8 @@ import elocindev.deathknights.registry.StatusEffectRegistry;
 import elocindev.deathknights.spells.SpellHandler;
 
 //? if 1.20.1 {
-import elocindev.deathknights.registry.EnchantmentRegistry;
-//?}
+/*import elocindev.deathknights.registry.EnchantmentRegistry;
+*///?}
 
 public class DeathKnights implements ModInitializer {
 	public static final String MODID = "death_knights";
@@ -44,8 +44,8 @@ public class DeathKnights implements ModInitializer {
 
 		// Enchants are data-based in 1.21!
 		//? if 1.20.1 {
-		EnchantmentRegistry.register();
-		//?}
+		/*EnchantmentRegistry.register();
+		*///?}
 
 		ItemRegistry.register();
 		LootInjector.init();

@@ -23,10 +23,10 @@ public class JewelryConfig {
         public float value = 0;
         public EntityAttributeModifier.Operation operation =
             //? if 1.20.1 {
-            EntityAttributeModifier.Operation.ADDITION;
-            //?} else {
-            /*EntityAttributeModifier.Operation.ADD_VALUE;
-            *///?}
+            /*EntityAttributeModifier.Operation.ADDITION;
+            *///?} else {
+            EntityAttributeModifier.Operation.ADD_VALUE;
+            //?}
 
         public AttributeModifier(Identifier id, float value, EntityAttributeModifier.Operation operation) {
             this(id.toString(), value, operation);
