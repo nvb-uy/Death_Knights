@@ -14,10 +14,6 @@ public class EffectUtils {
         //? }
     }
 
-    public static boolean hasStatusEffect(LivingEntity entity, RegistryEntry<StatusEffect> effect) {
-        return entity.hasStatusEffect(effect);
-    }
-
     public static StatusEffectInstance getStatusEffect(LivingEntity entity, StatusEffect effect) {
         //? if 1.20.1 {
         /*return entity.getStatusEffect(effect);
