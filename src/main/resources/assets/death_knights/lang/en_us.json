@@ -1,0 +1,123 @@
+{
+    "itemGroup.death_knights.main":                         "Death Knights",
+    
+    "attribute.name.death_knights.blood_power":             "Blood Spell Power",
+    "attribute.name.death_knights.unholy_power":            "Unholy Spell Power",
+
+    "effect.death_knights.blood_power":                     "Blood Power",
+    "effect.death_knights.unholy_power":                    "Unholy Power",
+
+    "enchantment.death_knights.decaying":                   "Decaying",
+    "enchantment.death_knights.decaying.desc":              "Increases the damage dealt by Unholy and Blood Spell Powers.",
+    "enchantment.death_knights.decaying.description":       "Increases the damage dealt by Unholy and Blood Spell Powers.",
+
+    "item.death_knights.blood_stone":                       "Blood Rune",
+    "item.death_knights.unholy_stone":                      "Unholy Rune",
+    
+    "item.death_knights.runecarved_stone":                  "Runecarved Stone",
+
+    "item.death_knights.blood_spell_book":                  "Tome of Vampiric Knowledge",
+    "item.death_knights.unholy_spell_book":                 "Tome of Unholy Teachings",
+    "item.death_knights.frost_spell_book":                  "Tome of the Eternal Winter",
+
+    "item.death_knights.initiate_runeblade":                "Iron Runeblade",
+    "item.death_knights.diamond_runeblade":                 "Diamond Runeblade",
+    "item.death_knights.netherite_runeblade":               "Netherite Runeblade",
+    "item.death_knights.ruby_runeblade":                    "Ruby Runeblade",
+    "item.death_knights.aeternium_runeblade":               "Aeternium Runeblade",
+
+    "item.death_knights.great_iron_runeblade":              "Great Iron Runeblade",
+    "item.death_knights.great_diamond_runeblade":           "Great Diamond Runeblade",
+    "item.death_knights.great_netherite_runeblade":         "Great Netherite Runeblade",
+    "item.death_knights.great_ruby_runeblade":              "Great Ruby Runeblade",
+    "item.death_knights.great_aeternium_runeblade":         "Great Aeternium Runeblade",
+
+    "item.death_knights.great_iron_runeaxe":                "Great Iron Runeaxe",
+    "item.death_knights.great_diamond_runeaxe":             "Great Diamond Runeaxe",
+    "item.death_knights.great_netherite_runeaxe":           "Great Netherite Runeaxe",
+    "item.death_knights.great_ruby_runeaxe":                "Great Ruby Runeaxe",
+    "item.death_knights.great_aeternium_runeaxe":           "Great Aeternium Runeaxe",
+
+    "item.death_knights.initiate_armor_head":               "Hood of Death's Call",
+    "item.death_knights.initiate_armor_chest":              "Tunic of Death's Call",
+    "item.death_knights.initiate_armor_legs":               "Leggings of Death's Call",
+    "item.death_knights.initiate_armor_feet":               "Boots of Death's Call",
+
+    "item.death_knights.frozen_champion_armor_head":        "Helm of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_chest":       "Chestplate of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_legs":        "Legplates of the Frozen Champion",
+    "item.death_knights.frozen_champion_armor_feet":        "Boots of the Frozen Champion",
+
+    "item.death_knights.plaguebringer_armor_head":          "Helm of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_chest":         "Chestplate of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_legs":          "Legplates of the Plaguebringer",
+    "item.death_knights.plaguebringer_armor_feet":          "Boots of the Plaguebringer",
+    
+    "item.death_knights.crimson_guard_armor_head":          "Crimson Guard's Helmet",
+    "item.death_knights.crimson_guard_armor_chest":         "Crimson Guard's Chestplate",
+    "item.death_knights.crimson_guard_armor_legs":          "Crimson Guard's Legplates",
+    "item.death_knights.crimson_guard_armor_feet":          "Crimson Guard's Boots",
+
+    "item.death_knights.frost_dk_ring":                     "Ring of the Eternal Winter",
+    "item.death_knights.frost_dk_ring.lore":                "Born of death and cold, no one knows where this ancient ring came from.",
+    "item.death_knights.frost_dk_necklace":                 "A Dragon's Bane",
+    "item.death_knights.frost_dk_necklace.lore":            "Crafted from the remains of an ancient frozen dragon.",
+
+    "item.death_knights.unholy_dk_ring":                    "Signet of Death",
+    "item.death_knights.unholy_dk_ring.lore":               "Listen closely... hear the pain and suffering of the damned souls within this ring.",
+    "item.death_knights.unholy_dk_necklace":                "Echoes of the Damned",
+    "item.death_knights.unholy_dk_necklace.lore":           "Passed by many generations, says to be cursed by the soul of each owner it had.",
+    
+    "item.death_knights.blood_dk_ring":                     "Ring of Bloodthirst",
+    "item.death_knights.blood_dk_ring.lore":                "The blood of those who used this ring still drips to this day.",
+    "item.death_knights.blood_dk_necklace":                 "Necklace of the Blood Queen",
+    "item.death_knights.blood_dk_necklace.lore":            "Forged from the blood of a queen, may hold a curse.",
+
+    "spell.death_knights.lesser_death_strike.name":         "Death Strike",
+    "spell.death_knights.lesser_death_strike.description":  "Strike the target with a powerful attack, dealing {damage_1} physical damage and {damage_2} blood damage.",
+    "spell.death_knights.death_strike.name":                "Death Strike",
+    "spell.death_knights.death_strike.description":         "Strike the target with a powerful attack, dealing {damage_1} physical damage and {damage_2} blood damage. You heal 10% of your maximum health, if you are already at maximum health, you get an absorption equivalent to 10% of your max health.",
+    "spell.death_knights.blood_boil.name":                  "Blood Boil",
+    "spell.death_knights.blood_boil.description":           "Boil the blood of all enemies within 8 blocks, dealing {damage} blood damage and applying Blood Plague, dealing constant damage per second.",
+    "spell.death_knights.marrowrend.name":                  "Marrowrend",
+    "spell.death_knights.marrowrend.description":           "Rend the target, dealing {damage_1} physical damage and {damage_2} blood damage. Applies 3 stacks of Resistance to the caster, taking damage will reduce a stack. The stacks can go up to 4.",
+    "spell.death_knights.dark_command.name":                "Dark Command",
+    "spell.death_knights.dark_command.description":         "Shout to command the target and enrage it, forcing it to attack you. Enraged enemies deal 20% less damage.",
+
+    "spell.death_knights.lesser_festering_strike.name":     "Festering Strike",
+    "spell.death_knights.lesser_festering_strike.description": "Strike the target with a festering attack, dealing {damage_1} physical damage and {damage_2} unholy damage.",
+    "spell.death_knights.festering_strike.name":            "Festering Strike",
+    "spell.death_knights.festering_strike.description":     "Strike the target with a festering attack, dealing {damage_1} physical damage and {damage_2} unholy damage. Applies two stacks of a random disease to the target if they have no active disease, or increases the stacks of the active disease by 2.",
+    "spell.death_knights.death_coil.name":                  "Death Coil",
+    "spell.death_knights.death_coil.description":           "Unleash a coil of death, dealing {damage} unholy damage to the target. If the target is affected by a disease, it will explode up to 4 stacks and apply a single stack of that disease to nearby non-infected targets.",
+    "spell.death_knights.epidemic.name":                    "Epidemic",
+    "spell.death_knights.epidemic.description":             "Explode up to 2 stacks of an active disease of all nearby targets, and deal unholy damage per stack to each affected target.",
+    "spell.death_knights.death_grip.name":                  "Death Grip",
+    "spell.death_knights.death_grip.description":           "Grip the target with the power of death, pulling them towards you, and giving them slowness.",
+
+    "spell.death_knights.lesser_obliterate.name":           "Obliterate",
+    "spell.death_knights.lesser_obliterate.description":    "Strikes a powerful attack against the target, dealing {damage_1} physical damage and {damage_2} frost damage.",
+    "spell.death_knights.obliterate.name":                  "Obliterate",
+    "spell.death_knights.obliterate.description":           "Strikes a powerful attack against the target, dealing {damage_1} physical damage and {damage_2} frost damage. Applies freezing to the target for 2 seconds and extends the duration of Remorseless Winter and Agonizing Breath.",
+    "spell.death_knights.frost_strike.name":                "Frost Strike",
+    "spell.death_knights.frost_strike.description":         "Infuse your runeblade with frost, dealing {damage_2} frost damage and {damage_1} physical damage. If the victim is frozen, icicles will be be thrown to all nearby enemies, dealing {damage_2} frost damage.",
+    "spell.death_knights.remorseless_winter.name":          "Remorseless Winter",
+    "spell.death_knights.remorseless_winter.description":   "Surround yourself with a remorseless winter, dealing constant frost damage to all enemies within 8 blocks every second, having a small chance of freezing them for a second every time it deals damage.",
+    "spell.death_knights.agonizing_breath.name":            "Agonizing Breath",
+    "spell.death_knights.agonizing_breath.description":     "Breathe a cone of frost, dealing high frost damage to all enemies in front of you. If no targets are hit, the breath will stop.",
+
+    "effect.death_knights.festering_wound":                 "Festering Wound",
+    "effect.death_knights.atrocious_plague":                "Atrocious Plague",
+    "effect.death_knights.atrocious_plague.desc":           "Reduces the damage dealt by the target by 10% per stack.",
+    "effect.death_knights.grevious_plague":                 "Grevious Plague",
+    "effect.death_knights.grevious_plague.desc":            "Reduces the healing received by the target by 15% per stack.",
+    
+    "effect.death_knights.blood_plague":                    "Blood Plague",
+    "effect.death_knights.blood_plague.desc":               "Deals constant damage per second based on the nearest's blood death knight's power.",
+    "effect.death_knights.blood_thirst":                    "Blood Thirst",
+    "effect.death_knights.blood_thirst.desc":               "Bloodlust takes over, allowing to damage nearby enemies affected by Blood Plague.",
+    "effect.death_knights.marrowshield":                    "Marrowshield",
+    "effect.death_knights.marrowshield.desc":               "Protected by the bones of the fallen, gaining stacked Resistance lost by getting hit.",
+    "effect.death_knights.enraged":                         "Enraged",
+    "effect.death_knights.enraged.desc":                    "Enraged by bloodlust. You deal 20% less damage."
+}

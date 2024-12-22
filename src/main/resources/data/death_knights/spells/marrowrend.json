@@ -1,0 +1,69 @@
+{
+  "range": 3.5,
+  "school": "death_knights:blood",
+  "learn": {
+    "tier": 2
+  },
+  "cast": {
+    "duration": 0.0
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR"
+    },
+    "sound": {
+      "id": "minecraft:entity.player.attack.sweep"
+    },
+    "animation": "death_knights:marrowrend"
+  },
+  "impact": [
+    {
+      "school": "PHYSICAL_MELEE",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.5,
+          "spell_power_coefficient": 0.35
+        }
+      }
+    },
+    {
+      "school": "death_knights:blood",
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.0,
+          "spell_power_coefficient": 0.8
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "death_knights:blood_hit",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 5,
+          "min_speed": 0.05,
+          "max_speed": 0.2
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "SET",
+          "duration": 10,
+          "amplifier": 0,
+          "effect_id": "death_knights:marrowshield",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.6,
+    "item_id": "death_knights:blood_stone",
+    "cooldown_duration": 8
+  }
+}

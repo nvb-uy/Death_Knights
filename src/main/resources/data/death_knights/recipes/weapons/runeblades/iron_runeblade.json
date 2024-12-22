@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "death_knights:runecarved_stone"
+    },
+    "base": {
+        "item": "minecraft:iron_sword"
+    },
+    "addition": {
+        "item": "runes:frost_stone"
+    },
+    "result": {
+        "item": "death_knights:initiate_runeblade"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " 2 ",
+        "1S3"
+    ],
+    "key": {
+        "1": {
+            "item": "death_knights:blood_stone"
+        },
+        "2": {
+            "item": "death_knights:unholy_stone"
+        },
+        "3": {
+            "item": "runes:frost_stone"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "result": {
+        "count": 1,
+        "item": "death_knights:runecarved_stone"
+    }
+}

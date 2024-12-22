@@ -1,0 +1,91 @@
+{
+    "school": "death_knights:unholy",
+    "range": 64,
+    "learn": {
+      "tier": 2
+    },
+    "cast": {
+      "duration": 0.60,
+      "animation": "death_knights:death_coil_cast",
+      "sound": {
+        "id": "spell_engine:generic_soul_casting",
+        "randomness": 0
+      },
+      "particles": [
+        {
+          "particle_id": "death_knights:unholy_smoke",
+          "shape": "PIPE",
+          "origin": "FEET",
+          "count": 1.0,
+          "min_speed": 0.02,
+          "max_speed": 0.05
+        }
+      ]
+    },
+    "release": {
+      "target": {
+        "type": "PROJECTILE",
+        "projectile": {
+          "launch_properties": {
+            "velocity": 1.2,
+            "extra_launch_count": 0,
+            "extra_launch_delay": 4
+          },
+          "projectile": {
+            "homing_angle": 2,
+            "client_data": {
+              "travel_particles": [
+                {
+                  "particle_id": "death_knights:unholy_smoke",
+                  "shape": "CIRCLE",
+                  "rotation": "LOOK",
+                  "origin": "CENTER",
+                  "count": 3.0,
+                  "min_speed": 0.01,
+                  "max_speed": 0.04
+                }
+              ],
+              "model": {
+                "model_id": "death_knights:projectile/unholy_missile",
+                "scale": 1.0
+              }
+            }
+          }
+        }
+      },
+      "animation": "spell_engine:one_handed_projectile_release",
+      "sound": {
+        "id": "spell_engine:generic_soul_release",
+        "pitch": 1.1
+      }
+    },
+    "impact": [
+      {
+        "action": {
+          "type": "DAMAGE",
+          "damage": {
+            "knockback": 0.6,
+            "spell_power_coefficient": 1.2
+          }
+        },
+        "particles": [
+          {
+            "particle_id": "death_knights:unholy_hit",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 40,
+            "min_speed": 0.04,
+            "max_speed": 0.07
+          }
+        ],
+        "sound": {
+          "id": "spell_engine:generic_soul_release",
+          "pitch": 1.6
+        }
+      }
+    ],
+    "cost": {
+      "item_id": "death_knights:unholy_stone",
+      "cooldown_duration": 6
+    }
+  }

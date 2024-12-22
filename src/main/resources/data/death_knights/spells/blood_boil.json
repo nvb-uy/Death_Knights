@@ -1,0 +1,109 @@
+{
+    "school": "death_knights:blood",
+    "range": 5,
+    "learn": {
+      "tier": 3
+    },
+    "cast": {
+      "duration": 0,
+      "animation": "spell_engine:two_handed_channeling"
+    },
+    "release": {
+      "target": {
+        "type": "AREA",
+        "area": {
+          "vertical_range_multiplier": 0.5
+        }
+      },
+      "animation": "spell_engine:one_handed_area_release",
+      "sound": {
+        "id": "spell_engine:generic_fire_release",
+        "pitch": 1.2
+      },
+      "particles": [
+        {
+          "particle_id": "death_knights:blood_boil",
+          "shape": "CIRCLE",
+          "origin": "CENTER",
+          "count": 120.0,
+          "min_speed": 0.19,
+          "max_speed": 0.19
+        },
+        {
+          "particle_id": "death_knights:blood_boil",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 200.0,
+          "min_speed": 0.26,
+          "max_speed": 0.29
+        },
+        {
+          "particle_id": "death_knights:blood_boil",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 100.0,
+          "min_speed": 0.41,
+          "max_speed": 0.43
+        },
+        {
+          "particle_id": "death_knights:blood_boil",
+          "shape": "CIRCLE",
+          "origin": "CENTER",
+          "count": 130.0,
+          "min_speed": 0.17,
+          "max_speed": 0.17
+        }
+      ]
+    },
+    "impact": [
+      {
+        "school": "death_knights:blood",
+        "action": {
+          "type": "DAMAGE",
+          "damage": {
+            "spell_power_coefficient": 0.6
+          }
+        },
+        "particles": [
+          {
+            "particle_id": "death_knights:blood_hit",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 8,
+            "min_speed": 0.05,
+            "max_speed": 0.2
+          }
+        ],
+        "sound": {
+          "id": "spell_engine:generic_fire_release",
+          "pitch": 1.8
+        }
+      },
+      {
+        "action": {
+          "type": "FIRE",
+          "fire": {
+            "duration": 0
+          }
+        }
+      },
+      {
+        "action": {
+          "type": "STATUS_EFFECT",
+          "status_effect": {
+            "apply_mode": "ADD",
+            "duration": 15,
+            "amplifier": 0,
+            "effect_id": "death_knights:blood_thirst",
+            "show_particles": false
+          },
+          "apply_to_caster": true
+        }
+      }
+    ],
+    "cost": {
+      "exhaust": 0.4,
+      "item_id": "death_knights:blood_stone",
+      "cooldown_duration": 13
+    }
+  }

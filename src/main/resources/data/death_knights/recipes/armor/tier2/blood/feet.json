@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "death_knights:blood_stone"
+    },
+    "base": {
+        "item": "death_knights:initiate_armor_feet"
+    },
+    "addition": {
+        "item": "minecraft:iron_boots"
+    },
+    "result": {
+        "item": "death_knights:crimson_guard_armor_feet"
+    }
+}
