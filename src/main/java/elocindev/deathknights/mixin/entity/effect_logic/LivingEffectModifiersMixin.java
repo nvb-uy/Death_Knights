@@ -11,12 +11,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
 import elocindev.deathknights.registry.SpellRegistry;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 @Mixin(value = LivingEntity.class, priority = 1000)
@@ -30,7 +32,7 @@ public abstract class LivingEffectModifiersMixin {
     @Shadow public abstract boolean damage(DamageSource source, float amount);
 
     @Inject(method = "damage", at = @At("RETURN"), cancellable = true)
-    protected void death_knights$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    protected void death_knights(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
         LivingEntity attacker = entity.getAttacker();
 
@@ -39,7 +41,11 @@ public abstract class LivingEffectModifiersMixin {
         if (attacker == null) return;
 
         Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
-        StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
+        //? if 1.20.1 {
+        /*StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
+        *///?} else {
+        RegistryEntry<StatusEffect> effect = RegistryEntry.of(Registries.STATUS_EFFECT.get(effectId));
+        //? }
 
         if (effect == null) {
             effect = StatusEffects.RESISTANCE;
@@ -76,12 +82,12 @@ public abstract class LivingEffectModifiersMixin {
 
         if (attacker == null) return;
 
-        if (attacker.hasStatusEffect(SpellRegistry.ATROCIOUS_PLAGUE)) {
-            newAmount = amount * (1.0f - (0.10f * (attacker.getStatusEffect(SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1)));
+        if (EffectUtils.hasStatusEffect(attacker, SpellRegistry.ATROCIOUS_PLAGUE)) {
+            newAmount = amount * (1.0f - (0.10f * (EffectUtils.getStatusEffect(attacker, SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
-        if (attacker.hasStatusEffect(SpellRegistry.ENRAGED)) {
-            newAmount *= 1f - (0.20f * (attacker.getStatusEffect(SpellRegistry.ENRAGED).getAmplifier() + 1));   
+        if (EffectUtils.hasStatusEffect(attacker, SpellRegistry.ENRAGED)) {
+            newAmount *= 1f - (0.20f * (EffectUtils.getStatusEffect(attacker, SpellRegistry.ENRAGED).getAmplifier() + 1));   
         }
 
         cir.setReturnValue(newAmount);;
@@ -91,8 +97,8 @@ public abstract class LivingEffectModifiersMixin {
     private float death_knights$modifyHealAmount(float amount) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
-        if (entity.hasStatusEffect(SpellRegistry.GREVIOUS_PLAGUE)) {
-            amount = amount * (1.0f - (0.10f * (entity.getStatusEffect(SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
+        if (EffectUtils.hasStatusEffect(entity, SpellRegistry.GREVIOUS_PLAGUE)) {
+            amount = amount * (1.0f - (0.10f * (EffectUtils.getStatusEffect(entity, SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
         return amount;
