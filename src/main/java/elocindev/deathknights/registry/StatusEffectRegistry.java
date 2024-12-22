@@ -4,7 +4,7 @@ import elocindev.deathknights.DeathKnights;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_power.internals.SpellStatusEffect;
 
 public class StatusEffectRegistry {

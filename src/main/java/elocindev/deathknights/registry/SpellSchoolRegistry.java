@@ -1,7 +1,7 @@
 package elocindev.deathknights.registry;
 
 import elocindev.deathknights.DeathKnights;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
 
