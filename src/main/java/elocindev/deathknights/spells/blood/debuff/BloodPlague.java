@@ -23,27 +23,35 @@ public class BloodPlague extends SpellEffect {
 
     
     @Override public
-    //? if 1.20.1 { 
-    /*void
-    *///? } else {
-    boolean
-    //? }
+    //? if 1.20.1 {
+    void
+    //? else {
+    /*boolean
+    *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getWorld().isClient() || entity.age % CONFIG.tick_rate != 0) return super.applyUpdateEffect(entity, amplifier);
+        if (entity.getWorld().isClient() || entity.age % CONFIG.tick_rate != 0) return
+        //? if 1.21.1 {
+        /*super.applyUpdateEffect(entity, amplifier)
+        *///?}
+        ;
 
         for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(CONFIG.radius*2), (e) -> EffectUtils.hasStatusEffect(e, SpellRegistry.BLOOD_THIRST))) {
             if (TargetHelper.allowedToHurt(e, entity) && !(entity instanceof HorseEntity)) {
                 entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(
                 //? if 1.20.1 {
-                /*    SpellSchoolRegistry.BLOOD.attribute
-                *///? } else {
-                SpellSchoolRegistry.BLOOD.attributeEntry
-                //? }
+                SpellSchoolRegistry.BLOOD.attribute
+                //? else {
+                /*SpellSchoolRegistry.BLOOD.attributeEntry
+                *///?}
                 ) * CONFIG.damage_blood_scaling) * (amplifier));
                 break;
             }
         }
 
-        return super.applyUpdateEffect(entity, amplifier);
+        return
+        //? if 1.21.1 {
+        /*super.applyUpdateEffect(entity, amplifier)
+        *///?}
+        ;
     }
 }

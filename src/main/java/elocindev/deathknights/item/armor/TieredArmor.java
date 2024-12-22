@@ -3,7 +3,7 @@ package elocindev.deathknights.item.armor;
 import elocindev.deathknights.client.render.armor.TieredArmorRenderer;
 import elocindev.necronomicon.api.ResourceIdentifier;
 //? if 1.20.1 {
-/*import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
@@ -28,8 +28,8 @@ import net.spell_engine.api.item.armor.Armor;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-*///?} else {
-import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
+//?} else {
+/*import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
 import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
 import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
@@ -48,10 +48,10 @@ import net.minecraft.util.Identifier;
 import net.spell_engine.api.item.armor.Armor;
 
 import java.util.function.Consumer;
-//?}
+*///?}
 
 //? if 1.20.1 {
-/*
+
 public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
     public static final Identifier equipSoundId = ResourceIdentifier.get("iron_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
@@ -121,9 +121,9 @@ public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttri
         return cache;
     }
 }
-*///?} else {
+//?} else {
 
-public class TieredArmor extends Armor.CustomItem implements GeoItem {
+/*public class TieredArmor extends Armor.CustomItem implements GeoItem {
     private String armorType;
 
     public TieredArmor(RegistryEntry<ArmorMaterial> material, Type slot, Settings settings) {
@@ -165,4 +165,4 @@ public class TieredArmor extends Armor.CustomItem implements GeoItem {
     }
 }
 
-//?}
+*///?}

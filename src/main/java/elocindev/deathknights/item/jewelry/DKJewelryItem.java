@@ -7,29 +7,29 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
 
 //? if (1.20.1) {
-/*import net.minecraft.world.World;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 import net.minecraft.client.item.TooltipContext;
-*///?} else {
-import net.minecraft.util.Identifier;
+//?} else {
+/*import net.minecraft.util.Identifier;
 import net.minecraft.component.type.AttributeModifiersComponent;
-//?}
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.registry.entry.RegistryEntry;
+*///?}
 
 public class DKJewelryItem extends TrinketItem {
     //? if (1.20.1) {
-    /*private List<Modifier> configurableModifiers = List.of();
-    *///?} else {
-    private AttributeModifiersComponent customAttributes = AttributeModifiersComponent.builder().build();
-    //?}
+    private List<Modifier> configurableModifiers = List.of();
+    //?} else {
+    /*private AttributeModifiersComponent customAttributes = AttributeModifiersComponent.builder().build();
+    *///?}
 
     private final String lore;
 
@@ -39,7 +39,7 @@ public class DKJewelryItem extends TrinketItem {
     }
 
     //? if (1.20.1) {
-    /*@Override
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         if (lore != null && !lore.isEmpty()) {
@@ -61,9 +61,9 @@ public class DKJewelryItem extends TrinketItem {
     public void setConfigurableModifiers(List<Modifier> configurableModifiers) {
         this.configurableModifiers = configurableModifiers;
     }
-    *///?} else {
+    //?} else {
 
-    @Override
+    /*@Override
     public void appendTooltip(ItemStack itemStack, net.minecraft.item.Item.TooltipContext tooltipContext, List<Text> tooltip, TooltipType tooltipType) {
         super.appendTooltip(itemStack, tooltipContext, tooltip, tooltipType);
 
@@ -85,5 +85,5 @@ public class DKJewelryItem extends TrinketItem {
     public void setConfigurableModifiers(AttributeModifiersComponent component) {
         this.customAttributes = component;
     }
-    //?}
+    *///?}
 }

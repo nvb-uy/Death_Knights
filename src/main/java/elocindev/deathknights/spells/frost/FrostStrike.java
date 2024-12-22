@@ -12,8 +12,8 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.20.1 {
-/*import net.minecraft.entity.attribute.AttributeContainer;
-*///?}
+import net.minecraft.entity.attribute.AttributeContainer;
+//?}
 
 public class FrostStrike extends SpellEffect {
     public static FrostStrikeConfig CONFIG = FrostStrikeConfig.INSTANCE;
@@ -31,8 +31,8 @@ public class FrostStrike extends SpellEffect {
     @Override
     public void onApplied(LivingEntity entity,
     //? if 1.20.1 {
-    /*AttributeContainer attributes,
-    *///?}
+    AttributeContainer attributes,
+    //?}
     int amplifier) {
         World world = entity.getWorld();
 
@@ -41,17 +41,17 @@ public class FrostStrike extends SpellEffect {
 
             float icicle_damage = 
             //? if 1.20.1 {
-            /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.frost_scaling_icicles);
-            *///?} else {
-            (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.frost_scaling_icicles);
-            //?}
+            (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.frost_scaling_icicles);
+            //?} else {
+            /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.frost_scaling_icicles);
+            *///?}
 
             double critChance = 
             //? if 1.20.1 {
-            /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
-            *///?} else {
-            entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
-            //?}
+            entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+            //?} else {
+            /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
+            *///?}
 
             for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.icicles_radius, CONFIG.icicles_radius, CONFIG.icicles_radius), (e) -> e != entity && e instanceof PlayerEntity == false)) {
                 if (Math.random() < critChance)
@@ -65,8 +65,8 @@ public class FrostStrike extends SpellEffect {
 
         super.onApplied(entity, 
         //? if 1.20.1 {
-        /*attributes,
-        *///?}
+        attributes,
+        //?}
         amplifier);
     }
 

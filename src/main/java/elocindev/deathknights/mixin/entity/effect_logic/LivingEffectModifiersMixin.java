@@ -18,8 +18,11 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+
+//? if 1.21.1 {
+/*import net.minecraft.registry.entry.RegistryEntry;
+*///?}
 
 @Mixin(value = LivingEntity.class, priority = 1000)
 public abstract class LivingEffectModifiersMixin {
@@ -42,10 +45,10 @@ public abstract class LivingEffectModifiersMixin {
 
         Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
         //? if 1.20.1 {
-        /*StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
-        *///?} else {
-        RegistryEntry<StatusEffect> effect = RegistryEntry.of(Registries.STATUS_EFFECT.get(effectId));
-        //? }
+        StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
+        //?} else {
+        /*RegistryEntry<StatusEffect> effect = RegistryEntry.of(Registries.STATUS_EFFECT.get(effectId));
+        *///?}
 
         if (effect == null) {
             effect = StatusEffects.RESISTANCE;
