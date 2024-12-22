@@ -4,12 +4,22 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
+
+//? if 1.20.1 {
 import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
-import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
-import mod.azure.azurelibarmor.core.animation.AnimatableManager;
 import mod.azure.azurelibarmor.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.util.AzureLibUtil;
+//?} else {
+/*import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
+import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
+import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
+import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
+*///?}
+
+import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
+import mod.azure.azurelibarmor.core.animation.AnimatableManager;
+
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;

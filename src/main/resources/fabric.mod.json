@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "death_knights",
-	"version": "${version}",
+	"version": "${modversion}",
 	"name": "Death Knights",
 	"description": "Embrace darkness and become a Death Knight! An RPG Series mod inspired by World of Warcraft.",
 	"authors": [
@@ -27,7 +27,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.14.0",
-		"minecraft": "~1.20.1",
+		"minecraft": "${mc}",
 		"java": ">=17",
 		"fabric-api": "*",
 		"player-animator": "*",

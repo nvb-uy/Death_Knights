@@ -2,8 +2,13 @@ package elocindev.deathknights.client.render.armor;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.item.armor.TieredArmor;
-import mod.azure.azurelibarmor.model.GeoModel;
 import net.minecraft.util.Identifier;
+
+//? if 1.20.1 {
+import mod.azure.azurelibarmor.model.GeoModel;
+//?} else {
+/*import mod.azure.azurelibarmor.common.api.client.model.GeoModel;
+*///?}
 
 public class TieredArmorModel extends GeoModel<TieredArmor> {
     String name;
