@@ -14,15 +14,27 @@ import elocindev.deathknights.config.Configs;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.spell_engine.client.animation.AnimationRegistry;
+import net.spell_engine.internals.casting.SpellCast;
+
+//? if 1.20.1 {
+/*import net.spell_engine.client.animation.AnimationRegistry;
+*///?}
 
 @Mixin(value = AbstractClientPlayerEntity.class, priority = 1500)
 public class AnimationSpeedPatcherMixin {
-    @ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
+    //? if 1.20.1 {
+    /*@ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
     private float death_knights$playSpellAnimation(float speed, @Local String animation) {
         AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
         
         KeyframeAnimation kfAnim = (KeyframeAnimation) AnimationRegistry.animations.get(animation);
+    *///?}
+    @ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
+    private float death_knights$playSpellAnimation(SpellCast.Animation type, @Local String animation, float speed) {
+        AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
+        
+        KeyframeAnimation kfAnim = null; // TODO: FIX THIS
+
         if (animation == null) return speed;
 
         for (String anim : Configs.Client.CONFIG.patched_animations) {
