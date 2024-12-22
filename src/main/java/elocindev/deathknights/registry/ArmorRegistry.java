@@ -1,7 +1,7 @@
 package elocindev.deathknights.registry;
 
 //? if 1.20.1 {
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -190,8 +190,8 @@ public class ArmorRegistry {
 		Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
 	}
 }
-//?} else {
-/*import java.util.ArrayList;
+*///?} else {
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -352,4 +352,4 @@ public class ArmorRegistry {
     }
 }
 
-*///?}
+//?}

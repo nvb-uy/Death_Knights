@@ -3,7 +3,7 @@ package elocindev.deathknights.item.armor;
 import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
 import elocindev.necronomicon.api.ResourceIdentifier;
 //? if 1.20.1 {
-import mod.azure.azurelibarmor.animatable.GeoItem;
+/*import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
 import mod.azure.azurelibarmor.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.util.AzureLibUtil;
@@ -29,8 +29,8 @@ import java.util.function.Supplier;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-//?} else {
-/*import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
+*///?} else {
+import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
 import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
 import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
@@ -49,11 +49,11 @@ import net.minecraft.item.ItemStack;
 import net.spell_engine.api.item.armor.Armor;
 
 import java.util.function.Consumer;
-*///?}
+//?}
 
 
 //? if 1.20.1 {
-public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
+/*public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
     public static final Identifier equipSoundId = ResourceIdentifier.get("leather_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
@@ -118,9 +118,9 @@ public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAtt
         return cache;
     }
 }
-//?} else {
+*///?} else {
 
-/*public class InitiateArmor extends Armor.CustomItem implements GeoItem {
+public class InitiateArmor extends Armor.CustomItem implements GeoItem {
     public InitiateArmor(RegistryEntry<ArmorMaterial> material, Type slot, Settings settings) {
         super(material, slot, settings);
     }
@@ -157,4 +157,4 @@ public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAtt
         return cache;
     }
 }
-*///?}
+//?}

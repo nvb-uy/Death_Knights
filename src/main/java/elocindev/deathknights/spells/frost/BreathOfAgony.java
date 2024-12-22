@@ -22,8 +22,8 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.21.1 {
-/*import net.minecraft.registry.entry.RegistryEntry;
-*///?}
+import net.minecraft.registry.entry.RegistryEntry;
+//?}
 
 public class BreathOfAgony extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "breath_of_agony"));
@@ -36,10 +36,10 @@ public class BreathOfAgony extends SpellEffect {
     
     @Override public
     //? if 1.20.1 {
-    void
-    //?} else {
-    /*boolean
-    *///?}
+    /*void
+    *///?} else {
+    boolean
+    //?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
@@ -71,17 +71,17 @@ public class BreathOfAgony extends SpellEffect {
 
         float damage = 
         //? if 1.20.1 {
-        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
-        //?} else {
-        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
-        *///?}
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        *///?} else {
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+        //?}
 
         double critChance = 
         //? if 1.20.1 {
-        entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
-        //?} else {
-        /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
-        *///?}
+        /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+        *///?} else {
+        entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
+        //?}
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
@@ -96,16 +96,16 @@ public class BreathOfAgony extends SpellEffect {
             if (nearby.isEmpty()) {
                 entity.removeStatusEffect(
                     //? if 1.20.1 {
-                    this
-                    //?} else {
-                    /*RegistryEntry.of(this)
-                    *///?}
+                    /*this
+                    *///?} else {
+                    RegistryEntry.of(this)
+                    //?}
                 );
 
                 return 
                 //? if 1.21.1 {
-                /*super.applyUpdateEffect(entity, amplifier)
-                *///?}
+                super.applyUpdateEffect(entity, amplifier)
+                //?}
                 ;
             }
 
@@ -120,8 +120,8 @@ public class BreathOfAgony extends SpellEffect {
 
         return 
         //? if 1.21.1 {
-        /*super.applyUpdateEffect(entity, amplifier)
-        *///?}
+        super.applyUpdateEffect(entity, amplifier)
+        //?}
         ;
     }
 
