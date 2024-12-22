@@ -11,7 +11,8 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import net.minecraft.registry.entry.RegistryEntry;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
@@ -30,8 +31,13 @@ public class BreathOfAgony extends SpellEffect {
         0x330066); 
     }
     
-    @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+    @Override public
+    //? if 1.20.1 { 
+    /*void
+    *///? } else {
+    boolean
+    //? }
+    applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
         double length = CONFIG.length;
@@ -60,8 +66,19 @@ public class BreathOfAgony extends SpellEffect {
             world.addParticle(particleEffect, basePosition.x, basePosition.y, basePosition.z, particleVelocity.x, 0, particleVelocity.z);
         }
 
-        float damage = (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
-        double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+        float damage = 
+        // ? if 1.20.1 {
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        */// ? } else {
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+        // ? }
+
+        double critChance = 
+        // ? if 1.20.1 {
+        /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+        */// ? } else {
+        entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
+        // ? }
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
@@ -74,8 +91,15 @@ public class BreathOfAgony extends SpellEffect {
             var nearby = world.getEntitiesByClass(LivingEntity.class, frontBoundingBox, (e) -> e != entity);
             
             if (nearby.isEmpty()) {
-                entity.removeStatusEffect(this);
-                return;
+                entity.removeStatusEffect(
+                    // ? if 1.20.1 {
+                    /*this
+                    */// ? } else {
+                    RegistryEntry.of(this)
+                    // ? }
+                );
+
+                return super.applyUpdateEffect(entity, amplifier);
             }
 
             for (LivingEntity victim : nearby) {
@@ -86,6 +110,8 @@ public class BreathOfAgony extends SpellEffect {
                 victim.setFrozenTicks(CONFIG.frozen_ticks);
             }
         }
+
+        return super.applyUpdateEffect(entity, amplifier);
     }
 
 

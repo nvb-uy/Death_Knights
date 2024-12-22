@@ -5,25 +5,28 @@ import elocindev.deathknights.api.core.SpellEffect;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.packet.s2c.play.StopSoundS2CPacket;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.spell_engine.particle.Particles;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
+
+//? if 1.20.1 {
+/*import net.minecraft.entity.attribute.AttributeContainer;
+import net.minecraft.network.packet.s2c.play.StopSoundS2CPacket;
+import net.minecraft.server.network.ServerPlayerEntity;
+*///?}
 
 public class RemorselessWinter extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "remorseless_winter"));
@@ -36,8 +39,13 @@ public class RemorselessWinter extends SpellEffect {
         0x330066); 
     }
     
-    @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+    @Override public
+    //? if 1.20.1 { 
+    /*void
+    *///? } else {
+    boolean
+    //? }
+    applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
 
@@ -73,8 +81,16 @@ public class RemorselessWinter extends SpellEffect {
                 world.addParticle(particleEffect, entity.getX() + xOffset2+off*-1, entity.getY() + randomYOffset/2, entity.getZ() + zOffset2+off, velocityX, 0, velocityZ);
         }
 
-        float damage = (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        float damage = 
+        //? if 1.20.1 {
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+        *///?} else {
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+
+        double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
+        //?}
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
@@ -92,7 +108,7 @@ public class RemorselessWinter extends SpellEffect {
             playAmbient(world, entity);
         }
 
-        super.applyUpdateEffect(entity, amplifier);
+        return super.applyUpdateEffect(entity, amplifier);
     }
 
     private static void playAmbient(World world, LivingEntity entity) {
@@ -105,7 +121,9 @@ public class RemorselessWinter extends SpellEffect {
         return true;
     }
 
-    @Override
+
+    //? if 1.20.1 {
+    /*@Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
         World world = entity.getWorld();
 
@@ -123,6 +141,7 @@ public class RemorselessWinter extends SpellEffect {
 
         super.onRemoved(entity, attributes, amplifier);
     }
+    *///?}
 
     public static DamageSource of(World world, RegistryKey<DamageType> key) {
         return new DamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(key));

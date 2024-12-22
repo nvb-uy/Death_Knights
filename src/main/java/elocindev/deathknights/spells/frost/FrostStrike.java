@@ -3,7 +3,6 @@ package elocindev.deathknights.spells.frost;
 import elocindev.deathknights.api.core.SpellEffect;
 import elocindev.deathknights.config.entries.spells.frost.FrostStrikeConfig;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
@@ -11,6 +10,10 @@ import net.spell_engine.particle.Particles;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
+
+//? if 1.20.1 {
+/*import net.minecraft.entity.attribute.AttributeContainer;
+*///?}
 
 public class FrostStrike extends SpellEffect {
     public static FrostStrikeConfig CONFIG = FrostStrikeConfig.INSTANCE;
@@ -26,14 +29,29 @@ public class FrostStrike extends SpellEffect {
     }
 
     @Override
-    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+    public void onApplied(LivingEntity entity,
+    //? if 1.20.1 {
+    /*AttributeContainer attributes,
+    *///?}
+    int amplifier) {
         World world = entity.getWorld();
 
         if (entity.isFrozen()) {
             entity.setFrozenTicks(0);
 
-            float icicle_damage = (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.frost_scaling_icicles);
-            double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+            float icicle_damage = 
+            //? if 1.20.1 {
+            /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.frost_scaling_icicles);
+            *///?} else {
+            (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.frost_scaling_icicles);
+            //?}
+
+            double critChance = 
+            //? if 1.20.1 {
+            /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
+            *///?} else {
+            entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
+            //?}
 
             for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.icicles_radius, CONFIG.icicles_radius, CONFIG.icicles_radius), (e) -> e != entity && e instanceof PlayerEntity == false)) {
                 if (Math.random() < critChance)
@@ -45,7 +63,11 @@ public class FrostStrike extends SpellEffect {
             }
         }
 
-        super.onApplied(entity, attributes, amplifier);
+        super.onApplied(entity, 
+        //? if 1.20.1 {
+        /*attributes,
+        *///?}
+        amplifier);
     }
 
     @Override
