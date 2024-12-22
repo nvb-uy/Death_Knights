@@ -14,13 +14,15 @@ public class ParticleRegistry {
     public static final DefaultParticleType UNHOLY_SMOKE = FabricParticleTypes.simple();
     public static final DefaultParticleType BLOOD_HIT = FabricParticleTypes.simple();
     public static final DefaultParticleType BLOOD_BOIL = FabricParticleTypes.simple();
-
+    *///?}
 
     public static void register() {
-        Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_hit"), UNHOLY_HIT);
+        //? if 1.20.1 {
+        /*Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_hit"), UNHOLY_HIT);
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_smoke"), UNHOLY_SMOKE);
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_hit"), BLOOD_HIT);
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_boil"), BLOOD_BOIL);
+        *///? }
     }
-    *///?}
+    
 }

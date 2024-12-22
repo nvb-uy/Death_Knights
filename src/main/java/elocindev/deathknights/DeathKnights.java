@@ -49,9 +49,7 @@ public class DeathKnights implements ModInitializer {
 
 		SpellHandler.registerSpells();
 		
-		//? if 1.20.1 {
-		/*ParticleRegistry.register();
-		*///?}
+		ParticleRegistry.register();
 
 		LOGGER.info("Death Knights Initialized!");
 	}
