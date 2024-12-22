@@ -6,13 +6,14 @@ import elocindev.deathknights.config.entries.spells.unholy.EpidemicConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig.PlagueProperty;
 import elocindev.deathknights.registry.SpellSchoolRegistry;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.event.CombatEvents;
 import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
@@ -39,7 +40,7 @@ public class EpidemicHandler {
 
                         for (PlagueProperty plague : PLAGUE_CONFIG.plagues) {
                             StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(plague.effect_id));
-                            if (plagueEffect != null && livingTarget.hasStatusEffect(plagueEffect)) {
+                            if (plagueEffect != null && EffectUtils.hasStatusEffect(livingTarget, plagueEffect)) {
                                 activePlague = plague;
                                 activeEffect = plagueEffect;
                                 break;
@@ -47,25 +48,31 @@ public class EpidemicHandler {
                         }
 
                         if (activePlague != null && activeEffect != null) {
-                            StatusEffectInstance plagueInstance = livingTarget.getStatusEffect(activeEffect);
+                            StatusEffectInstance plagueInstance = EffectUtils.getStatusEffect(livingTarget, activeEffect);
                             if (plagueInstance != null) {
                                 int currentStacks = plagueInstance.getAmplifier() + 1;
                                 int stacksToExplode = Math.min(currentStacks, CONFIG.plague_stacks);
                                 int remainingStacks = currentStacks - stacksToExplode;
 
-                                float damagePerStack = (float) (caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attribute) * CONFIG.unholy_coefficent);
+                                float damagePerStack = (float) 
+                                //? if 1.20.1 {
+                                /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attribute)
+                                *///?} else {
+                                (caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
+                                //?}
+                                * CONFIG.unholy_coefficent);
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 
                                 if (remainingStacks > 0) {
-                                    livingTarget.addStatusEffect(new StatusEffectInstance(activeEffect, activePlague.duration_ticks, remainingStacks - 1));
+                                    livingTarget.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), activePlague.duration_ticks, remainingStacks - 1));
                                 } else {
-                                    livingTarget.removeStatusEffect(activeEffect);
+                                    livingTarget.removeStatusEffect(EffectUtils.create(activeEffect));
                                 }
 
                                 List<LivingEntity> nearbyEntities = livingTarget.getWorld().getEntitiesByClass(LivingEntity.class, livingTarget.getBoundingBox().expand(CONFIG.epidemic_radius), e -> e != livingTarget);
                                 
                                 for (LivingEntity ent : nearbyEntities) {
-                                    StatusEffectInstance nearbyPlagueInstance = ent.getStatusEffect(activeEffect);
+                                    StatusEffectInstance nearbyPlagueInstance = ent.getStatusEffect(EffectUtils.create(activeEffect));
                                     if (ent.equals(caster) || ent instanceof PlayerEntity playerVictim && (playerVictim.isCreative() || playerVictim.isSpectator() || !TargetHelper.allowedToHurt(caster, playerVictim))) continue;
             
                                     
@@ -77,9 +84,9 @@ public class EpidemicHandler {
                                         ent.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * nearbyStacksToExplode);
 
                                         if (nearbyRemainingStacks > 0) {
-                                            ent.addStatusEffect(new StatusEffectInstance(activeEffect, activePlague.duration_ticks, nearbyRemainingStacks - 1));
+                                            ent.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), activePlague.duration_ticks, nearbyRemainingStacks - 1));
                                         } else {
-                                            ent.removeStatusEffect(activeEffect);
+                                            ent.removeStatusEffect(EffectUtils.create(activeEffect));
                                         }
                                     }
                                 }

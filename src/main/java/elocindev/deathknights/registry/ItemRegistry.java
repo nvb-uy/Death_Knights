@@ -319,7 +319,7 @@ public class ItemRegistry {
     }
 
     public static Jewelry add(Identifier id, Rarity rarity, JewelryConfig.Item config, String lore, boolean fireproof) {
-        var settings = new FabricItemSettings().rarity(rarity);
+        var settings = new Item.Settings().rarity(rarity);
         if (fireproof) {
             settings = settings.fireproof();
         }

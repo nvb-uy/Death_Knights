@@ -3,7 +3,7 @@ package elocindev.deathknights.spells.unholy;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.Vec3d;
 import net.spell_engine.api.event.CombatEvents;
 import net.spell_engine.internals.SpellHelper;
@@ -14,6 +14,7 @@ import java.util.Map;
 
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.unholy.DeathGripConfig;
+import elocindev.deathknights.util.EffectUtils;
 import elocindev.necronomicon.api.NecUtilsAPI;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.Entity;
@@ -116,7 +117,12 @@ public class DeathGripHandler {
     private static void teleportNearPlayer(LivingEntity target, PlayerEntity caster) {
         double offsetX = (caster.getRandom().nextDouble() - 0.5) * 2.0;
         double offsetZ = (caster.getRandom().nextDouble() - 0.5) * 2.0;
-        target.teleport(caster.getX() + offsetX, caster.getY() + 1.0, caster.getZ() + offsetZ);
+        target.teleport(caster.getX() + offsetX, caster.getY() + 1.0, caster.getZ() + offsetZ
+        //? if 1.21.1 {
+        , true
+        //? }
+        );
+
         caster.getWorld().playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
     }
 
@@ -125,7 +131,7 @@ public class DeathGripHandler {
             StatusEffect effect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(effectHolder.effect_id));
             
             if (effect != null) {
-                StatusEffectInstance effectInstance = new StatusEffectInstance(effect, (int) effectHolder.duration, (int) effectHolder.amplifier);
+                StatusEffectInstance effectInstance = new StatusEffectInstance(EffectUtils.create(effect), (int) effectHolder.duration, (int) effectHolder.amplifier);
                 target.addStatusEffect(effectInstance);
             }
         }

@@ -4,14 +4,19 @@ import elocindev.deathknights.api.core.SpellEffect;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig.PlagueProperty;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
+
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.random.Random;
+
+//? if 1.20.1 {
+/*import net.minecraft.entity.attribute.AttributeContainer;
+*///?}
 
 import java.util.List;
 
@@ -29,8 +34,16 @@ public class FesteringStrike extends SpellEffect {
     }
 
     @Override
-    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        super.onApplied(entity, attributes, amplifier);
+    public void onApplied(LivingEntity entity, 
+    //?if 1.20.1 {
+    /*AttributeContainer attributes,
+    *///?}
+    int amplifier) {
+        super.onApplied(entity,
+        //?if 1.20.1 {
+        /*attributes,
+        *///?}        
+        amplifier);
 
         List<PlagueProperty> plagues = CONFIG.plagues;
 
@@ -39,7 +52,7 @@ public class FesteringStrike extends SpellEffect {
 
         for (PlagueProperty plague : plagues) {
             StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(plague.effect_id));
-            if (plagueEffect != null && entity.hasStatusEffect(plagueEffect)) {
+            if (plagueEffect != null && EffectUtils.hasStatusEffect(entity, plagueEffect)) {
                 activePlague = plague;
                 activeEffect = plagueEffect;
                 break;
@@ -47,19 +60,19 @@ public class FesteringStrike extends SpellEffect {
         }
 
         if (activePlague != null && activeEffect != null) {
-            StatusEffectInstance currentInstance = entity.getStatusEffect(activeEffect);
+            StatusEffectInstance currentInstance = EffectUtils.getStatusEffect(entity, activeEffect);
 
             if (currentInstance != null) {
                 int currentStacks = currentInstance.getAmplifier() + 1;
                 int newStacks = Math.min(currentStacks + 2, activePlague.max_stacks);
-                entity.addStatusEffect(new StatusEffectInstance(activeEffect, activePlague.duration_ticks, newStacks - 1));
+                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), activePlague.duration_ticks, newStacks - 1));
             }
         } else {
             PlagueProperty randomPlague = getWeightedPlague(plagues);
             StatusEffect randomEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(randomPlague.effect_id));
             
             if (randomEffect != null) {
-                entity.addStatusEffect(new StatusEffectInstance(randomEffect, randomPlague.duration_ticks, 1)); // 2 stacks = amplifier 1
+                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(randomEffect), randomPlague.duration_ticks, 1)); // 2 stacks = amplifier 1
             }
         }
     }
