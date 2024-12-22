@@ -7,7 +7,7 @@ import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import elocindev.necronomicon.api.ResourceIdentifier;
-*///? else {
+*///?} else {
 import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -70,7 +70,7 @@ public class ParticleRegistry {
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_smoke"), UNHOLY_SMOKE);
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_hit"), BLOOD_HIT);
         Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_boil"), BLOOD_BOIL);
-        *///? else {
+        *///?} else {
         for(var entry: all) {
             Registry.register(Registries.PARTICLE_TYPE, entry.id, entry.particleType);
         }

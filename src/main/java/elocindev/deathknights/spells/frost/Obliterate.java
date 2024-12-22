@@ -46,7 +46,7 @@ public class Obliterate extends SpellEffect {
             entity.addStatusEffect(new StatusEffectInstance(
                 //? if 1.20.1 {
                 /*breath,
-                //? else {
+                //?} else {
                 /*RegistryEntry.of(breath),
                 *///?}
             EffectUtils.getStatusEffect(entity, breath).getDuration() + CONFIG.breath_of_agony_extension_ticks, 0, false, false, true));
@@ -56,7 +56,7 @@ public class Obliterate extends SpellEffect {
             entity.addStatusEffect(new StatusEffectInstance(
                 //? if 1.20.1 {
                 winter,
-                //? else {
+                //?} else {
                 /*RegistryEntry.of(winter),
                 *///?}
             EffectUtils.getStatusEffect(entity, winter).getDuration() + CONFIG.remorseless_winter_extension_ticks, 0, false, false, true));

@@ -42,7 +42,7 @@ public class RemorselessWinter extends SpellEffect {
     @Override public
     //? if 1.20.1 {
     /*void
-    //? else {
+    //?} else {
     /*boolean
     *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {

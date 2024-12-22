@@ -25,7 +25,7 @@ public class BloodPlague extends SpellEffect {
     @Override public
     //? if 1.20.1 {
     /*void
-    *///? else {
+    *///?} else {
     boolean
     //?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
@@ -40,7 +40,7 @@ public class BloodPlague extends SpellEffect {
                 entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(
                 //? if 1.20.1 {
                 /*SpellSchoolRegistry.BLOOD.attribute
-                *///? else {
+                *///?} else {
                 SpellSchoolRegistry.BLOOD.attributeEntry
                 //?}
                 ) * CONFIG.damage_blood_scaling) * (amplifier));

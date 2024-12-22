@@ -190,7 +190,7 @@ public class ArmorRegistry {
 		Armor.register(configs, entries, ItemGroupRegistry.MAIN_TAB_GROUP);
 	}
 }
-*///? else {
+*///?} else {
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

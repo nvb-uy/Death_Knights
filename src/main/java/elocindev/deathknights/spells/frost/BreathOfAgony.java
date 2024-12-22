@@ -37,7 +37,7 @@ public class BreathOfAgony extends SpellEffect {
     @Override public
     //? if 1.20.1 {
     /*void
-    //? else {
+    //?} else {
     /*boolean
     *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
@@ -97,7 +97,7 @@ public class BreathOfAgony extends SpellEffect {
                 entity.removeStatusEffect(
                     //? if 1.20.1 {
                     this
-                    //? else {
+                    //?} else {
                     /*RegistryEntry.of(this)
                     *///?}
                 );
