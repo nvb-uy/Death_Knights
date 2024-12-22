@@ -2,13 +2,13 @@ package elocindev.deathknights.client.render.armor;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.item.armor.TieredArmor;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 //? if 1.20.1 {
-import mod.azure.azurelibarmor.model.GeoModel;
-//?} else {
-/*import mod.azure.azurelibarmor.common.api.client.model.GeoModel;
-*///?}
+/*import mod.azure.azurelibarmor.model.GeoModel;
+*///?} else {
+import mod.azure.azurelibarmor.common.api.client.model.GeoModel;
+//?}
 
 public class TieredArmorModel extends GeoModel<TieredArmor> {
     String name;
@@ -20,12 +20,12 @@ public class TieredArmorModel extends GeoModel<TieredArmor> {
 
     @Override
     public Identifier getModelResource(TieredArmor object) {
-        return new Identifier(DeathKnights.MODID, "geo/"+this.name+"_armor.geo.json");
+        return ResourceIdentifier.get(DeathKnights.MODID, "geo/"+this.name+"_armor.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(TieredArmor armor) {
-        return new Identifier(DeathKnights.MODID, "textures/armor/"+this.name+".png");
+        return ResourceIdentifier.get(DeathKnights.MODID, "textures/armor/"+this.name+".png");
     }
 
     @Override

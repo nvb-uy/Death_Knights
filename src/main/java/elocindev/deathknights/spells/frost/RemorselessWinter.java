@@ -17,7 +17,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.spell_engine.particle.Particles;
@@ -26,7 +26,7 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 public class RemorselessWinter extends SpellEffect {
-    public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(DeathKnights.MODID, "remorseless_winter"));
+    public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "remorseless_winter"));
     public static RemorselessWinterConfig CONFIG = Configs.Spells.Frost.REMORSELESS_WINTER;
 
     private boolean hasAmbientPlayed = false;

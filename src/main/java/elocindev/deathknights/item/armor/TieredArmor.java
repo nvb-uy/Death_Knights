@@ -27,7 +27,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.item.ConfigurableAttributes;
 import net.spell_engine.api.item.armor.Armor;
 
@@ -35,7 +35,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class TieredArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
-    public static final Identifier equipSoundId = new Identifier("iron_equip");
+    public static final Identifier equipSoundId = ResourceIdentifier.get("iron_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
     private String name;

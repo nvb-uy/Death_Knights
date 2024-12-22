@@ -11,7 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.runes.api.RuneItems;
 import net.runes.api.RuneItems.RuneType;
 
@@ -21,17 +21,17 @@ public class ItemGroupRegistry {
         .displayName(Text.translatable("itemGroup.death_knights.main"))
 		.build();
 
-    public static RegistryKey<ItemGroup> MAIN_TAB_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DeathKnights.MODID, "main"));
+    public static RegistryKey<ItemGroup> MAIN_TAB_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, ResourceIdentifier.get(DeathKnights.MODID, "main"));
 
     public static void register() {
-            Registry.register(Registries.ITEM_GROUP, new Identifier(DeathKnights.MODID, "main"), MAIN_TAB);
+            Registry.register(Registries.ITEM_GROUP, ResourceIdentifier.get(DeathKnights.MODID, "main"), MAIN_TAB);
         
             ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
                 content.addAfter(RuneItems.get(RuneType.SOUL), new ItemStack(ItemRegistry.BLOOD_RUNE));
                 content.addAfter(ItemRegistry.BLOOD_RUNE, new ItemStack(ItemRegistry.UNHOLY_RUNE));
             });
 
-            ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DeathKnights.MODID, "main"))).register(content -> {
+            ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, ResourceIdentifier.get(DeathKnights.MODID, "main"))).register(content -> {
                 content.add(new ItemStack(ItemRegistry.BLOOD_SPELL_BOOK));
                 content.add(new ItemStack(ItemRegistry.UNHOLY_SPELL_BOOK));
                 content.add(new ItemStack(ItemRegistry.FROST_SPELL_BOOK));

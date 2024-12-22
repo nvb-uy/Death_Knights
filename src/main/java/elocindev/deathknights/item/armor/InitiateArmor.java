@@ -6,16 +6,16 @@ import com.google.common.collect.Multimap;
 import elocindev.deathknights.client.render.armor.InitiateArmorRenderer;
 
 //? if 1.20.1 {
-import mod.azure.azurelibarmor.animatable.GeoItem;
+/*import mod.azure.azurelibarmor.animatable.GeoItem;
 import mod.azure.azurelibarmor.animatable.client.RenderProvider;
 import mod.azure.azurelibarmor.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.util.AzureLibUtil;
-//?} else {
-/*import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
+*///?} else {
+import mod.azure.azurelibarmor.common.api.common.animatable.GeoItem;
 import mod.azure.azurelibarmor.common.internal.client.RenderProvider;
 import mod.azure.azurelibarmor.common.api.client.renderer.GeoArmorRenderer;
 import mod.azure.azurelibarmor.common.internal.common.util.AzureLibUtil;
-*///?}
+//?}
 
 import mod.azure.azurelibarmor.core.animatable.instance.AnimatableInstanceCache;
 import mod.azure.azurelibarmor.core.animation.AnimatableManager;
@@ -28,7 +28,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.item.ConfigurableAttributes;
 import net.spell_engine.api.item.armor.Armor;
 
@@ -36,7 +36,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class InitiateArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
-    public static final Identifier equipSoundId = new Identifier("leather_equip");
+    public static final Identifier equipSoundId = ResourceIdentifier.get("leather_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
 

@@ -5,6 +5,7 @@ import net.minecraft.util.Identifier;
 import net.spell_engine.api.render.CustomModels;
 import elocindev.deathknights.config.ConfigLoader;
 import elocindev.deathknights.registry.ClientParticleRegistry;
+import elocindev.necronomicon.api.ResourceIdentifier;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class DeathKnightsClient implements ClientModInitializer {
 		ConfigLoader.initClient();
 
 		CustomModels.registerModelIds(List.of(
-			new Identifier(DeathKnights.MODID, "projectile/unholy_missile")
+			ResourceIdentifier.get(DeathKnights.MODID, "projectile/unholy_missile")
 		));
 
 		ClientParticleRegistry.register();

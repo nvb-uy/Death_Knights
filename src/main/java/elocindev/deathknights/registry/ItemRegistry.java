@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.Rarity;
 
 import java.util.ArrayList;
@@ -34,54 +34,54 @@ public class ItemRegistry {
     public static final Item RUNECARVED_STONE = reg(new Item(new FabricItemSettings()), "runecarved_stone");
 
     // SPELL BOOKS
-    public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "blood"));
-    public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "unholy"));
-    public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(new Identifier(DeathKnights.MODID, "frost"));
+    public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "blood"));
+    public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "unholy"));
+    public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "frost"));
 
     // JEWELRY
     public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
     public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
     public static final Map<String, Item> jewelryMap = new HashMap<>();
 
-    public static Jewelry FROST_DK_RING = add(new Identifier(DeathKnights.MODID, "frost_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry FROST_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                     new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(new Identifier("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
-    public static Jewelry FROST_DK_NECKLACE = add(new Identifier(DeathKnights.MODID, "frost_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry FROST_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                 new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(new Identifier("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
-    public static Jewelry UNHOLY_DK_RING = add(new Identifier(DeathKnights.MODID, "unholy_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry UNHOLY_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "unholy_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                     new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(new Identifier("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
-    public static Jewelry UNHOLY_DK_NECKLACE = add(new Identifier(DeathKnights.MODID, "unholy_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry UNHOLY_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "unholy_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                 new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(new Identifier("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
-    public static Jewelry BLOOD_DK_RING = add(new Identifier(DeathKnights.MODID, "blood_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry BLOOD_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "blood_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                     new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(new Identifier("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
-    public static Jewelry BLOOD_DK_NECKLACE = add(new Identifier(DeathKnights.MODID, "blood_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
+    public static Jewelry BLOOD_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "blood_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
                 new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(new Identifier("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -260,13 +260,13 @@ public class ItemRegistry {
             );
 
     public static <T extends Item> T reg(T instance, String id) {
-        return Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, id), instance);
+        return Registry.register(Registries.ITEM, ResourceIdentifier.get(DeathKnights.MODID, id), instance);
     }
 
     public static void register() {
-        Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "blood_spell_book"), BLOOD_SPELL_BOOK.asItem());
-        Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "unholy_spell_book"), UNHOLY_SPELL_BOOK.asItem());
-        Registry.register(Registries.ITEM, new Identifier(DeathKnights.MODID, "frost_spell_book"), FROST_SPELL_BOOK.asItem());
+        Registry.register(Registries.ITEM, ResourceIdentifier.get(DeathKnights.MODID, "blood_spell_book"), BLOOD_SPELL_BOOK.asItem());
+        Registry.register(Registries.ITEM, ResourceIdentifier.get(DeathKnights.MODID, "unholy_spell_book"), UNHOLY_SPELL_BOOK.asItem());
+        Registry.register(Registries.ITEM, ResourceIdentifier.get(DeathKnights.MODID, "frost_spell_book"), FROST_SPELL_BOOK.asItem());
 
         register(Configs.Items.JEWELRY.value);
         Configs.Items.JEWELRY.save();
@@ -282,7 +282,7 @@ public class ItemRegistry {
 
             var modifiers = new ArrayList<DKJewelryItem.Modifier>();
             for (var modifier : itemConfig.attributes) {
-                var attribute = AttributeResolver.get(new Identifier(modifier.id));
+                var attribute = AttributeResolver.get(ResourceIdentifier.get(modifier.id));
 
                 if (attribute == null) {
                     System.err.println("Failed to resolve EntityAttribute with id: " + modifier.id);

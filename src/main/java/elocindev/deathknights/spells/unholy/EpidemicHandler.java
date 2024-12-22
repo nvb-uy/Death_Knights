@@ -12,7 +12,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.event.CombatEvents;
 import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
@@ -38,7 +38,7 @@ public class EpidemicHandler {
                         StatusEffect activeEffect = null;
 
                         for (PlagueProperty plague : PLAGUE_CONFIG.plagues) {
-                            StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(new Identifier(plague.effect_id));
+                            StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(plague.effect_id));
                             if (plagueEffect != null && livingTarget.hasStatusEffect(plagueEffect)) {
                                 activePlague = plague;
                                 activeEffect = plagueEffect;

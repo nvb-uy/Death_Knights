@@ -17,7 +17,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 @Mixin(value = LivingEntity.class, priority = 1000)
 public abstract class LivingEffectModifiersMixin {
@@ -38,7 +38,7 @@ public abstract class LivingEffectModifiersMixin {
 
         if (attacker == null) return;
 
-        Identifier effectId = new Identifier(CONFIG.effect_to_apply);
+        Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
         StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
 
         if (effect == null) {

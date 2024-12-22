@@ -10,7 +10,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.random.Random;
 
 import java.util.List;
@@ -38,7 +38,7 @@ public class FesteringStrike extends SpellEffect {
         StatusEffect activeEffect = null;
 
         for (PlagueProperty plague : plagues) {
-            StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(new Identifier(plague.effect_id));
+            StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(plague.effect_id));
             if (plagueEffect != null && entity.hasStatusEffect(plagueEffect)) {
                 activePlague = plague;
                 activeEffect = plagueEffect;
@@ -56,7 +56,7 @@ public class FesteringStrike extends SpellEffect {
             }
         } else {
             PlagueProperty randomPlague = getWeightedPlague(plagues);
-            StatusEffect randomEffect = Registries.STATUS_EFFECT.get(new Identifier(randomPlague.effect_id));
+            StatusEffect randomEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(randomPlague.effect_id));
             
             if (randomEffect != null) {
                 entity.addStatusEffect(new StatusEffectInstance(randomEffect, randomPlague.duration_ticks, 1)); // 2 stacks = amplifier 1

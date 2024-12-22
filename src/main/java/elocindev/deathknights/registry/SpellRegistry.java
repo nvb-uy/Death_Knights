@@ -15,7 +15,7 @@ import elocindev.deathknights.spells.unholy.debuff.AtrociousPlague;
 import elocindev.deathknights.spells.unholy.debuff.GreviousPlague;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 public class SpellRegistry {
     // FROST
@@ -42,7 +42,7 @@ public class SpellRegistry {
     public static void register() {}
 
     public static <S extends SpellEffect> S reg(S spell, String id) {
-        Registry.register(Registries.STATUS_EFFECT, new Identifier(DeathKnights.MODID, id), (SpellEffect) spell);
+        Registry.register(Registries.STATUS_EFFECT, ResourceIdentifier.get(DeathKnights.MODID, id), (SpellEffect) spell);
         
         return spell;
     }

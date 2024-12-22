@@ -11,7 +11,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
@@ -22,7 +22,7 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 public class BreathOfAgony extends SpellEffect {
-    public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(DeathKnights.MODID, "breath_of_agony"));
+    public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "breath_of_agony"));
     public static BreathOfAgonyConfig CONFIG = Configs.Spells.Frost.BREATH_OF_AGONY;
 
     public BreathOfAgony() {

@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 public class MarrowrendHandler {
     private static final MarrowrendConfig CONFIG = Configs.Spells.Blood.MARROWREND;
@@ -27,7 +27,7 @@ public class MarrowrendHandler {
     }
 
     private static void applyEffectToCaster(PlayerEntity caster) {
-        Identifier effectId = new Identifier(CONFIG.effect_to_apply);
+        Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
         StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
 
         if (effect == null) {

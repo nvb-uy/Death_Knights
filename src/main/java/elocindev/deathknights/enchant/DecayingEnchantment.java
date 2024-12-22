@@ -6,7 +6,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.enchantment.SpellPowerEnchanting;
 import net.spell_power.internals.SchoolFilteredEnchantment;

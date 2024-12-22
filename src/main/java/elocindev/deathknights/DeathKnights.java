@@ -48,7 +48,10 @@ public class DeathKnights implements ModInitializer {
 		if (JEWELRY_ENABLED) JewelryCompat.registerInjection();
 
 		SpellHandler.registerSpells();
-		ParticleRegistry.register();
+		
+		//? if 1.20.1 {
+		/*ParticleRegistry.register();
+		*///?}
 
 		LOGGER.info("Death Knights Initialized!");
 	}

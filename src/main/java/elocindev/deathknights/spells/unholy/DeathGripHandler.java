@@ -3,7 +3,7 @@ package elocindev.deathknights.spells.unholy;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.Vec3d;
 import net.spell_engine.api.event.CombatEvents;
 import net.spell_engine.internals.SpellHelper;
@@ -122,7 +122,7 @@ public class DeathGripHandler {
 
     private static void applyEffectsToTarget(LivingEntity target) {
         for (DeathGripConfig.EffectHolder effectHolder : CONFIG.effects) {
-            StatusEffect effect = Registries.STATUS_EFFECT.get(new Identifier(effectHolder.effect_id));
+            StatusEffect effect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(effectHolder.effect_id));
             
             if (effect != null) {
                 StatusEffectInstance effectInstance = new StatusEffectInstance(effect, (int) effectHolder.duration, (int) effectHolder.amplifier);

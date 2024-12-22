@@ -1,7 +1,7 @@
 package elocindev.deathknights.config.entries;
 
 import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 import java.util.HashMap;
 import java.util.List;

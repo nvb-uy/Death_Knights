@@ -1,26 +1,26 @@
 package elocindev.deathknights.registry;
 //? if 1.20.1 {
-import elocindev.deathknights.DeathKnights;
+/*import elocindev.deathknights.DeathKnights;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
-//?}
+import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+*///?}
 
 public class ParticleRegistry {
     //? if 1.20.1 {
-    public static final DefaultParticleType UNHOLY_HIT = FabricParticleTypes.simple();
+    /*public static final DefaultParticleType UNHOLY_HIT = FabricParticleTypes.simple();
     public static final DefaultParticleType UNHOLY_SMOKE = FabricParticleTypes.simple();
     public static final DefaultParticleType BLOOD_HIT = FabricParticleTypes.simple();
     public static final DefaultParticleType BLOOD_BOIL = FabricParticleTypes.simple();
 
 
     public static void register() {
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(DeathKnights.MODID, "unholy_hit"), UNHOLY_HIT);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(DeathKnights.MODID, "unholy_smoke"), UNHOLY_SMOKE);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(DeathKnights.MODID, "blood_hit"), BLOOD_HIT);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(DeathKnights.MODID, "blood_boil"), BLOOD_BOIL);
+        Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_hit"), UNHOLY_HIT);
+        Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "unholy_smoke"), UNHOLY_SMOKE);
+        Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_hit"), BLOOD_HIT);
+        Registry.register(Registries.PARTICLE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "blood_boil"), BLOOD_BOIL);
     }
-    //?}
+    *///?}
 }
