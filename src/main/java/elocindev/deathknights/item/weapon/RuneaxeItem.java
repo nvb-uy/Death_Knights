@@ -4,6 +4,7 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.TagKey;
 
 import java.util.UUID;
 
@@ -14,10 +15,14 @@ import elocindev.deathknights.api.DKAttributeAPI;
 import elocindev.deathknights.api.types.RunebladeSize;
 import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.registry.ItemRegistry;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+
+//? if 1.20.1 {
+/*import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+*///?}
 
 public class RuneaxeItem extends AxeItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> mainHandAttributes;
@@ -59,18 +64,31 @@ public class RuneaxeItem extends AxeItem {
                     return material.getEnchantability();
                 }
 
-                @Override
+                //? if 1.20.1 {
+                /*@Override
                 public int getMiningLevel() {
                     return material.getMiningLevel();
                 }
+                *///? }
 
                 @Override
                 public Ingredient getRepairIngredient() {
                     return Ingredient.ofItems(new ItemConvertible[]{ItemRegistry.RUNECARVED_STONE});
                 }
 
+                //? if 1.21.1 {
+                @Override
+                public TagKey<Block> getInverseTag() {
+                    return null;
+                }
+                //? }
             },
-        attackDamage, attackSpeed, new FabricItemSettings());
+        //? if 1.20.1 {
+        /*attackDamage, attackSpeed, 
+        new FabricItemSettings());
+        *///?} else {
+        new Settings());
+        //?}
 
         this.type = type;
         this.size = size;
