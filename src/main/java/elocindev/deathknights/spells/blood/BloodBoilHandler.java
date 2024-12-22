@@ -5,6 +5,7 @@ import net.spell_engine.api.event.CombatEvents;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
 import elocindev.deathknights.registry.SpellRegistry;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -31,13 +32,13 @@ public class BloodBoilHandler {
     }
 
     private static void applyDebuff(PlayerEntity caster, LivingEntity target) {
-        StatusEffectInstance currentEffect = target.getStatusEffect(SpellRegistry.BLOOD_PLAGUE);
+        StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(target, SpellRegistry.BLOOD_PLAGUE);
         int currentAmplifier = currentEffect != null ? currentEffect.getAmplifier() : -1;
 
         if (currentAmplifier < CONFIG.max_stacks - 1) {
-            target.addStatusEffect(new StatusEffectInstance(SpellRegistry.BLOOD_PLAGUE, currentEffect != null ? currentEffect.getDuration() : CONFIG.duration_ticks, currentAmplifier + 1));
+            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), currentEffect != null ? currentEffect.getDuration() : CONFIG.duration_ticks, currentAmplifier + 1));
         } else if (CONFIG.reset_duration_if_max_stacks) {
-            target.addStatusEffect(new StatusEffectInstance(SpellRegistry.BLOOD_PLAGUE, CONFIG.duration_ticks, currentAmplifier));
+            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), CONFIG.duration_ticks, currentAmplifier));
         }
     }
 }

@@ -3,11 +3,13 @@ package elocindev.deathknights.spells.blood;
 import net.spell_engine.api.event.CombatEvents;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
 
 public class MarrowrendHandler {
@@ -28,13 +30,16 @@ public class MarrowrendHandler {
 
     private static void applyEffectToCaster(PlayerEntity caster) {
         Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
-        StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
+        //? if 1.20.1 {
+        /*StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
+        *///?} else {
+        RegistryEntry<StatusEffect> effect = RegistryEntry.of(Registries.STATUS_EFFECT.get(effectId));
 
         if (effect == null) {
             effect = StatusEffects.RESISTANCE;
         }
 
-        StatusEffectInstance currentEffect = caster.getStatusEffect(effect);
+        StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(caster, effect);
         int currentAmplifier = currentEffect != null ? currentEffect.getAmplifier() : -1;
         int newAmplifier = Math.min(currentAmplifier + CONFIG.stack_amount, CONFIG.max_stacks - 1);
 

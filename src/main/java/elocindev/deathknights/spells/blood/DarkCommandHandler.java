@@ -2,6 +2,7 @@ package elocindev.deathknights.spells.blood;
 
 import net.spell_engine.api.event.CombatEvents;
 import elocindev.deathknights.registry.SpellRegistry;
+import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.MobEntity;
@@ -18,7 +19,7 @@ public class DarkCommandHandler {
                     for (var target : args.targets()) {
                         if (target instanceof LivingEntity ent) {
                             ent.setAttacking(caster);
-                            ent.addStatusEffect(new StatusEffectInstance(SpellRegistry.ENRAGED, 100, 0));
+                            ent.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.ENRAGED), 100, 0));
                         } if (target instanceof MobEntity mob) {
                             mob.setTarget(caster);
                         }
