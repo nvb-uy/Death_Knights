@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "runes:rune_crafting/base/stone"
+      },
+      {
+        "tag": "death_knights:rune_crafting/reagent/unholy_medium"
+      }
+    ],
+    "result": {
+      "count": 4,
+      "item": "death_knights:unholy_stone"
+    }
+}
