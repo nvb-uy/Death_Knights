@@ -1,7 +1,7 @@
 package elocindev.deathknights.config.entries;
 
 import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.util.Identifier; import elocindev.necronomicon.api.ResourceIdentifier;
+import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +21,12 @@ public class JewelryConfig {
     public static class AttributeModifier { AttributeModifier() { }
         public String id = "";
         public float value = 0;
-        public EntityAttributeModifier.Operation operation = EntityAttributeModifier.Operation.ADDITION;
+        public EntityAttributeModifier.Operation operation =
+            //? if 1.20.1 {
+            /*EntityAttributeModifier.Operation.ADDITION;
+            *///?} else {
+            EntityAttributeModifier.Operation.ADD_VALUE;
+            //?}
 
         public AttributeModifier(Identifier id, float value, EntityAttributeModifier.Operation operation) {
             this(id.toString(), value, operation);
