@@ -3,12 +3,14 @@ package elocindev.deathknights.registry;
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.api.types.RunebladeSize;
 import elocindev.deathknights.api.types.RunebladeType;
+import elocindev.deathknights.util.AttributeUtil;
 import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.JewelryConfig;
 import elocindev.deathknights.item.jewelry.DKJewelryItem;
 import elocindev.deathknights.item.weapon.RuneaxeItem;
 import elocindev.deathknights.item.weapon.RunebladeItem;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterials;
@@ -18,70 +20,70 @@ import net.minecraft.util.Identifier; import elocindev.necronomicon.api.Resource
 import net.minecraft.util.Rarity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.List;
 
-import net.spell_engine.api.item.AttributeResolver;
 import net.spell_engine.api.item.trinket.SpellBookItem;
 import net.spell_engine.api.item.trinket.SpellBooks;
 import net.spell_power.api.SpellSchools;
 
+//? if 1.20.1 {
+/*import net.spell_engine.api.item.AttributeResolver;
+import java.util.HashMap;
+import java.util.Map;
+import net.spell_engine.api.item.ItemConfig;
+*///?}
+
 public class ItemRegistry {
     // RUNES
-    public static final Item BLOOD_RUNE = reg(new Item(new FabricItemSettings()), "blood_stone");
-    public static final Item UNHOLY_RUNE = reg(new Item(new FabricItemSettings()), "unholy_stone");
-    public static final Item RUNECARVED_STONE = reg(new Item(new FabricItemSettings()), "runecarved_stone");
+    public static final Item BLOOD_RUNE = reg(new Item(new Item.Settings()), "blood_stone");
+    public static final Item UNHOLY_RUNE = reg(new Item(new Item.Settings()), "unholy_stone");
+    public static final Item RUNECARVED_STONE = reg(new Item(new Item.Settings()), "runecarved_stone");
 
     // SPELL BOOKS
     public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "blood"));
     public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "unholy"));
     public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "frost"));
 
-    // JEWELRY
-    public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
-    public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
-    public static final Map<String, Item> jewelryMap = new HashMap<>();
-
     public static Jewelry FROST_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                    new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
     public static Jewelry FROST_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(SpellSchools.FROST.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
     public static Jewelry UNHOLY_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "unholy_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                    new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
     public static Jewelry UNHOLY_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "unholy_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(SpellSchoolRegistry.UNHOLY.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.attack_damage") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
     public static Jewelry BLOOD_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "blood_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                    new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                    new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
     public static Jewelry BLOOD_DK_NECKLACE = add(ResourceIdentifier.get(DeathKnights.MODID, "blood_dk_necklace"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
-                new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                new JewelryConfig.AttributeModifier(SpellSchoolRegistry.BLOOD.id, 0.08F, AttributeUtil.getMultiplyBase()),
+                new JewelryConfig.AttributeModifier(ResourceIdentifier.get("generic.max_health") , 0.06F, AttributeUtil.getMultiplyBase())
             )
     ));
 
@@ -272,14 +274,16 @@ public class ItemRegistry {
         Configs.Items.JEWELRY.save();
     }
 
+    private static final Identifier modifierId = ResourceIdentifier.get(DeathKnights.MODID, "equipment_bonus");
+
     public static void register(JewelryConfig jewelry_configs) {
-        for (var entry : JEWELRY_ITEMS) {
+        //? if 1.20.1 {
+        /*for (var entry : JEWELRY_ITEMS) {
             JewelryConfig.Item itemConfig = jewelry_configs.items.get(entry.id.toString());
             if (itemConfig == null) {
                 itemConfig = entry.config;
                 jewelry_configs.items.put(entry.id.toString(), entry.config);
             }
-
             var modifiers = new ArrayList<DKJewelryItem.Modifier>();
             for (var modifier : itemConfig.attributes) {
                 var attribute = AttributeResolver.get(ResourceIdentifier.get(modifier.id));
@@ -297,9 +301,47 @@ public class ItemRegistry {
             }
 
             entry.item().setConfigurableModifiers(modifiers);
-            
+
             Registry.register(Registries.ITEM, entry.id(), entry.item());
         }
+        *///?} else {
+
+        for (var entry : all) {
+            JewelryConfig.Item itemConfig = jewelry_configs.items.get(entry.id.toString());
+            if (itemConfig == null) {
+                itemConfig = entry.config;
+                jewelry_configs.items.put(entry.id.toString(), entry.config);
+            }
+
+            AttributeModifiersComponent.Builder attributes = AttributeModifiersComponent.builder();
+            for (var modifier : itemConfig.attributes) {
+                var id = Identifier.of(modifier.id);
+                var attribute = Registries.ATTRIBUTE.getEntry(id);
+                if (attribute.isPresent()) {
+                    attributes.add(attribute.get(),
+                            new EntityAttributeModifier(
+                                    modifierId,
+                                    modifier.value,
+                                    modifier.operation), AttributeModifierSlot.ANY);
+                } else {
+                    System.err.println("Failed to resolve EntityAttribute with id: " + modifier.id);
+                }
+            }
+            var settings = new Item.Settings()
+                    .rarity(entry.rarity);
+            if (entry.fireproof()) {
+                settings.fireproof();
+            }
+
+            var item = entry.create(settings);
+
+            item.setConfigurableModifiers(attributes.build());
+
+            Registry.register(Registries.ITEM, entry.id(), item);
+        }
+
+        //?}
+        
     }
 
     public static Jewelry add(Identifier id, JewelryConfig.Item config) {
@@ -323,9 +365,81 @@ public class ItemRegistry {
         if (fireproof) {
             settings = settings.fireproof();
         }
-        var Jewelry = new Jewelry(id, new DKJewelryItem(settings, lore), config, fireproof);
-        JEWELRY_ITEMS.add(Jewelry);
-        jewelryMap.put(id.toString(), Jewelry.item());
-        return Jewelry;
+        
+        //? if 1.20.1 {
+        /*var entry = new Jewelry(id, new DKJewelryItem(settings, lore), config, fireproof);
+        JEWELRY_ITEMS.add(entry);
+        jewelryMap.put(id.toString(), entry.item());
+        *///?} else {
+        var entry = new Jewelry(id, DKJewelryItem::new, rarity, config, lore, fireproof);
+        all.add(entry);
+        //?}
+
+        return entry;
     }
+
+    //? if 1.21.1 {
+    public static final ArrayList<Jewelry> all = new ArrayList<>();
+
+    public interface JewelryFactory {
+        DKJewelryItem create(Item.Settings settings, String lore);
+    }
+
+    public static final class Jewelry {
+        private final Identifier id;
+        private final JewelryFactory factory;
+        private final Rarity rarity;
+        private final JewelryConfig.Item config;
+        private final String lore;
+        private final boolean fireproof;
+
+        public DKJewelryItem item;
+
+        public Jewelry(Identifier id, JewelryFactory factory, Rarity rarity, JewelryConfig.Item config, String lore, boolean fireproof) {
+            this.id = id;
+            this.factory = factory;
+            this.rarity = rarity;
+            this.config = config;
+            this.lore = lore;
+            this.fireproof = fireproof;
+        }
+
+        public Identifier id() {
+            return id;
+        }
+
+        public JewelryFactory factory() {
+            return factory;
+        }
+
+        public Rarity rarity() {
+            return rarity;
+        }
+
+        public JewelryConfig.Item config() {
+            return config;
+        }
+
+        public String lore() {
+            return lore;
+        }
+
+        public boolean fireproof() {
+            return fireproof;
+        }
+
+        public DKJewelryItem create(Item.Settings settings) {
+            item = factory.create(settings, lore);
+            return item;
+        }
+
+        public DKJewelryItem item() {
+            return item;
+        }
+    }
+    //?} else {
+    /*public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
+    public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
+    public static final Map<String, Item> jewelryMap = new HashMap<>();
+    *///?}
 }

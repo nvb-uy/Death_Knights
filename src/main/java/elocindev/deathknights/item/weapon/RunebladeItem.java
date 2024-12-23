@@ -4,20 +4,24 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-
-import java.util.UUID;
+import net.minecraft.registry.tag.TagKey;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
-import elocindev.deathknights.api.DKAttributeAPI;
 import elocindev.deathknights.api.types.RunebladeSize;
 import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.registry.ItemRegistry;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.block.Block;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+
+//? if 1.20.1 {
+/*import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EquipmentSlot;
+import elocindev.deathknights.api.DKAttributeAPI;
+import java.util.UUID;
+*///?}
 
 public class RunebladeItem extends SwordItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> mainHandAttributes;
@@ -59,18 +63,31 @@ public class RunebladeItem extends SwordItem {
                     return material.getEnchantability();
                 }
 
-                @Override
+                //? if 1.20.1 {
+                /*@Override
                 public int getMiningLevel() {
                     return material.getMiningLevel();
                 }
+                *///?}
 
                 @Override
                 public Ingredient getRepairIngredient() {
                     return Ingredient.ofItems(new ItemConvertible[]{ItemRegistry.RUNECARVED_STONE});
                 }
 
+                //? if 1.21.1 {
+                @Override
+                public TagKey<Block> getInverseTag() {
+                    return null;
+                }
+                //?}
             },
-        attackDamage, attackSpeed, new FabricItemSettings());
+        //? if 1.20.1 {
+        /*attackDamage, attackSpeed, 
+        new FabricItemSettings());
+        *///?} else {
+        new Settings());
+        //?}
 
         this.type = type;
         this.size = size;
@@ -80,11 +97,13 @@ public class RunebladeItem extends SwordItem {
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> mh_modifiers = ImmutableMultimap.builder();
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> oh_modifiers = ImmutableMultimap.builder();
 
-        this.buildMainHandAttributes(mh_modifiers);
+        //? if 1.20.1 {
+        /*this.buildMainHandAttributes(mh_modifiers);
         this.buildOffHandAttributes(oh_modifiers);
 
         this.mainHandAttributes = mh_modifiers.build();  
         this.offHandAttributes = oh_modifiers.build();
+        *///?}
     }
 
     public RunebladeType getType() {
@@ -99,7 +118,8 @@ public class RunebladeItem extends SwordItem {
         return this.size == RunebladeSize.ONE_HANDED;
     }
     
-    @Override
+    //? if 1.20.1 {
+    /*@Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
         switch (slot) {
             case MAINHAND:
@@ -123,5 +143,6 @@ public class RunebladeItem extends SwordItem {
         EntityAttributeModifier.Operation operator = this.isAddition ? EntityAttributeModifier.Operation.ADDITION : EntityAttributeModifier.Operation.MULTIPLY_BASE;
         
         DKAttributeAPI.buildMagicAttributes(modifiers, this.type, UUID.fromString("a8082dfc-871c-4a75-80e3-4cc6ec2ffbb0"), operator, this.spellPowerAmount);
-    }    
+    }
+    *///?} 
 }

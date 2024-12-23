@@ -5,22 +5,24 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-import java.util.UUID;
+
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
-import elocindev.deathknights.api.DKAttributeAPI;
+
 import elocindev.deathknights.api.types.RunebladeSize;
 import elocindev.deathknights.api.types.RunebladeType;
 import elocindev.deathknights.registry.ItemRegistry;
 
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 
 //? if 1.20.1 {
 /*import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import elocindev.deathknights.api.DKAttributeAPI;
+import net.minecraft.entity.EquipmentSlot;
+import java.util.UUID;
 *///?} else {
 import net.minecraft.block.Block;
 import net.minecraft.registry.tag.TagKey;
@@ -30,10 +32,12 @@ public class RuneaxeItem extends AxeItem {
     private Multimap<EntityAttribute, EntityAttributeModifier> mainHandAttributes;
     private Multimap<EntityAttribute, EntityAttributeModifier> offHandAttributes;
 
-    private RunebladeType type;
-    private RunebladeSize size;
     private float spellPowerAmount;
     private boolean isAddition;
+
+    private RunebladeType type;
+    private RunebladeSize size;
+    
 
     public RuneaxeItem(RunebladeType type, RunebladeSize size, ToolMaterial material, int attackDamage, float attackSpeed, float attributeAmount, boolean isAddition) {
         this(type, size, material, attackDamage, attackSpeed, attributeAmount, isAddition, false);
@@ -100,8 +104,10 @@ public class RuneaxeItem extends AxeItem {
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> mh_modifiers = ImmutableMultimap.builder();
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> oh_modifiers = ImmutableMultimap.builder();
 
-        this.buildMainHandAttributes(mh_modifiers);
+        //? if 1.20.1 {
+        /*this.buildMainHandAttributes(mh_modifiers);
         this.buildOffHandAttributes(oh_modifiers);
+        *///?}
 
         this.mainHandAttributes = mh_modifiers.build();  
         this.offHandAttributes = oh_modifiers.build();
@@ -119,7 +125,8 @@ public class RuneaxeItem extends AxeItem {
         return this.size == RunebladeSize.ONE_HANDED;
     }
     
-    @Override
+    //? if 1.20.1 {
+    /*@Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
         switch (slot) {
             case MAINHAND:
@@ -143,5 +150,6 @@ public class RuneaxeItem extends AxeItem {
         EntityAttributeModifier.Operation operator = this.isAddition ? EntityAttributeModifier.Operation.ADDITION : EntityAttributeModifier.Operation.MULTIPLY_BASE;
         
         DKAttributeAPI.buildMagicAttributes(modifiers, this.type, UUID.fromString("a8082dfc-871c-4a75-80e3-4cc6ec2ffbb0"), operator, this.spellPowerAmount);
-    }    
+    }
+    *///?} 
 }
