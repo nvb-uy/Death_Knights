@@ -1,6 +1,10 @@
 package elocindev.deathknights.mixin.client.animation;
 
 import org.spongepowered.asm.mixin.Mixin;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+
+//? if 1.20.1 {
+/*import net.spell_engine.client.animation.AnimationRegistry;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -11,16 +15,9 @@ import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.client.animation.DeathKnightsAnimations;
 import elocindev.deathknights.compat.BetterCombatCompat;
 import elocindev.deathknights.config.Configs;
-import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-
-
-//? if 1.20.1 {
-/*import net.spell_engine.client.animation.AnimationRegistry;
-*///?} else {
-import net.spell_engine.internals.casting.SpellCast;
-//?}
+*///?}
 
 @Mixin(value = AbstractClientPlayerEntity.class, priority = 1500)
 public class AnimationSpeedPatcherMixin {
@@ -30,13 +27,6 @@ public class AnimationSpeedPatcherMixin {
         AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
         
         KeyframeAnimation kfAnim = (KeyframeAnimation) AnimationRegistry.animations.get(animation);
-    *///?} else {
-    @ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
-    private float death_knights$playSpellAnimation(SpellCast.Animation type, @Local String animation, float speed) {
-        AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
-        
-        KeyframeAnimation kfAnim = null; // TODO: FIX THIS
-    //?}
 
         if (animation == null) return speed;
 
@@ -71,4 +61,6 @@ public class AnimationSpeedPatcherMixin {
             return 3f;
         }
     }
+    *///?}
 }
+

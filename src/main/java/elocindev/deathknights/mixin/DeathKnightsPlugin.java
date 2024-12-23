@@ -7,7 +7,9 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import net.fabricmc.loader.api.FabricLoader;
+//? if 1.20.1 {
+/*import net.fabricmc.loader.api.FabricLoader;
+*///?}
 
 public class DeathKnightsPlugin implements IMixinConfigPlugin {
 
@@ -22,7 +24,11 @@ public class DeathKnightsPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (!FabricLoader.getInstance().isModLoaded("bettercombat") && mixinClassName.equals("AnimationSpeedPatcherMixin")) {
+        if (mixinClassName.equals("AnimationSpeedPatcherMixin")
+        //? if 1.20.1 {
+        /*&& !FabricLoader.getInstance().isModLoaded("bettercombat")
+        *///?}
+        ) {
             return false;
         }
         
