@@ -9,8 +9,6 @@ import elocindev.deathknights.config.entries.JewelryConfig;
 import elocindev.deathknights.item.jewelry.DKJewelryItem;
 import elocindev.deathknights.item.weapon.RuneaxeItem;
 import elocindev.deathknights.item.weapon.RunebladeItem;
-import net.minecraft.component.type.AttributeModifierSlot;
-import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterials;
@@ -32,7 +30,10 @@ import net.spell_power.api.SpellSchools;
 import java.util.HashMap;
 import java.util.Map;
 import net.spell_engine.api.item.ItemConfig;
-*///?}
+*///?} else {
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.AttributeModifiersComponent;
+//?}
 
 public class ItemRegistry {
     // RUNES
