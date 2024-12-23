@@ -36,15 +36,81 @@ import net.minecraft.component.type.AttributeModifiersComponent;
 //?}
 
 public class ItemRegistry {
-    // RUNES
+    // MARK: RUNES
     public static final Item BLOOD_RUNE = reg(new Item(new Item.Settings()), "blood_stone");
     public static final Item UNHOLY_RUNE = reg(new Item(new Item.Settings()), "unholy_stone");
     public static final Item RUNECARVED_STONE = reg(new Item(new Item.Settings()), "runecarved_stone");
 
-    // SPELL BOOKS
+    // MARK: SPELL BOOKS
     public static final SpellBookItem BLOOD_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "blood"));
     public static final SpellBookItem UNHOLY_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "unholy"));
     public static final SpellBookItem FROST_SPELL_BOOK = SpellBooks.create(ResourceIdentifier.get(DeathKnights.MODID, "frost"));
+
+    // MARK: JEWELRY
+    //? if 1.21.1 {
+    public static final ArrayList<Jewelry> all = new ArrayList<>();
+
+    public interface JewelryFactory {
+        DKJewelryItem create(Item.Settings settings, String lore);
+    }
+
+    public static final class Jewelry {
+        private final Identifier id;
+        private final JewelryFactory factory;
+        private final Rarity rarity;
+        private final JewelryConfig.Item config;
+        private final String lore;
+        private final boolean fireproof;
+
+        public DKJewelryItem item;
+
+        public Jewelry(Identifier id, JewelryFactory factory, Rarity rarity, JewelryConfig.Item config, String lore, boolean fireproof) {
+            this.id = id;
+            this.factory = factory;
+            this.rarity = rarity;
+            this.config = config;
+            this.lore = lore;
+            this.fireproof = fireproof;
+        }
+
+        public Identifier id() {
+            return id;
+        }
+
+        public JewelryFactory factory() {
+            return factory;
+        }
+
+        public Rarity rarity() {
+            return rarity;
+        }
+
+        public JewelryConfig.Item config() {
+            return config;
+        }
+
+        public String lore() {
+            return lore;
+        }
+
+        public boolean fireproof() {
+            return fireproof;
+        }
+
+        public DKJewelryItem create(Item.Settings settings) {
+            item = factory.create(settings, lore);
+            return item;
+        }
+
+        public DKJewelryItem item() {
+            return item;
+        }
+    }
+    //?} else {
+    /*public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
+    public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
+    public static final Map<String, Item> jewelryMap = new HashMap<>();
+    *///?}
 
     public static Jewelry FROST_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
@@ -88,7 +154,7 @@ public class ItemRegistry {
             )
     ));
 
-    // WEAPONS
+    // MARK: WEAPONS
     public static final RunebladeItem IRON_RUNEBLADE = reg(
         new RunebladeItem(
             RunebladeType.ALL,
@@ -146,7 +212,7 @@ public class ItemRegistry {
             "aeternium_runeblade"
         );
 
-    // TWO HANDED RUNEBLADES
+    // MARK: TWO HANDED RUNEBLADES
 
     public static final RunebladeItem GREAT_IRON_RUNEBLADE = reg(
         new RunebladeItem(
@@ -340,9 +406,7 @@ public class ItemRegistry {
 
             Registry.register(Registries.ITEM, entry.id(), item);
         }
-
         //?}
-        
     }
 
     public static Jewelry add(Identifier id, JewelryConfig.Item config) {
@@ -378,69 +442,4 @@ public class ItemRegistry {
 
         return entry;
     }
-
-    //? if 1.21.1 {
-    public static final ArrayList<Jewelry> all = new ArrayList<>();
-
-    public interface JewelryFactory {
-        DKJewelryItem create(Item.Settings settings, String lore);
-    }
-
-    public static final class Jewelry {
-        private final Identifier id;
-        private final JewelryFactory factory;
-        private final Rarity rarity;
-        private final JewelryConfig.Item config;
-        private final String lore;
-        private final boolean fireproof;
-
-        public DKJewelryItem item;
-
-        public Jewelry(Identifier id, JewelryFactory factory, Rarity rarity, JewelryConfig.Item config, String lore, boolean fireproof) {
-            this.id = id;
-            this.factory = factory;
-            this.rarity = rarity;
-            this.config = config;
-            this.lore = lore;
-            this.fireproof = fireproof;
-        }
-
-        public Identifier id() {
-            return id;
-        }
-
-        public JewelryFactory factory() {
-            return factory;
-        }
-
-        public Rarity rarity() {
-            return rarity;
-        }
-
-        public JewelryConfig.Item config() {
-            return config;
-        }
-
-        public String lore() {
-            return lore;
-        }
-
-        public boolean fireproof() {
-            return fireproof;
-        }
-
-        public DKJewelryItem create(Item.Settings settings) {
-            item = factory.create(settings, lore);
-            return item;
-        }
-
-        public DKJewelryItem item() {
-            return item;
-        }
-    }
-    //?} else {
-    /*public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
-    public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
-    public static final Map<String, Item> jewelryMap = new HashMap<>();
-    *///?}
 }
