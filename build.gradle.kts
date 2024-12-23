@@ -19,10 +19,10 @@ val templateSettings = object : BlahajSettings {
 
 			// Optional/Compat mod dependencies
 			deps.modImplementation("maven.modrinth:better-combat:${project.property("deps.bettercombat_version")}-fabric")
-			deps.modImplementation("maven.modrinth:betterend:${project.property("deps.betterend_version")}-fabric")
-			deps.modImplementation("maven.modrinth:betternether:${project.property("deps.betternether_version")}-fabric")
-			deps.modRuntimeOnly("maven.modrinth:bclib:${project.property("deps.bclib_version")}-fabric")
-			deps.modImplementation("maven.modrinth:rogues-and-warriors:${project.property("deps.warriors_version")}-fabric")
+			deps.modCompileOnly("maven.modrinth:betterend:${project.property("deps.betterend_version")}-fabric")
+			deps.modCompileOnly("maven.modrinth:betternether:${project.property("deps.betternether_version")}-fabric")
+			deps.modCompileOnly("maven.modrinth:bclib:${project.property("deps.bclib_version")}-fabric")
+			deps.modCompileOnly("maven.modrinth:rogues-and-warriors:${project.property("deps.warriors_version")}-fabric")
 		}
 
 		override fun addFabric(mod : ModData, deps: DependencyHandler) {
