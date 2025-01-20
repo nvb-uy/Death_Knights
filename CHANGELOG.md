@@ -4,6 +4,9 @@ IMPORTANT FOR MOD AND MODPACK DEVELOPERS:
 THIS UPDATE REPLACES ALL DEATH KNIGHTS ATTRIBUTES WITH THEIR ETERNAL ATTRIBUTES EQUIVALENT
 E.G. death_knights:blood > eternal_attributes:blood
 
+If you are referencing death knight's SpellSchoolRegistry class, then the spell schools will be redirected to Eternal Attributes, but for datapacks, you'll need to change the attribute and school ids to eternal_attributes:{school}.
+
+- Now requires Eternal Attributes as dependency
 - Added Tier 3 Armor Sets:
   - Icebound Knight (Frost)
   - Crimson Knight (Blood)

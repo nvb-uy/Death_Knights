@@ -1,19 +1,11 @@
 package elocindev.deathknights.registry;
 
-import elocindev.deathknights.DeathKnights;
-import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import elocindev.necronomicon.api.ResourceIdentifier;
 
 public class AttributeRegistry {
-    public static final EntityAttribute BLOOD_POWER = new ClampedEntityAttribute("attribute.name.death_knights.blood_power", 0.0D, 0.0D, 2048.0D).setTracked(true);
-    public static final EntityAttribute UNHOLY_POWER = new ClampedEntityAttribute("attribute.name.death_knights.unholy_power", 0.0D, 0.0D, 2048.0D).setTracked(true);
+    public static final EntityAttribute BLOOD_POWER = elocindev.eternal_attributes.registry.AttributeRegistry.BLOOD_POWER;
+    public static final EntityAttribute UNHOLY_POWER = elocindev.eternal_attributes.registry.AttributeRegistry.UNHOLY_POWER;
 
 
-    public static void register() {
-        Registry.register(Registries.ATTRIBUTE, ResourceIdentifier.get(DeathKnights.MODID, "blood"), BLOOD_POWER);
-        Registry.register(Registries.ATTRIBUTE, ResourceIdentifier.get(DeathKnights.MODID, "unholy"), UNHOLY_POWER);
-    }
+    public static void register() {}
 }

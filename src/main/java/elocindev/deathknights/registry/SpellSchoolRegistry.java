@@ -1,31 +1,12 @@
 package elocindev.deathknights.registry;
 
-import elocindev.deathknights.DeathKnights;
-import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_power.api.SpellSchool;
-import net.spell_power.api.SpellSchools;
 
 public class SpellSchoolRegistry {
     
-    public static final SpellSchool BLOOD = SpellSchools.register(
-        SpellSchools.createMagic(
-            ResourceIdentifier.get(DeathKnights.MODID, "blood"),
-            0x800000,
-            false,
-            AttributeRegistry.BLOOD_POWER,
-            StatusEffectRegistry.BLOOD_POWER
-        )
-    );
+    public static final SpellSchool BLOOD = elocindev.eternal_attributes.registry.SpellSchoolRegistry.BLOOD;
 
-    public static final SpellSchool UNHOLY = SpellSchools.register(
-        SpellSchools.createMagic(
-            ResourceIdentifier.get(DeathKnights.MODID, "unholy"),
-            0x2abf6d,
-            false,
-            AttributeRegistry.UNHOLY_POWER,
-            StatusEffectRegistry.UNHOLY_POWER
-        )
-    );
+    public static final SpellSchool UNHOLY = elocindev.eternal_attributes.registry.SpellSchoolRegistry.UNHOLY;
 
     public static void register() {}
 }
