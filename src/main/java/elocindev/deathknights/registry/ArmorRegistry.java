@@ -26,8 +26,13 @@ public class ArmorRegistry {
             );
     };
 
-	private static final Supplier<Ingredient> TIER_1_INGREDIENTS = () -> { return Ingredient.ofItems(
+	private static final Supplier<Ingredient> TIER_2_INGREDIENTS = () -> { return Ingredient.ofItems(
 			Items.IRON_INGOT
+		);
+	};
+
+	private static final Supplier<Ingredient> TIER_3_INGREDIENTS = () -> { return Ingredient.ofItems(
+			Items.NETHERITE_INGOT
 		);
 	};
 
@@ -41,8 +46,13 @@ public class ArmorRegistry {
 	public static List<ItemConfig.Attribute> getPowerForTier(int tier, Identifier power, Identifier secondary, float secondaryAmount, boolean isSecondaryAdditive) {
 		float main_power = 0.10f;
 
-		if (tier > 1) {
-			main_power = 0.20f;
+		switch(tier) {
+			case 2:
+				main_power = 0.20f;
+				break;
+			case 3:
+				main_power = 0.25f;
+				break;
 		}
 
 		if (isSecondaryAdditive) {
@@ -95,7 +105,7 @@ public class ArmorRegistry {
 					18,
 					10,
 					TieredArmor.equipSound,
-					TIER_1_INGREDIENTS
+					TIER_2_INGREDIENTS
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
@@ -129,7 +139,7 @@ public class ArmorRegistry {
 					18,
 					10,
 					TieredArmor.equipSound,
-					TIER_1_INGREDIENTS
+					TIER_2_INGREDIENTS
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
@@ -161,7 +171,7 @@ public class ArmorRegistry {
 					18,
 					10,
 					TieredArmor.equipSound,
-					TIER_1_INGREDIENTS
+					TIER_2_INGREDIENTS
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(3)
@@ -178,6 +188,102 @@ public class ArmorRegistry {
 				new TieredArmor("plaguebringer", material, ArmorItem.Type.CHESTPLATE, new Item.Settings()),
 				new TieredArmor("plaguebringer", material, ArmorItem.Type.LEGGINGS, new Item.Settings()),
 				new TieredArmor("plaguebringer", material, ArmorItem.Type.BOOTS, new Item.Settings())
+		))
+		.put(entries)
+		.armorSet();
+
+	// TIER 3 FROST - Icebound Knight Set
+	// +25% FROST POWER, +5% ATTACK SPEED, Netherite Level Armor
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static final Armor.Set icebound_knight =
+		create(
+			new Armor.CustomMaterial(
+				"icebound_knight_armor",
+				30,
+				15,
+				TieredArmor.equipSound,
+				TIER_3_INGREDIENTS
+			),
+			ItemConfig.ArmorSet.with(
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(8)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(6)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f))
+			))
+		.bundle(material -> new Armor.Set(DeathKnights.MODID,
+				new TieredArmor("icebound_knight", material, ArmorItem.Type.HELMET, new Item.Settings().fireproof()),
+				new TieredArmor("icebound_knight", material, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof()),
+				new TieredArmor("icebound_knight", material, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof()),
+				new TieredArmor("icebound_knight", material, ArmorItem.Type.BOOTS, new Item.Settings().fireproof())
+		))
+		.put(entries)
+		.armorSet();
+
+	// TIER 3 BLOOD - Crimson Knight Set
+	// +25% BLOOD POWER, +4 MAX HEALTH, Netherite Level Armor
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static final Armor.Set crimson_knight =
+		create(
+			new Armor.CustomMaterial(
+				"crimson_knight_armor",
+				30,
+				15,
+				TieredArmor.equipSound,
+				TIER_3_INGREDIENTS
+			),
+			ItemConfig.ArmorSet.with(
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 4f, true)),
+				new ItemConfig.ArmorSet.Piece(8)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 4f, true)),
+				new ItemConfig.ArmorSet.Piece(6)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 4f, true)),
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.BLOOD.id, ResourceIdentifier.get("minecraft:generic.max_health"), 4f, true))
+			))
+		.bundle(material -> new Armor.Set(DeathKnights.MODID,
+				new TieredArmor("crimson_knight", material, ArmorItem.Type.HELMET, new Item.Settings().fireproof()),
+				new TieredArmor("crimson_knight", material, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof()),
+				new TieredArmor("crimson_knight", material, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof()),
+				new TieredArmor("crimson_knight", material, ArmorItem.Type.BOOTS, new Item.Settings().fireproof())
+		))
+		.put(entries)
+		.armorSet();
+
+	// TIER 3 UNHOLY - Blightbringer Set
+	// +25% UNHOLY POWER, +5% ATTACK DAMAGE, Netherite Level Armor
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static final Armor.Set blightbringer =
+		create(
+			new Armor.CustomMaterial(
+				"blightbringer_armor",
+				30,
+				15,
+				TieredArmor.equipSound,
+				TIER_3_INGREDIENTS
+			),
+			ItemConfig.ArmorSet.with(
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(8)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(6)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.05f)),
+				new ItemConfig.ArmorSet.Piece(3)
+						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_damage"), 0.05f))
+			))
+		.bundle(material -> new Armor.Set(DeathKnights.MODID,
+				new TieredArmor("blightbringer", material, ArmorItem.Type.HELMET, new Item.Settings().fireproof()),
+				new TieredArmor("blightbringer", material, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof()),
+				new TieredArmor("blightbringer", material, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof()),
+				new TieredArmor("blightbringer", material, ArmorItem.Type.BOOTS, new Item.Settings().fireproof())
 		))
 		.put(entries)
 		.armorSet();
@@ -215,7 +321,7 @@ import net.minecraft.item.ArmorMaterial;
 
 public class ArmorRegistry {
     private static final Supplier<Ingredient> INITIATE_INGREDIENTS = () -> Ingredient.ofItems(Items.CHAIN);
-    private static final Supplier<Ingredient> TIER_1_INGREDIENTS = () -> Ingredient.ofItems(Items.IRON_INGOT);
+    private static final Supplier<Ingredient> TIER_2_INGREDIENTS = () -> Ingredient.ofItems(Items.IRON_INGOT);
 
     public static RegistryEntry<ArmorMaterial> material(String name, int protectionHead, int protectionChest, int protectionLegs, int protectionFeet, int enchantability, RegistryEntry<SoundEvent> equipSound, Supplier<Ingredient> repairIngredient) {
         var material = new ArmorMaterial(
@@ -241,7 +347,7 @@ public class ArmorRegistry {
             "tier_1_armor",
             3, 6, 5, 3,
             10,
-            RegistryEntry.of(TieredArmor.equipSound), TIER_1_INGREDIENTS);
+            RegistryEntry.of(TieredArmor.equipSound), TIER_2_INGREDIENTS);
 
     public static final ArrayList<Armor.Entry> entries = new ArrayList<>();
     public static final List<Identifier> initiate_powers = List.of(SpellSchoolRegistry.BLOOD.id, SpellSchoolRegistry.UNHOLY.id, SpellSchools.FROST.id);
