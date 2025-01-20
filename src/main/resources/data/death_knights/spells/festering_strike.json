@@ -1,6 +1,6 @@
 {
   "range": 3.5,
-  "school": "death_knights:unholy",
+  "school": "eternal_attributes:unholy",
   "group": "primary",
   "learn": {
     "tier": 1
@@ -29,7 +29,7 @@
       }
     },
     {
-      "school": "death_knights:unholy",
+      "school": "eternal_attributes:unholy",
       "action": {
         "type": "DAMAGE",
         "damage": {
