@@ -76,13 +76,33 @@ public class ArmorRegistry {
 				),
 				ItemConfig.ArmorSet.with(
 					new ItemConfig.ArmorSet.Piece(2)
-							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+							.addAll(
+								List.of(
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.BLOOD.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.UNHOLY.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchools.FROST.id, 0.10f)
+								)),
 					new ItemConfig.ArmorSet.Piece(5)
-							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+							.addAll(
+								List.of(
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.BLOOD.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.UNHOLY.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchools.FROST.id, 0.10f)
+								)),
 					new ItemConfig.ArmorSet.Piece(4)
-							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1)),
+							.addAll(
+								List.of(
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.BLOOD.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.UNHOLY.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchools.FROST.id, 0.10f)
+								)),
 					new ItemConfig.ArmorSet.Piece(2)
-							.addAll(ItemConfig.Attribute.bonuses(initiate_powers, 1))
+							.addAll(
+								List.of(
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.BLOOD.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchoolRegistry.UNHOLY.id, 0.10f),
+									ItemConfig.Attribute.multiply(SpellSchools.FROST.id, 0.10f)
+								))
 				))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new InitiateArmor(material, ArmorItem.Type.HELMET, new Item.Settings()),
