@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 
 //? if 1.20.1 {
-/*import net.spell_engine.client.animation.AnimationRegistry;
+import net.spell_engine.client.animation.AnimationRegistry;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -17,12 +17,12 @@ import elocindev.deathknights.compat.BetterCombatCompat;
 import elocindev.deathknights.config.Configs;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-*///?}
+//?}
 
 @Mixin(value = AbstractClientPlayerEntity.class, priority = 1500)
 public class AnimationSpeedPatcherMixin {
     //? if 1.20.1 {
-    /*@ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
+    @ModifyVariable(method = "playSpellAnimation", at = @At("HEAD"), ordinal = 0)
     private float death_knights$playSpellAnimation(float speed, @Local String animation) {
         AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) (Object) this;
         
@@ -61,6 +61,6 @@ public class AnimationSpeedPatcherMixin {
             return 3f;
         }
     }
-    *///?}
+    //?}
 }
 

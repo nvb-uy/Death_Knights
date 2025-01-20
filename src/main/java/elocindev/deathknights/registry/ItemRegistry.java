@@ -26,14 +26,14 @@ import net.spell_engine.api.item.trinket.SpellBooks;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.20.1 {
-/*import net.spell_engine.api.item.AttributeResolver;
+import net.spell_engine.api.item.AttributeResolver;
 import java.util.HashMap;
 import java.util.Map;
 import net.spell_engine.api.item.ItemConfig;
-*///?} else {
-import net.minecraft.component.type.AttributeModifierSlot;
+//?} else {
+/*import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
-//?}
+*///?}
 
 public class ItemRegistry {
     // MARK: RUNES
@@ -48,7 +48,7 @@ public class ItemRegistry {
 
     // MARK: JEWELRY
     //? if 1.21.1 {
-    public static final ArrayList<Jewelry> all = new ArrayList<>();
+    /*public static final ArrayList<Jewelry> all = new ArrayList<>();
 
     public interface JewelryFactory {
         DKJewelryItem create(Item.Settings settings, String lore);
@@ -106,11 +106,11 @@ public class ItemRegistry {
             return item;
         }
     }
-    //?} else {
-    /*public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
+    *///?} else {
+    public record Jewelry(Identifier id, DKJewelryItem item, JewelryConfig.Item config, boolean fireproof) {}
     public static final ArrayList<Jewelry> JEWELRY_ITEMS = new ArrayList<>();
     public static final Map<String, Item> jewelryMap = new HashMap<>();
-    *///?}
+    //?}
 
     public static Jewelry FROST_DK_RING = add(ResourceIdentifier.get(DeathKnights.MODID, "frost_dk_ring"), Rarity.RARE, true, new JewelryConfig.Item(
             List.of(
@@ -345,7 +345,7 @@ public class ItemRegistry {
 
     public static void register(JewelryConfig jewelry_configs) {
         //? if 1.20.1 {
-        /*for (var entry : JEWELRY_ITEMS) {
+        for (var entry : JEWELRY_ITEMS) {
             JewelryConfig.Item itemConfig = jewelry_configs.items.get(entry.id.toString());
             if (itemConfig == null) {
                 itemConfig = entry.config;
@@ -371,9 +371,9 @@ public class ItemRegistry {
 
             Registry.register(Registries.ITEM, entry.id(), entry.item());
         }
-        *///?} else {
+        //?} else {
 
-        for (var entry : all) {
+        /*for (var entry : all) {
             JewelryConfig.Item itemConfig = jewelry_configs.items.get(entry.id.toString());
             if (itemConfig == null) {
                 itemConfig = entry.config;
@@ -406,7 +406,7 @@ public class ItemRegistry {
 
             Registry.register(Registries.ITEM, entry.id(), item);
         }
-        //?}
+        *///?}
     }
 
     public static Jewelry add(Identifier id, JewelryConfig.Item config) {
@@ -432,13 +432,13 @@ public class ItemRegistry {
         }
         
         //? if 1.20.1 {
-        /*var entry = new Jewelry(id, new DKJewelryItem(settings, lore), config, fireproof);
+        var entry = new Jewelry(id, new DKJewelryItem(settings, lore), config, fireproof);
         JEWELRY_ITEMS.add(entry);
         jewelryMap.put(id.toString(), entry.item());
-        *///?} else {
-        var entry = new Jewelry(id, DKJewelryItem::new, rarity, config, lore, fireproof);
+        //?} else {
+        /*var entry = new Jewelry(id, DKJewelryItem::new, rarity, config, lore, fireproof);
         all.add(entry);
-        //?}
+        *///?}
 
         return entry;
     }

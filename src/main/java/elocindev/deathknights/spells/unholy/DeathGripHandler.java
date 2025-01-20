@@ -119,8 +119,8 @@ public class DeathGripHandler {
         double offsetZ = (caster.getRandom().nextDouble() - 0.5) * 2.0;
         target.teleport(caster.getX() + offsetX, caster.getY() + 1.0, caster.getZ() + offsetZ
         //? if 1.21.1 {
-        , true
-        //?}
+        /*, true
+        *///?}
         );
 
         caster.getWorld().playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);

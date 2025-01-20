@@ -56,10 +56,10 @@ public class EpidemicHandler {
 
                                 float damagePerStack = (float) 
                                 //? if 1.20.1 {
-                                /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attribute)
-                                *///?} else {
-                                (caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
-                                //?}
+                                (caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attribute)
+                                //?} else {
+                                /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
+                                *///?}
                                 * CONFIG.unholy_coefficent);
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 

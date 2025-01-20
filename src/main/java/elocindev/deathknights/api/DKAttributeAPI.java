@@ -1,7 +1,7 @@
 package elocindev.deathknights.api;
 
 //? if 1.20.1 {
-/*import java.util.UUID;
+import java.util.UUID;
 import java.util.Vector;
 
 import com.google.common.collect.ImmutableMultimap;
@@ -12,14 +12,14 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
-*///?}
+//?}
 
 /**
  * @deprecated 1.20.1 Only
  */
 public class DKAttributeAPI {
     //? if 1.20.1 {
-    /*public static void buildMagicAttributes(ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> modifiers, RunebladeType type, UUID uuid, EntityAttributeModifier.Operation operator, float amount) {
+    public static void buildMagicAttributes(ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> modifiers, RunebladeType type, UUID uuid, EntityAttributeModifier.Operation operator, float amount) {
         Vector<SpellSchool> powers = new Vector<SpellSchool>();
 
         applyPowers(powers, type);
@@ -59,5 +59,5 @@ public class DKAttributeAPI {
             powers.add(school);
         }
     }
-    *///?}
+    //?}
 }

@@ -15,8 +15,8 @@ import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.random.Random;
 
 //? if 1.20.1 {
-/*import net.minecraft.entity.attribute.AttributeContainer;
-*///?}
+import net.minecraft.entity.attribute.AttributeContainer;
+//?}
 
 import java.util.List;
 
@@ -35,14 +35,14 @@ public class FesteringStrike extends SpellEffect {
 
     @Override
     public void onApplied(LivingEntity entity, 
-    //?if 1.20.1 {
-    /*AttributeContainer attributes,
-    *///?}
+    //? if 1.20.1 {
+    AttributeContainer attributes,
+    //?}
     int amplifier) {
         super.onApplied(entity,
-        //?if 1.20.1 {
-        /*attributes,
-        *///?}        
+        //? if 1.20.1 {
+        attributes,
+        //?}
         amplifier);
 
         List<PlagueProperty> plagues = CONFIG.plagues;

@@ -23,10 +23,10 @@ import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.20.1 {
-/*import net.minecraft.entity.attribute.AttributeContainer;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.network.packet.s2c.play.StopSoundS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
-*///?}
+//?}
 
 public class RemorselessWinter extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "remorseless_winter"));
@@ -41,10 +41,10 @@ public class RemorselessWinter extends SpellEffect {
     
     @Override public
     //? if 1.20.1 {
-    /*void
-    *///?} else {
-    boolean
-    //?}
+    void
+    //?} else {
+    /*boolean
+    *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
@@ -83,14 +83,14 @@ public class RemorselessWinter extends SpellEffect {
 
         float damage = 
         //? if 1.20.1 {
-        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
 
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
-        *///?} else {
-        (float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+        //?} else {
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
 
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
-        //?}
+        *///?}
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
@@ -110,8 +110,8 @@ public class RemorselessWinter extends SpellEffect {
 
         return
         //? if 1.21.1 {
-        super.applyUpdateEffect(entity, amplifier)
-        //?}
+        /*super.applyUpdateEffect(entity, amplifier)
+        *///?}
         ;
     }
 
@@ -127,7 +127,7 @@ public class RemorselessWinter extends SpellEffect {
 
 
     //? if 1.20.1 {
-    /*@Override
+    @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
         World world = entity.getWorld();
 
@@ -145,7 +145,7 @@ public class RemorselessWinter extends SpellEffect {
 
         super.onRemoved(entity, attributes, amplifier);
     }
-    *///?}
+    //?}
 
     public static DamageSource of(World world, RegistryKey<DamageType> key) {
         return new DamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(key));
