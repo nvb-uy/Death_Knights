@@ -58,6 +58,21 @@
     "item.death_knights.crimson_guard_armor_legs":          "Crimson Guard's Legplates",
     "item.death_knights.crimson_guard_armor_feet":          "Crimson Guard's Boots",
 
+    "item.death_knights.icebound_knight_armor_head":        "Helm of the Icebound Knight",
+    "item.death_knights.icebound_knight_armor_chest":       "Chestplate of the Icebound Knight",
+    "item.death_knights.icebound_knight_armor_legs":        "Legplates of the Icebound Knight",
+    "item.death_knights.icebound_knight_armor_feet":        "Boots of the Icebound Knight",
+
+    "item.death_knights.blightbringer_armor_head":          "Helm of the Blightbringer",
+    "item.death_knights.blightbringer_armor_chest":         "Chestplate of the Blightbringer",
+    "item.death_knights.blightbringer_armor_legs":          "Legplates of the Blightbringer",
+    "item.death_knights.blightbringer_armor_feet":          "Boots of the Blightbringer",
+
+    "item.death_knights.crimson_knight_armor_head":         "Helm of the Crimson Knight",
+    "item.death_knights.crimson_knight_armor_chest":        "Chestplate of the Crimson Knight",
+    "item.death_knights.crimson_knight_armor_legs":         "Legplates of the Crimson Knight",
+    "item.death_knights.crimson_knight_armor_feet":         "Boots of the Crimson Knight",
+
     "item.death_knights.frost_dk_ring":                     "Ring of the Eternal Winter",
     "item.death_knights.frost_dk_ring.lore":                "Born of death and cold, no one knows where this ancient ring came from.",
     "item.death_knights.frost_dk_necklace":                 "A Dragon's Bane",
