@@ -227,13 +227,13 @@ public class ArmorRegistry {
 			),
 			ItemConfig.ArmorSet.with(
 				new ItemConfig.ArmorSet.Piece(3)
-						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+						.addAll(getPowerForTier(3, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 				new ItemConfig.ArmorSet.Piece(8)
-						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+						.addAll(getPowerForTier(3, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 				new ItemConfig.ArmorSet.Piece(6)
-						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
+						.addAll(getPowerForTier(3, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f)),
 				new ItemConfig.ArmorSet.Piece(3)
-						.addAll(getPowerForTier(3, SpellSchoolRegistry.UNHOLY.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f))
+						.addAll(getPowerForTier(3, SpellSchools.FROST.id, ResourceIdentifier.get("minecraft:generic.attack_speed"), 0.05f))
 			))
 		.bundle(material -> new Armor.Set(DeathKnights.MODID,
 				new TieredArmor("icebound_knight", material, ArmorItem.Type.HELMET, new Item.Settings().fireproof()),
