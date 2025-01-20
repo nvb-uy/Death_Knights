@@ -1,6 +1,6 @@
 {
   "range": 3.5,
-  "school": "death_knights:blood",
+  "school": "eternal_attributes:blood",
   "group": "primary",
   "learn": {
     "tier": 0
@@ -29,7 +29,7 @@
       }
     },
     {
-      "school": "death_knights:blood",
+      "school": "eternal_attributes:blood",
       "action": {
         "type": "DAMAGE",
         "damage": {
