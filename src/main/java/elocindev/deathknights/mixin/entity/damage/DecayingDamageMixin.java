@@ -11,6 +11,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.spell_power.api.SpellDamageSource;
 
+// TODO: IMPLEMENT ON 1.21.1
 //? if 1.20.1 {
 @Mixin(value = LivingEntity.class, priority = 1)
 public abstract class DecayingDamageMixin {

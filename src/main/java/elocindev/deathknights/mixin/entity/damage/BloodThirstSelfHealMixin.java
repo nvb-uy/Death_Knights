@@ -13,6 +13,8 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.spell_power.api.SpellDamageSource;
 
+// TODO: IMPLEMENT ON 1.21.1
+//? if 1.20.1 {
 @Mixin(value = LivingEntity.class, priority = 1)
 public abstract class BloodThirstSelfHealMixin {
     
@@ -41,3 +43,4 @@ public abstract class BloodThirstSelfHealMixin {
         return (0.01f * (float) (bldpwr / Configs.Spells.Blood.BLOOD_THIRST.oncepercent_heal_amount));
     }
 }
+//?}
