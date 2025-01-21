@@ -32,7 +32,8 @@
 		"fabric-api": "*",
 		"player-animator": "*",
 		"spell_engine": "*",
-		"necronomicon": ">=1.6.0"
+		"necronomicon": ">=1.6.0",
+		"eternal_attributes": "*"
 	},
 	"suggests": {
 		"bettercombat": "*"
