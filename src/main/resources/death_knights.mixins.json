@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_17",
 	"plugin": "elocindev.deathknights.mixin.DeathKnightsPlugin",
 	"mixins": [
-		"entity.effect_logic.LivingEffectModifiersMixin"
+		"entity.effect_logic.LivingEffectModifiersMixin",
+		"entity.damage.DecayingDamageMixin",
+		"entity.damage.BloodThirstSelfHealMixin"
 	],
 	"client": [
 		"client.animation.AnimationSpeedPatcherMixin"

@@ -12,3 +12,5 @@ If you are referencing death knight's SpellSchoolRegistry class, then the spell 
   - Crimson Knight (Blood)
   - Blightbringer (Unholy)
 - Death's Call armor set now gives +7.5% of all death knight elements instead of flat +1
+- Blood Boil's "Blood Plague" no longer deals damage, and instead it makes the death knight heal every time they deal blood damage (such as from a blood ability). The % max health healing scales up with the amount of blood power the death knight has.
+- Fixed Decaying enchantment not working

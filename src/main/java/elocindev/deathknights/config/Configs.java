@@ -14,6 +14,7 @@ import elocindev.deathknights.config.entries.spells.unholy.DeathGripConfig;
 import elocindev.deathknights.config.entries.spells.unholy.EpidemicConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
+import elocindev.deathknights.config.entries.spells.blood.BloodThirstConfig;
 import elocindev.deathknights.config.entries.spells.blood.DeathStrikeConfig;
 import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
 import net.spell_engine.api.item.ItemConfig;
@@ -43,6 +44,7 @@ public class Configs {
             public static DeathStrikeConfig         DEATH_STRIKE          =      DeathStrikeConfig.INSTANCE;
             public static MarrowrendConfig          MARROWREND            =      MarrowrendConfig.INSTANCE;
             public static BloodBoilConfig           BLOOD_BOIL            =      BloodBoilConfig.INSTANCE;
+            public static BloodThirstConfig         BLOOD_THIRST          =      BloodThirstConfig.INSTANCE;
         }
     }
 
