@@ -4,6 +4,7 @@ import elocindev.deathknights.spells.blood.BloodBoilHandler;
 import elocindev.deathknights.spells.blood.DarkCommandHandler;
 import elocindev.deathknights.spells.blood.DeathStrikeHandler;
 import elocindev.deathknights.spells.blood.MarrowrendHandler;
+import elocindev.deathknights.spells.frost.FrostStrikeHandler;
 import elocindev.deathknights.spells.unholy.DeathCoilHandler;
 import elocindev.deathknights.spells.unholy.DeathGripHandler;
 import elocindev.deathknights.spells.unholy.EpidemicHandler;
@@ -15,6 +16,8 @@ public class SpellHandler {
         DeathCoilHandler.register();
         EpidemicHandler.register();
         DeathGripHandler.register();
+
+        FrostStrikeHandler.register();
 
         DeathStrikeHandler.register();
         MarrowrendHandler.register();
