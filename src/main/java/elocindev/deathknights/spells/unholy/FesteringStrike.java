@@ -69,6 +69,7 @@ public class FesteringStrike extends SpellEffect {
             }
         } else {
             PlagueProperty randomPlague = getWeightedPlague(plagues);
+            if (randomPlague == null) return;
             StatusEffect randomEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(randomPlague.effect_id));
             
             if (randomEffect != null) {
@@ -83,19 +84,20 @@ public class FesteringStrike extends SpellEffect {
     }
 
     private PlagueProperty getWeightedPlague(List<PlagueProperty> plagues) {
-        int totalWeight = plagues.stream().mapToInt(plague -> plague.weight).sum();
+        int totalWeight = plagues.stream().mapToInt(plague -> Math.max(0, plague.weight)).sum();
+        if (totalWeight <= 0) return null;
         int randomValue = RANDOM.nextInt(totalWeight);
 
         int cumulativeWeight = 0;
 
         for (PlagueProperty plague : plagues) {
-            cumulativeWeight += plague.weight;
+            cumulativeWeight += Math.max(0, plague.weight);
 
             if (randomValue < cumulativeWeight) {
                 return plague;
             }
         }
 
-        return plagues.get(0);
+        return null;
     }
 }
