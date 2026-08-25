@@ -6,7 +6,6 @@ import net.minecraft.sound.SoundEvents;
 import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.util.math.Vec3d;
 import net.spell_engine.api.event.CombatEvents;
-import net.spell_engine.internals.SpellHelper;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -57,8 +56,6 @@ public class DeathGripHandler {
                             }
 
                             startDeathGripPull(livingTarget, caster);
-
-                            SpellHelper.imposeCooldown(caster, null, null, 0);
                         }
                     }
                 }
