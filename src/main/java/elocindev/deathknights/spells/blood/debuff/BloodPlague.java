@@ -12,6 +12,7 @@ import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
+import net.spell_power.api.SpellPower;
 
 
 public class BloodPlague extends SpellEffect {
@@ -37,13 +38,9 @@ public class BloodPlague extends SpellEffect {
 
         for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(CONFIG.radius*2), (e) -> EffectUtils.hasStatusEffect(e, SpellRegistry.BLOOD_THIRST))) {
             if (TargetHelper.allowedToHurt(e, entity) && !(entity instanceof HorseEntity)) {
-                entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(
-                //? if 1.20.1 {
-                SpellSchoolRegistry.BLOOD.attribute
-                //?} else {
-                /*SpellSchoolRegistry.BLOOD.attributeEntry
-                *///?}
-                ) * CONFIG.damage_blood_scaling) * (amplifier));
+                float bloodPower = (float) SpellPower.getSpellPower(SpellSchoolRegistry.BLOOD, e).baseValue();
+                entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e),
+                        bloodPower * CONFIG.damage_blood_scaling * amplifier);
                 break;
             }
         }

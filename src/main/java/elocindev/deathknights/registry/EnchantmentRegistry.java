@@ -2,6 +2,7 @@ package elocindev.deathknights.registry;
 
 //? if 1.20.1 {
 import elocindev.deathknights.DeathKnights;
+import elocindev.deathknights.config.entries.enchants.DecayingEnchantConfig;
 import elocindev.deathknights.enchant.DecayingEnchantment;
 import elocindev.necronomicon.api.ResourceIdentifier;
 import net.minecraft.enchantment.Enchantment.Rarity;
@@ -23,10 +24,9 @@ public class EnchantmentRegistry {
     }
 
     public static double getDecaying(QueryArgs query) {
-        double value = 0;
         var level = SpellPowerEnchanting.getEnchantmentLevel(DECAYING, query.entity(), null);
-        value = DECAYING.amplified(value, level);
-        return value;
+        var config = DecayingEnchantConfig.INSTANCE;
+        return config == null || !config.enabled ? 0 : level * config.bonus_per_level;
     }
 
     public static void registerEffects() {

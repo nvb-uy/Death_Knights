@@ -10,6 +10,7 @@ import elocindev.necronomicon.api.ResourceIdentifier;
 import net.spell_engine.api.event.CombatEvents;
 import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
+import net.spell_power.api.SpellPower;
 
 import java.util.List;
 
@@ -56,14 +57,9 @@ public class DeathCoilHandler {
                                 int stacksToExplode = Math.min(currentStacks, CONFIG.plague_stacks);
                                 int remainingStacks = currentStacks - stacksToExplode;
 
-                                float damagePerStack = (float)
-                                //? if 1.20.1 {
-                                (caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attribute)
-                                //?} else {
-                                /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
-                                *///?}
-
-                                * CONFIG.unholy_coefficent);
+                                float damagePerStack = (float) (SpellPower
+                                        .getSpellPower(SpellSchoolRegistry.UNHOLY, caster).baseValue()
+                                        * CONFIG.unholy_coefficent);
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 
                                 if (remainingStacks > 0) {
