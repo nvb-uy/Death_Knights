@@ -9,7 +9,7 @@ public class EpidemicConfig {
     public static EpidemicConfig INSTANCE;
 
     public static String getFile() {
-        return ConfigLoader.getNestedFile("death_coil.json5", "spells/unholy");
+        return ConfigLoader.getNestedFile("epidemic.json5", "spells/unholy");
     }
 
     @Comment("The unholy power multiplier that Epidemic's plague explosion will deal, per stack.")
