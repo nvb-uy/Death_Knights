@@ -62,17 +62,18 @@ public class FesteringStrike extends SpellEffect {
         if (activePlague != null && activeEffect != null) {
             StatusEffectInstance currentInstance = EffectUtils.getStatusEffect(entity, activeEffect);
 
-            if (currentInstance != null) {
+            if (currentInstance != null && activePlague.max_stacks > 0) {
                 int currentStacks = currentInstance.getAmplifier() + 1;
                 int newStacks = Math.min(currentStacks + 2, activePlague.max_stacks);
-                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), activePlague.duration_ticks, newStacks - 1));
+                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), currentInstance.getDuration(), newStacks - 1));
             }
         } else {
             PlagueProperty randomPlague = getWeightedPlague(plagues);
             StatusEffect randomEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(randomPlague.effect_id));
             
-            if (randomEffect != null) {
-                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(randomEffect), randomPlague.duration_ticks, 1)); // 2 stacks = amplifier 1
+            if (randomEffect != null && randomPlague.max_stacks > 0) {
+                int initialStacks = Math.min(2, randomPlague.max_stacks);
+                entity.addStatusEffect(new StatusEffectInstance(EffectUtils.create(randomEffect), randomPlague.duration_ticks, initialStacks - 1));
             }
         }
     }
