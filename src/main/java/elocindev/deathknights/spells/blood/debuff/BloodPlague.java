@@ -21,7 +21,12 @@ public class BloodPlague extends SpellEffect {
         super(StatusEffectCategory.HARMFUL, 0xb31d2c);
     }
 
-    
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        int tickRate = CONFIG.tick_rate;
+        return tickRate > 0 && duration % tickRate == 0;
+    }
+
     @Override public
     //? if 1.20.1 {
     void
@@ -29,23 +34,30 @@ public class BloodPlague extends SpellEffect {
     /*boolean
     *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getWorld().isClient() || entity.age % CONFIG.tick_rate != 0) return
+        if (entity.getWorld().isClient() || entity instanceof HorseEntity) return
         //? if 1.21.1 {
         /*super.applyUpdateEffect(entity, amplifier)
         *///?}
         ;
 
-        for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(CONFIG.radius*2), (e) -> EffectUtils.hasStatusEffect(e, SpellRegistry.BLOOD_THIRST))) {
-            if (TargetHelper.allowedToHurt(e, entity) && !(entity instanceof HorseEntity)) {
-                entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(
-                //? if 1.20.1 {
-                SpellSchoolRegistry.BLOOD.attribute
-                //?} else {
-                /*SpellSchoolRegistry.BLOOD.attributeEntry
-                *///?}
-                ) * CONFIG.damage_blood_scaling) * (amplifier));
-                break;
-            }
+        PlayerEntity caster = entity.getEntityWorld().getClosestPlayer(
+                entity.getX(),
+                entity.getY(),
+                entity.getZ(),
+                CONFIG.radius,
+                candidate -> candidate instanceof PlayerEntity player
+                        && EffectUtils.hasStatusEffect(player, SpellRegistry.BLOOD_THIRST)
+                        && TargetHelper.allowedToHurt(player, entity)
+        );
+
+        if (caster != null) {
+            entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, caster), ((float) caster.getAttributeValue(
+            //? if 1.20.1 {
+            SpellSchoolRegistry.BLOOD.attribute
+            //?} else {
+            /*SpellSchoolRegistry.BLOOD.attributeEntry
+            *///?}
+            ) * CONFIG.damage_blood_scaling) * (amplifier + 1));
         }
 
         return
