@@ -96,6 +96,7 @@ public class DeathGripHandler {
 
             if (pullInfo.timeElapsed >= CONFIG.max_pull_time) {
                 teleportNearPlayer(target, caster);
+                applyEffectsToTarget(target);
                 iterator.remove();
                 continue;
             }
