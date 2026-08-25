@@ -19,7 +19,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.spell_engine.particle.Particles;
 import net.spell_power.api.SpellDamageSource;
-import net.spell_power.api.SpellPowerMechanics;
+import net.spell_power.api.SpellPower;
 import net.spell_power.api.SpellSchools;
 
 //? if 1.20.1 {
@@ -81,16 +81,9 @@ public class RemorselessWinter extends SpellEffect {
                 world.addParticle(particleEffect, entity.getX() + xOffset2+off*-1, entity.getY() + randomYOffset/2, entity.getZ() + zOffset2+off, velocityX, 0, velocityZ);
         }
 
-        float damage = 
-        //? if 1.20.1 {
-        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
-
-        double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
-        //?} else {
-        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
-
-        double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
-        *///?}
+        SpellPower.Result spellPower = SpellPower.getSpellPower(SpellSchools.FROST, entity);
+        float damage = (float) (spellPower.baseValue() * CONFIG.damage_frost_scaling);
+        double critChance = spellPower.criticalChance();
 
         if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
 
