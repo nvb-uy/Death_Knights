@@ -67,7 +67,7 @@ public class DeathCoilHandler {
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 
                                 if (remainingStacks > 0) {
-                                    livingTarget.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), activePlague.duration_ticks, remainingStacks - 1));
+                                    livingTarget.addStatusEffect(new StatusEffectInstance(EffectUtils.create(activeEffect), plagueInstance.getDuration(), remainingStacks - 1));
                                 } else {
                                     livingTarget.removeStatusEffect(EffectUtils.create(activeEffect));
                                 }
@@ -86,7 +86,8 @@ public class DeathCoilHandler {
     
         for (LivingEntity ent : nearbyEntities) {
             StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(ent, plagueEffect);
-            if (ent.equals(caster) || ent instanceof PlayerEntity playerVictim && (playerVictim.isCreative() || playerVictim.isSpectator() || !TargetHelper.allowedToHurt(caster, playerVictim))) continue;
+            if (ent.equals(caster) || !TargetHelper.allowedToHurt(caster, ent)
+                    || ent instanceof PlayerEntity playerVictim && (playerVictim.isCreative() || playerVictim.isSpectator())) continue;
             
     
             if (currentEffect != null) {
