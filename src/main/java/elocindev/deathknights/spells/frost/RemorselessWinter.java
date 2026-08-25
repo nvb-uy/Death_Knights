@@ -2,7 +2,6 @@ package elocindev.deathknights.spells.frost;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.api.core.SpellEffect;
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.frost.RemorselessWinterConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -30,8 +29,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 
 public class RemorselessWinter extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "remorseless_winter"));
-    public static RemorselessWinterConfig CONFIG = Configs.Spells.Frost.REMORSELESS_WINTER;
-
     private boolean hasAmbientPlayed = false;
 
     public RemorselessWinter() {
@@ -48,12 +45,13 @@ public class RemorselessWinter extends SpellEffect {
     applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
+        RemorselessWinterConfig config = RemorselessWinterConfig.INSTANCE;
 
         if (!hasAmbientPlayed) { playAmbient(world, entity); hasAmbientPlayed = true; }
 
         double height = 2.0;
         int turns = 3;
-        double radius1 = CONFIG.radius;
+        double radius1 = config.radius;
         double radius2 = radius1 / 2;
         int particlesPerTick = 20;
 
@@ -83,25 +81,25 @@ public class RemorselessWinter extends SpellEffect {
 
         float damage = 
         //? if 1.20.1 {
-        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * config.damage_frost_scaling);
 
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
         //?} else {
-        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * config.damage_frost_scaling);
 
         double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
         *///?}
 
-        if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
+        if (random.nextDouble() < critChance) damage *= config.damage_critical_scaling;
 
-        if (entity.age % CONFIG.tick_rate == 0)
-            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.radius, CONFIG.radius, CONFIG.radius), (e) -> e != entity)) {
+        if (entity.age % config.tick_rate == 0)
+            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(config.radius, config.radius, config.radius), (e) -> e != entity)) {
                 e.damage(SpellDamageSource.create(SpellSchools.FROST, entity), damage);
 
                 world.addParticle(Particles.frost_hit.particleType, e.getX(), e.getY()+1, e.getZ(), 0, -0.1, 0);
                 
-                if (random.nextDouble() < CONFIG.frozen_chance)
-                    e.setFrozenTicks(CONFIG.frozen_ticks);
+                if (random.nextDouble() < config.frozen_chance)
+                    e.setFrozenTicks(config.frozen_ticks);
             }
         
         if (entity.age % 40 == 0) {

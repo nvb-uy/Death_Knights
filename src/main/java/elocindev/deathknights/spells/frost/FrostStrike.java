@@ -16,8 +16,6 @@ import net.minecraft.entity.attribute.AttributeContainer;
 //?}
 
 public class FrostStrike extends SpellEffect {
-    public static FrostStrikeConfig CONFIG = FrostStrikeConfig.INSTANCE;
-
     public FrostStrike() {
         super(StatusEffectCategory.HARMFUL,
         0x330066); 
@@ -35,15 +33,16 @@ public class FrostStrike extends SpellEffect {
     //?}
     int amplifier) {
         World world = entity.getWorld();
+        FrostStrikeConfig config = FrostStrikeConfig.INSTANCE;
 
         if (entity.isFrozen()) {
             entity.setFrozenTicks(0);
 
             float icicle_damage = 
             //? if 1.20.1 {
-            (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.frost_scaling_icicles);
+            (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * config.frost_scaling_icicles);
             //?} else {
-            /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.frost_scaling_icicles);
+            /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * config.frost_scaling_icicles);
             *///?}
 
             double critChance = 
@@ -53,7 +52,7 @@ public class FrostStrike extends SpellEffect {
             /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
             *///?}
 
-            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(CONFIG.icicles_radius, CONFIG.icicles_radius, CONFIG.icicles_radius), (e) -> e != entity && e instanceof PlayerEntity == false)) {
+            for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(config.icicles_radius, config.icicles_radius, config.icicles_radius), (e) -> e != entity && e instanceof PlayerEntity == false)) {
                 if (Math.random() < critChance)
                     icicle_damage *= 2;  
                                     

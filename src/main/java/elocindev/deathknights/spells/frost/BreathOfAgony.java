@@ -2,7 +2,6 @@ package elocindev.deathknights.spells.frost;
 
 import elocindev.deathknights.DeathKnights;
 import elocindev.deathknights.api.core.SpellEffect;
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.frost.BreathOfAgonyConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -27,8 +26,6 @@ import net.spell_power.api.SpellSchools;
 
 public class BreathOfAgony extends SpellEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, ResourceIdentifier.get(DeathKnights.MODID, "breath_of_agony"));
-    public static BreathOfAgonyConfig CONFIG = Configs.Spells.Frost.BREATH_OF_AGONY;
-
     public BreathOfAgony() {
         super(StatusEffectCategory.BENEFICIAL,
         0x330066); 
@@ -43,7 +40,8 @@ public class BreathOfAgony extends SpellEffect {
     applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Random random = world.getRandom();
-        double length = CONFIG.length;
+        BreathOfAgonyConfig config = BreathOfAgonyConfig.INSTANCE;
+        double length = config.length;
 
         ParticleEffect particleEffect = Particles.frost_hit.particleType;
         
@@ -71,9 +69,9 @@ public class BreathOfAgony extends SpellEffect {
 
         float damage = 
         //? if 1.20.1 {
-        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * CONFIG.damage_frost_scaling);
+        (float)(entity.getAttributeValue(SpellSchools.FROST.attribute) * config.damage_frost_scaling);
         //?} else {
-        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * CONFIG.damage_frost_scaling);
+        /*(float)(entity.getAttributeValue(SpellSchools.FROST.attributeEntry) * config.damage_frost_scaling);
         *///?}
 
         double critChance = 
@@ -83,9 +81,9 @@ public class BreathOfAgony extends SpellEffect {
         /*entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attributeEntry) / 100;
         *///?}
 
-        if (random.nextDouble() < critChance) damage *= CONFIG.damage_critical_scaling;
+        if (random.nextDouble() < critChance) damage *= config.damage_critical_scaling;
 
-        if (entity.age % CONFIG.tick_rate == 0) {
+        if (entity.age % config.tick_rate == 0) {
             Vec3d startPosition = entity.getPos();
             Vec3d endPosition = startPosition.add(direction.x * length, entity.getHeight(), direction.z * length);
 
@@ -114,7 +112,7 @@ public class BreathOfAgony extends SpellEffect {
                 
                 victim.damage(SpellDamageSource.create(SpellSchools.FROST, entity), damage);
                 world.addParticle(Particles.frost_hit.particleType, victim.getX(), victim.getY()+1, victim.getZ(), 0, -0.1, 0);
-                victim.setFrozenTicks(CONFIG.frozen_ticks);
+                victim.setFrozenTicks(config.frozen_ticks);
             }
         }
 

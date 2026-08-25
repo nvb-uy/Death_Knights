@@ -19,9 +19,6 @@ import net.spell_engine.utils.TargetHelper;
 import net.spell_power.api.SpellDamageSource;
 
 public class EpidemicHandler {
-    private static PlaguesConfig PLAGUE_CONFIG = PlaguesConfig.INSTANCE;
-    private static EpidemicConfig CONFIG = EpidemicConfig.INSTANCE;
-
     public static void register() {
         CombatEvents.SPELL_CAST.register(
             args -> {
@@ -29,6 +26,8 @@ public class EpidemicHandler {
                 if (caster == null) return;
 
                 if (args.spell().id().toString().equals("death_knights:epidemic")) {
+                    PlaguesConfig plagueConfig = PlaguesConfig.INSTANCE;
+                    EpidemicConfig config = EpidemicConfig.INSTANCE;
                     List<Entity> targets = args.targets();
                     
                     for (Entity target : targets) {
@@ -38,7 +37,7 @@ public class EpidemicHandler {
                         PlagueProperty activePlague = null;
                         StatusEffect activeEffect = null;
 
-                        for (PlagueProperty plague : PLAGUE_CONFIG.plagues) {
+                        for (PlagueProperty plague : plagueConfig.plagues) {
                             StatusEffect plagueEffect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(plague.effect_id));
                             if (plagueEffect != null && EffectUtils.hasStatusEffect(livingTarget, plagueEffect)) {
                                 activePlague = plague;
@@ -51,7 +50,7 @@ public class EpidemicHandler {
                             StatusEffectInstance plagueInstance = EffectUtils.getStatusEffect(livingTarget, activeEffect);
                             if (plagueInstance != null) {
                                 int currentStacks = plagueInstance.getAmplifier() + 1;
-                                int stacksToExplode = Math.min(currentStacks, CONFIG.plague_stacks);
+                                int stacksToExplode = Math.min(currentStacks, config.plague_stacks);
                                 int remainingStacks = currentStacks - stacksToExplode;
 
                                 float damagePerStack = (float) 
@@ -60,7 +59,7 @@ public class EpidemicHandler {
                                 //?} else {
                                 /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
                                 *///?}
-                                * CONFIG.unholy_coefficent);
+                                * config.unholy_coefficent);
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 
                                 if (remainingStacks > 0) {
@@ -69,7 +68,7 @@ public class EpidemicHandler {
                                     livingTarget.removeStatusEffect(EffectUtils.create(activeEffect));
                                 }
 
-                                List<LivingEntity> nearbyEntities = livingTarget.getWorld().getEntitiesByClass(LivingEntity.class, livingTarget.getBoundingBox().expand(CONFIG.epidemic_radius), e -> e != livingTarget);
+                                List<LivingEntity> nearbyEntities = livingTarget.getWorld().getEntitiesByClass(LivingEntity.class, livingTarget.getBoundingBox().expand(config.epidemic_radius), e -> e != livingTarget);
                                 
                                 for (LivingEntity ent : nearbyEntities) {
                                     StatusEffectInstance nearbyPlagueInstance = ent.getStatusEffect(EffectUtils.create(activeEffect));
@@ -78,7 +77,7 @@ public class EpidemicHandler {
                                     
                                     if (nearbyPlagueInstance != null) {
                                         int nearbyStacks = nearbyPlagueInstance.getAmplifier() + 1;
-                                        int nearbyStacksToExplode = Math.min(nearbyStacks, CONFIG.plague_stacks);
+                                        int nearbyStacksToExplode = Math.min(nearbyStacks, config.plague_stacks);
                                         int nearbyRemainingStacks = nearbyStacks - nearbyStacksToExplode;
 
                                         ent.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * nearbyStacksToExplode);

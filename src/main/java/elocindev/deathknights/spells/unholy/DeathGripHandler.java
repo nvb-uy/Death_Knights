@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.unholy.DeathGripConfig;
 import elocindev.deathknights.util.EffectUtils;
 import elocindev.necronomicon.api.NecUtilsAPI;
@@ -25,8 +24,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
 
 public class DeathGripHandler {
-    private static final DeathGripConfig CONFIG = Configs.Spells.Unholy.DEATH_GRIP;
-
     private static final Map<LivingEntity, PullInfoHolder> grippedEntities = new HashMap<>();
 
     private static class PullInfoHolder {
@@ -46,13 +43,14 @@ public class DeathGripHandler {
                 if (caster == null) return;
 
                 if (args.spell().id().toString().equals("death_knights:death_grip")) {
+                    DeathGripConfig config = DeathGripConfig.INSTANCE;
                     for (Entity target : args.targets()) {
                         if (target instanceof LivingEntity livingTarget) {
-                            if (CONFIG.entity_blacklist.contains(NecUtilsAPI.getEntityId(livingTarget))) {
+                            if (config.entity_blacklist.contains(NecUtilsAPI.getEntityId(livingTarget))) {
                                 continue;
                             }
                             
-                            if (livingTarget.getHealth() >= caster.getHealth() * CONFIG.health_threshold) {
+                            if (livingTarget.getHealth() >= caster.getHealth() * config.health_threshold) {
                                 continue;
                             }
 
@@ -81,6 +79,7 @@ public class DeathGripHandler {
             LivingEntity target = entry.getKey();
             PullInfoHolder pullInfo = entry.getValue();
             PlayerEntity caster = pullInfo.caster;
+            DeathGripConfig config = DeathGripConfig.INSTANCE;
 
             if (target.isRemoved() || caster.isRemoved() || !target.isAlive()) {
                 iterator.remove();
@@ -94,20 +93,20 @@ public class DeathGripHandler {
             Vec3d direction = casterPos.subtract(targetPos).normalize();
             double distance = casterPos.distanceTo(targetPos);
 
-            if (pullInfo.timeElapsed >= CONFIG.max_pull_time) {
+            if (pullInfo.timeElapsed >= config.max_pull_time) {
                 teleportNearPlayer(target, caster);
                 iterator.remove();
                 continue;
             }
 
-            if (distance <= CONFIG.min_distance) {
+            if (distance <= config.min_distance) {
                 target.setVelocity(0, 0, 0);
                 applyEffectsToTarget(target);
                 iterator.remove();
                 continue;
             }
             
-            Vec3d pullVelocity = direction.multiply(CONFIG.pull_speed);
+            Vec3d pullVelocity = direction.multiply(config.pull_speed);
 
             target.setVelocity(pullVelocity.x, pullVelocity.y, pullVelocity.z);
             target.velocityModified = true;
@@ -127,7 +126,7 @@ public class DeathGripHandler {
     }
 
     private static void applyEffectsToTarget(LivingEntity target) {
-        for (DeathGripConfig.EffectHolder effectHolder : CONFIG.effects) {
+        for (DeathGripConfig.EffectHolder effectHolder : DeathGripConfig.INSTANCE.effects) {
             StatusEffect effect = Registries.STATUS_EFFECT.get(ResourceIdentifier.get(effectHolder.effect_id));
             
             if (effect != null) {

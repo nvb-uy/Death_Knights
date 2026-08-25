@@ -1,7 +1,6 @@
 package elocindev.deathknights.spells.blood;
 
 import net.spell_engine.api.event.CombatEvents;
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
 import elocindev.deathknights.util.EffectUtils;
 import net.minecraft.entity.effect.StatusEffect;
@@ -16,8 +15,6 @@ import net.minecraft.util.Identifier; import elocindev.necronomicon.api.Resource
 *///?}
 
 public class MarrowrendHandler {
-    private static final MarrowrendConfig CONFIG = Configs.Spells.Blood.MARROWREND;
-
     public static void register() {
         CombatEvents.SPELL_CAST.register(
             args -> {
@@ -32,7 +29,8 @@ public class MarrowrendHandler {
     }
 
     private static void applyEffectToCaster(PlayerEntity caster) {
-        Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
+        MarrowrendConfig config = MarrowrendConfig.INSTANCE;
+        Identifier effectId = ResourceIdentifier.get(config.effect_to_apply);
         //? if 1.20.1 {
         StatusEffect effect = Registries.STATUS_EFFECT.get(effectId);
         //?} else {
@@ -45,11 +43,11 @@ public class MarrowrendHandler {
 
         StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(caster, effect);
         int currentAmplifier = currentEffect != null ? currentEffect.getAmplifier() : -1;
-        int newAmplifier = Math.min(currentAmplifier + CONFIG.stack_amount, CONFIG.max_stacks - 1);
+        int newAmplifier = Math.min(currentAmplifier + config.stack_amount, config.max_stacks - 1);
 
         StatusEffectInstance effectInstance = new StatusEffectInstance(
             effect,
-            CONFIG.effect_duration,
+            config.effect_duration,
             newAmplifier
         );
 

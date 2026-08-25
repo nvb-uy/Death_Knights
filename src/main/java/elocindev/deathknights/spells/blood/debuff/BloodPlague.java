@@ -1,7 +1,6 @@
 package elocindev.deathknights.spells.blood.debuff;
 
 import elocindev.deathknights.api.core.SpellEffect;
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
 import elocindev.deathknights.registry.SpellRegistry;
 import elocindev.deathknights.registry.SpellSchoolRegistry;
@@ -15,8 +14,6 @@ import net.spell_power.api.SpellDamageSource;
 
 
 public class BloodPlague extends SpellEffect {
-    public static BloodBoilConfig CONFIG = Configs.Spells.Blood.BLOOD_BOIL;
-
     public BloodPlague() {
         super(StatusEffectCategory.HARMFUL, 0xb31d2c);
     }
@@ -29,13 +26,14 @@ public class BloodPlague extends SpellEffect {
     /*boolean
     *///?}
     applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getWorld().isClient() || entity.age % CONFIG.tick_rate != 0) return
+        BloodBoilConfig config = BloodBoilConfig.INSTANCE;
+        if (entity.getWorld().isClient() || entity.age % config.tick_rate != 0) return
         //? if 1.21.1 {
         /*super.applyUpdateEffect(entity, amplifier)
         *///?}
         ;
 
-        for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(CONFIG.radius*2), (e) -> EffectUtils.hasStatusEffect(e, SpellRegistry.BLOOD_THIRST))) {
+        for (PlayerEntity e : entity.getEntityWorld().getEntitiesByClass(PlayerEntity.class, entity.getBoundingBox().expand(config.radius*2), (e) -> EffectUtils.hasStatusEffect(e, SpellRegistry.BLOOD_THIRST))) {
             if (TargetHelper.allowedToHurt(e, entity) && !(entity instanceof HorseEntity)) {
                 entity.damage(SpellDamageSource.create(SpellSchoolRegistry.BLOOD, e), ((float) e.getAttributeValue(
                 //? if 1.20.1 {
@@ -43,7 +41,7 @@ public class BloodPlague extends SpellEffect {
                 //?} else {
                 /*SpellSchoolRegistry.BLOOD.attributeEntry
                 *///?}
-                ) * CONFIG.damage_blood_scaling) * (amplifier));
+                ) * config.damage_blood_scaling) * (amplifier));
                 break;
             }
         }
