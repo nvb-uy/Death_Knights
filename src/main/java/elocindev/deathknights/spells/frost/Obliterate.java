@@ -15,8 +15,6 @@ import net.minecraft.entity.attribute.AttributeContainer;
 *///?}
  
 public class Obliterate extends SpellEffect {
-    public static ObliterateConfig CONFIG = ObliterateConfig.INSTANCE;
-
     public Obliterate() {
         super(StatusEffectCategory.BENEFICIAL,
         0x330066); 
@@ -41,6 +39,7 @@ public class Obliterate extends SpellEffect {
 
         var breath = SpellRegistry.BREATH_OF_AGONY;
         var winter = SpellRegistry.REMORSELESS_WINTER;
+        ObliterateConfig config = ObliterateConfig.INSTANCE;
         
         if (EffectUtils.hasStatusEffect(entity, breath)) {
             entity.addStatusEffect(new StatusEffectInstance(
@@ -49,7 +48,7 @@ public class Obliterate extends SpellEffect {
                 //?} else {
                 /*RegistryEntry.of(breath),
                 *///?}
-            EffectUtils.getStatusEffect(entity, breath).getDuration() + CONFIG.breath_of_agony_extension_ticks, 0, false, false, true));
+            EffectUtils.getStatusEffect(entity, breath).getDuration() + config.breath_of_agony_extension_ticks, 0, false, false, true));
         }
 
         if (EffectUtils.hasStatusEffect(entity, winter)) {
@@ -59,7 +58,7 @@ public class Obliterate extends SpellEffect {
                 //?} else {
                 /*RegistryEntry.of(winter),
                 *///?}
-            EffectUtils.getStatusEffect(entity, winter).getDuration() + CONFIG.remorseless_winter_extension_ticks, 0, false, false, true));
+            EffectUtils.getStatusEffect(entity, winter).getDuration() + config.remorseless_winter_extension_ticks, 0, false, false, true));
         }
     }
 

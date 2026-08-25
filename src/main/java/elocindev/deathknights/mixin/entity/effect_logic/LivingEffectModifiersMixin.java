@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.MarrowrendConfig;
 import elocindev.deathknights.registry.SpellRegistry;
 import elocindev.deathknights.util.EffectUtils;
@@ -39,7 +38,7 @@ public abstract class LivingEffectModifiersMixin {
         LivingEntity entity = (LivingEntity) (Object) this;
         LivingEntity attacker = entity.getAttacker();
 
-        MarrowrendConfig CONFIG = Configs.Spells.Blood.MARROWREND;
+        MarrowrendConfig CONFIG = MarrowrendConfig.INSTANCE;
 
         if (attacker == null) return;
 

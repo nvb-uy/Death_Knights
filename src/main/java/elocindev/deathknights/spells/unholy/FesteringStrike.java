@@ -1,7 +1,6 @@
 package elocindev.deathknights.spells.unholy;
 
 import elocindev.deathknights.api.core.SpellEffect;
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig.PlagueProperty;
 import elocindev.deathknights.util.EffectUtils;
@@ -21,7 +20,6 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import java.util.List;
 
 public class FesteringStrike extends SpellEffect {
-    public static PlaguesConfig CONFIG = Configs.Spells.Unholy.PLAGUES;
     private static final Random RANDOM = Random.create();
 
     public FesteringStrike() {
@@ -45,7 +43,7 @@ public class FesteringStrike extends SpellEffect {
         //?}
         amplifier);
 
-        List<PlagueProperty> plagues = CONFIG.plagues;
+        List<PlagueProperty> plagues = PlaguesConfig.INSTANCE.plagues;
 
         PlagueProperty activePlague = null;
         StatusEffect activeEffect = null;

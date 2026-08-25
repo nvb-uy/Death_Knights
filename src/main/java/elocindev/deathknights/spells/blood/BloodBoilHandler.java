@@ -2,7 +2,6 @@ package elocindev.deathknights.spells.blood;
 
 import net.spell_engine.api.event.CombatEvents;
 
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.blood.BloodBoilConfig;
 import elocindev.deathknights.registry.SpellRegistry;
 import elocindev.deathknights.util.EffectUtils;
@@ -12,8 +11,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class BloodBoilHandler {
-    private static final BloodBoilConfig CONFIG = Configs.Spells.Blood.BLOOD_BOIL;
-
     public static void register() {
         CombatEvents.SPELL_CAST.register(
             args -> {
@@ -32,13 +29,14 @@ public class BloodBoilHandler {
     }
 
     private static void applyDebuff(PlayerEntity caster, LivingEntity target) {
+        BloodBoilConfig config = BloodBoilConfig.INSTANCE;
         StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(target, SpellRegistry.BLOOD_PLAGUE);
         int currentAmplifier = currentEffect != null ? currentEffect.getAmplifier() : -1;
 
-        if (currentAmplifier < CONFIG.max_stacks - 1) {
-            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), currentEffect != null ? currentEffect.getDuration() : CONFIG.duration_ticks, currentAmplifier + 1));
-        } else if (CONFIG.reset_duration_if_max_stacks) {
-            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), CONFIG.duration_ticks, currentAmplifier));
+        if (currentAmplifier < config.max_stacks - 1) {
+            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), currentEffect != null ? currentEffect.getDuration() : config.duration_ticks, currentAmplifier + 1));
+        } else if (config.reset_duration_if_max_stacks) {
+            target.addStatusEffect(new StatusEffectInstance(EffectUtils.create(SpellRegistry.BLOOD_PLAGUE), config.duration_ticks, currentAmplifier));
         }
     }
 }

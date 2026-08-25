@@ -13,7 +13,6 @@ import net.spell_power.api.SpellDamageSource;
 
 import java.util.List;
 
-import elocindev.deathknights.config.Configs;
 import elocindev.deathknights.config.entries.spells.unholy.DeathCoilConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig;
 import elocindev.deathknights.config.entries.spells.unholy.PlaguesConfig.PlagueProperty;
@@ -21,8 +20,6 @@ import elocindev.deathknights.registry.SpellSchoolRegistry;
 import elocindev.deathknights.util.EffectUtils;
 
 public class DeathCoilHandler {
-    private static DeathCoilConfig CONFIG = Configs.Spells.Unholy.DEATH_COIL;
-
     public static void register() {
         CombatEvents.SPELL_CAST.register(
             args -> {
@@ -30,6 +27,7 @@ public class DeathCoilHandler {
                 if (caster == null) return;
 
                 if (args.spell().id().toString().equals("death_knights:death_coil")) {
+                    DeathCoilConfig config = DeathCoilConfig.INSTANCE;
                     List<Entity> targets = args.targets();
 
                     for (Entity target : targets) {
@@ -53,7 +51,7 @@ public class DeathCoilHandler {
                             if (plagueInstance != null) {
                                 int currentStacks = plagueInstance.getAmplifier() + 1;
 
-                                int stacksToExplode = Math.min(currentStacks, CONFIG.plague_stacks);
+                                int stacksToExplode = Math.min(currentStacks, config.plague_stacks);
                                 int remainingStacks = currentStacks - stacksToExplode;
 
                                 float damagePerStack = (float)
@@ -63,7 +61,7 @@ public class DeathCoilHandler {
                                 /*(caster.getAttributeValue(SpellSchoolRegistry.UNHOLY.attributeEntry)
                                 *///?}
 
-                                * CONFIG.unholy_coefficent);
+                                * config.unholy_coefficent);
                                 livingTarget.damage(SpellDamageSource.create(SpellSchoolRegistry.UNHOLY, caster), damagePerStack * stacksToExplode);
 
                                 if (remainingStacks > 0) {
@@ -72,7 +70,7 @@ public class DeathCoilHandler {
                                     livingTarget.removeStatusEffect(EffectUtils.create(activeEffect));
                                 }
 
-                                applyPlagueToNearbyTargets(livingTarget, caster, activeEffect, activePlague);
+                                applyPlagueToNearbyTargets(livingTarget, caster, activeEffect, activePlague, config);
                             }
                         }
                     }
@@ -81,8 +79,8 @@ public class DeathCoilHandler {
         );
     }
 
-    private static void applyPlagueToNearbyTargets(LivingEntity target, PlayerEntity caster, StatusEffect plagueEffect, PlagueProperty plague) {
-        List<LivingEntity> nearbyEntities = target.getWorld().getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(CONFIG.spread_radius), e -> e != target);
+    private static void applyPlagueToNearbyTargets(LivingEntity target, PlayerEntity caster, StatusEffect plagueEffect, PlagueProperty plague, DeathCoilConfig config) {
+        List<LivingEntity> nearbyEntities = target.getWorld().getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(config.spread_radius), e -> e != target);
     
         for (LivingEntity ent : nearbyEntities) {
             StatusEffectInstance currentEffect = EffectUtils.getStatusEffect(ent, plagueEffect);
