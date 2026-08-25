@@ -101,7 +101,8 @@ public abstract class LivingEffectModifiersMixin {
         LivingEntity entity = (LivingEntity) (Object) this;
 
         if (EffectUtils.hasStatusEffect(entity, SpellRegistry.GREVIOUS_PLAGUE)) {
-            amount = amount * (1.0f - (0.10f * (EffectUtils.getStatusEffect(entity, SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
+            amount *= Math.max(0.0f, 1.0f - (0.15f
+                    * (EffectUtils.getStatusEffect(entity, SpellRegistry.GREVIOUS_PLAGUE).getAmplifier() + 1)));
         }
 
         return amount;
