@@ -1,6 +1,5 @@
 package elocindev.deathknights.mixin.entity.effect_logic;
 
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,18 +29,17 @@ public abstract class LivingEffectModifiersMixin {
     @Shadow protected float lastDamageTaken;
     @Shadow private long lastDamageTime;
     @Shadow public abstract float getMaxHealth();
-    @Shadow @Nullable public abstract LivingEntity getAttacker();
     @Shadow public abstract float getHealth();
     @Shadow public abstract boolean damage(DamageSource source, float amount);
 
     @Inject(method = "damage", at = @At("RETURN"), cancellable = true)
     protected void death_knights(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
-        LivingEntity attacker = entity.getAttacker();
 
         MarrowrendConfig CONFIG = Configs.Spells.Blood.MARROWREND;
 
-        if (attacker == null) return;
+        if (!cir.getReturnValue() || source.getAttacker() == null
+                || !EffectUtils.hasStatusEffect(entity, SpellRegistry.MARROWSHIELD)) return;
 
         Identifier effectId = ResourceIdentifier.get(CONFIG.effect_to_apply);
         //? if 1.20.1 {
@@ -54,22 +52,22 @@ public abstract class LivingEffectModifiersMixin {
             effect = StatusEffects.RESISTANCE;
         }
 
-        if (attacker.hasStatusEffect(effect)) {
-            StatusEffectInstance effectInstance = attacker.getStatusEffect(effect);
+        if (entity.hasStatusEffect(effect)) {
+            StatusEffectInstance effectInstance = entity.getStatusEffect(effect);
 
             if (effectInstance != null) {
                 int currentAmplifier = effectInstance.getAmplifier();
                 float chance = CONFIG.stack_reduction_chance;
                 
-                if (attacker.getWorld().getRandom().nextFloat() < chance) {
+                if (entity.getWorld().getRandom().nextFloat() < chance) {
                     if (currentAmplifier > 0) {
-                        attacker.addStatusEffect(new StatusEffectInstance(
+                        entity.addStatusEffect(new StatusEffectInstance(
                             effect,
                             CONFIG.effect_duration,
                             currentAmplifier - 1
                         ));
                     } else {
-                        attacker.removeStatusEffect(effect);
+                        entity.removeStatusEffect(effect);
                     }
                 }
             }
