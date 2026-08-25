@@ -1,6 +1,5 @@
 package elocindev.deathknights.spells.unholy;
 
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import elocindev.necronomicon.api.ResourceIdentifier;
@@ -65,7 +64,7 @@ public class DeathGripHandler {
             }
         );
         
-        ServerTickEvents.END_WORLD_TICK.register(DeathGripHandler::updateGrippedEntities);
+        ServerTickEvents.END_SERVER_TICK.register(server -> updateGrippedEntities());
     }
 
     private static void startDeathGripPull(LivingEntity target, PlayerEntity caster) {
@@ -73,7 +72,7 @@ public class DeathGripHandler {
         caster.getWorld().playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
     }
 
-    private static void updateGrippedEntities(ServerWorld world) {
+    private static void updateGrippedEntities() {
         Iterator<Map.Entry<LivingEntity, PullInfoHolder>> iterator = grippedEntities.entrySet().iterator();
 
         while (iterator.hasNext()) {
@@ -82,7 +81,8 @@ public class DeathGripHandler {
             PullInfoHolder pullInfo = entry.getValue();
             PlayerEntity caster = pullInfo.caster;
 
-            if (target.isRemoved() || caster.isRemoved() || !target.isAlive()) {
+            if (target.isRemoved() || caster.isRemoved() || !target.isAlive()
+                    || target.getWorld() != caster.getWorld()) {
                 iterator.remove();
                 continue;
             }
