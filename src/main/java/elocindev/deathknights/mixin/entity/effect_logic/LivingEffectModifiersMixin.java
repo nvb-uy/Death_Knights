@@ -78,22 +78,19 @@ public abstract class LivingEffectModifiersMixin {
 
     @Inject(method = "modifyAppliedDamage", at = @At("RETURN"), cancellable = true)
     protected void death_knights$modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
-        LivingEntity entity = (LivingEntity) (Object) this;
-        LivingEntity attacker = entity.getAttacker();
+        float newAmount = cir.getReturnValue();
 
-        float newAmount = amount;
-
-        if (attacker == null) return;
+        if (!(source.getAttacker() instanceof LivingEntity attacker)) return;
 
         if (EffectUtils.hasStatusEffect(attacker, SpellRegistry.ATROCIOUS_PLAGUE)) {
-            newAmount = amount * (1.0f - (0.10f * (EffectUtils.getStatusEffect(attacker, SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1)));
+            newAmount *= 1.0f - (0.10f * (EffectUtils.getStatusEffect(attacker, SpellRegistry.ATROCIOUS_PLAGUE).getAmplifier() + 1));
         }
 
         if (EffectUtils.hasStatusEffect(attacker, SpellRegistry.ENRAGED)) {
             newAmount *= 1f - (0.20f * (EffectUtils.getStatusEffect(attacker, SpellRegistry.ENRAGED).getAmplifier() + 1));   
         }
 
-        cir.setReturnValue(newAmount);;
+        cir.setReturnValue(newAmount);
     }
 
     @ModifyVariable(method = "heal", at = @At("HEAD"), argsOnly = true)
